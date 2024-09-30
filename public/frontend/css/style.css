@@ -1,0 +1,156 @@
+body, h1, h2, h3, h4, h5, h6{
+    font-family: "Montserrat", system-ui;
+}
+
+@media (max-width: 992px) {
+    .navbar-collapse {
+        position: fixed;
+        top: 0px;
+        left: 0;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+        width: 75%;
+        height: 100%;
+    }
+
+    .navbar-collapse.collapsing {
+        left: -75%;
+        transition: height 0s ease;
+    }
+
+    .navbar-collapse.show {
+        left: 0;
+        transition: left 300ms ease-in-out;
+    }
+
+    .navbar-toggler.collapsed ~ .navbar-collapse {
+        transition: left 500ms ease-in-out;
+    }
+}
+
+/*--------------------------------------------------
+LOGIN CSS START
+-------------------------------------------------- */
+.wrap-login100 {
+    background: #fff;
+    padding: 60px;
+  }
+
+.modal-close{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 300;;
+}
+.form-title {
+    font-size: 30px;
+    color: #555555;
+    line-height: 1.2;
+    text-transform: uppercase;
+    width: 100%;
+    display: block;
+  }
+.p-b-25{
+    padding-bottom: 25px;
+}
+.form-radious{
+    border-radius: 10px !important;
+}
+
+.login-label {
+    font-size: 13px;
+    color: #555555;
+    line-height: 1.4;
+    text-transform: uppercase;
+    padding-bottom: 7px;
+    font-weight: 600;
+  }
+
+  .login-input {
+    color: #555555;
+    line-height: 1.2;
+    font-size: 18px;
+    display: block;
+    width: 100%;
+    background: transparent;
+    height: 55px;
+    padding: 0 25px 0 25px;
+    border: 1px solid #999999;
+    border-radius: 7px;
+  }
+
+  .login-subtitle{
+    color: #555555;
+  }
+.otp-wrapper{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+  .otp-field {
+    display: flex;
+  }
+  .otp-field input {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 32px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 2px;
+    /* outline: 1px solid #555555; */
+    /* outline-offset: 2px; */
+    font-weight: bold;
+    color: #555555;
+    outline: none;
+    background: #ffffff;
+    transition: all 0.1s;
+    box-shadow: none;
+    border: 1px solid #999999;
+    
+  }
+  .otp-field input:focus {
+    border: 2px solid #5d983a;
+    box-shadow: 0 0 2px 2px #90d865;
+  }
+  .disabled {
+    opacity: 0.5;
+  }
+  .space {
+    margin-right: 1rem !important;
+  }
+  .m-t-40{
+    margin-top: 40px;
+  }
+  .verify-account-btn{
+    border: 0px;
+    padding: 10px 15px;
+    background: #5d983a;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 7px;
+    width: 236px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .verify-account-btn:hover{
+    background: #90d865;
+    color: #000000;
+  }
+.resend{
+    color: #555555;
+}
+.resend a{
+    color: #5d983a;
+}
+
+.resend a:hover{
+    color: #555555;
+}
