@@ -29,7 +29,7 @@
                                     <div class="col-12">
                                         <label for="inputChoosePassword" class="form-label">Password</label>
                                         <div class="input-group" id="show_hide_password">
-                                            <input type="password" name="password" class="form-control border-end-0" id="inputChoosePassword" value="12345678" placeholder="Enter Password"> <a href="javascript:;" class="input-group-text bg-transparent" required><i class='bx bx-hide'></i></a>
+                                            <input type="password" name="password" class="form-control border-end-0" id="inputChoosePassword" value="x7I9>5dOz7I£0" placeholder="Enter Password"> <a href="javascript:;" class="input-group-text bg-transparent" required><i class='bx bx-hide'></i></a>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
