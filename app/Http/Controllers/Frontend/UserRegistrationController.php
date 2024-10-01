@@ -32,6 +32,6 @@ class UserRegistrationController extends Controller
             'mobile'=>$request->phone_number,
         ];
         User::create($data);
-        return redirect()->route('registration.form')->with('success', 'Registration successful!');
+        return redirect()->back()->with('success', 'Registration successful!');
     }
 }
