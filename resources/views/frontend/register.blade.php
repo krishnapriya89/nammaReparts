@@ -158,5 +158,43 @@
             });
         });
 
+        $('.otp-field input').on('keyup', function (e) {
+        if ($(this).val().length >= $(this).attr('maxlength')) {
+            $(this).next('input').focus();
+        }
+        if (e.key === 'Backspace' && $(this).val() === '') {
+            $(this).prev('input').focus();
+        }
+        });
+        //verify otp
+        $('#verifyOtpBtn').on('click',function(e){
+            e.preventDefault();
+            const otp = $('.otp-field input').map(function () {
+                return $(this).val();
+            }).get().join(''); // Join all OTP inputs
+            let csrfToken = $('meta[name="csrf-token"]').attr('content');
+            $.ajax({
+                url:'/verify-otp',
+                method:'POST',
+                data:{
+                    _token:csrfToken,
+                    otp:otp,
+                    phone_number:$('#phone_number').val()
+                },
+                success: function(response) {
+                    console.log(response);
+                    if (response.success) {
+                        alert("Success: " + response.message);
+                    } else {
+                        alert("Error: " + response.message);
+                    }
+                },
+                error: function(xhr) {
+                    console.log(xhr.responseText); // Log error response for debugging
+                    alert('Something went wrong. Please try again.');
+                }
+            });
+        });
+
     });
 </script>

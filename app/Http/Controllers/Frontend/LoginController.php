@@ -23,7 +23,7 @@ class LoginController extends Controller
         // Get the phone number and generate the OTP
         $phoneNumber = $request->phone_number;
         $otp = rand(1000, 9999);
-        $expiryTime = Carbon::now()->addMinutes(5);
+        $expiryTime = Carbon::now()->addMinutes(7);
 
         // Log OTP generation (optional)
         Log::info("Generated OTP: $otp for phone number: $phoneNumber");
@@ -73,6 +73,27 @@ class LoginController extends Controller
     //verify otp
     public function verifyOtp(Request $request)
     {
-        return $request->all();
+       $otp = $request->otp;
+       $phone_number = $request->phone_number;
+
+       $verify_otp = Otplog::where('phone_number', $phone_number)
+        ->where('otp', $otp)
+        ->where('expiry_time', '>', Carbon::now())
+        ->first();
+
+        if ($verify_otp) {
+            Log::info('OTP verification successful', [
+                'phone_number' => $phone_number,
+                'otp' => $otp,
+            ]);
+            return response()->json(['success' => true, 'message' => 'OTP verified successfully']);
+        } else {
+            Log::warning('OTP verification failed', [
+                'phone_number' => $phone_number,
+                'otp' => $otp,
+                'current_time' => Carbon::now(),
+            ]);
+            return response()->json(['success' => false, 'message' => 'Invalid or expired OTP'], 400);
+        }
     }
 }
