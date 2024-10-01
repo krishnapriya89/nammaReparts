@@ -34,5 +34,12 @@ return [
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
+    'kaleyra' => [
+    'account_id' => env('KALEYRA_ACCOUNT_ID'),
+    'api_key' => env('KALEYRA_API_KEY'),
+    'sender_id' => env('KALEYRA_SENDER_ID'),
+    'template_id' => env('KALEYRA_TEMPLATE_ID'),
+],
+
 
 ];

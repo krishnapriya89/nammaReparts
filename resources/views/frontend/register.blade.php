@@ -19,7 +19,7 @@
                   <div class="form-radious modal-body wrap-login100">
                     <h5 class="form-title p-b-25">Account Login</h5>
                     <form action="{{route('login')}}" method="post" id="login_form">
-@csrf
+                        @csrf
                         <div class="form-group">
                             <label class="login-label ">Mobile Number</label>
                             <input class="login-input" type="text" name="phone_number" id="phone_number" placeholder="Enter Your Mobile Number">
@@ -127,101 +127,41 @@
             </div>
         </div>
     </div>
-
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $.ajaxSetup({
-
-    });
-</script>
-
-<script>
-    $(document).ready(function(){
-
-        $('#phone_number').on('input',function(){
-            const phone_number = $(this).val();
-            if(phone_number.length === 10)
-            {
-                $('#login_form').submit();
-            }
-        });
-        //submit the login form
+    @endsection
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+                $('#phone_number').on('input',function(){
+                const phone_number = $(this).val();
+                if(phone_number.length === 10)
+                {
+                    $('#login_form').submit();
+                }
+            });
+         //submit the login form
         $('#login_form').on('submit', function (event) {
-         event.preventDefault(); // Prevent the default form submission
+                event.preventDefault(); // Prevent the default form submission
 
-            $.ajax({
-                url: $(this).attr('action'), // Use the form action URL
-                method: 'POST',
-                data: $(this).serialize(), // Serialize the form data
-                success: function (response) {
-                    if (response.success) {
-                        $('#MyModa2').modal('show'); // Show the OTP modal
-                    } else {
-                        alert(response.message); // Show error message if OTP not sent
-                    }
-                },
-                error: function (xhr) {
-                    const errorMessage = xhr.responseJSON.message || 'An error occurred.';
-                    alert(errorMessage); // Show error message if request fails
-                }
-            });
-        });
-
-        $('.otp-field input').on('keyup', function (e) {
-        if ($(this).val().length >= $(this).attr('maxlength')) {
-            $(this).next('input').focus();
-        }
-        if (e.key === 'Backspace' && $(this).val() === '') {
-            $(this).prev('input').focus();
-        }
-        });
-
-        //verify otp
-        $('#verifyOtpBtn').on('click',function(){
-            console.log($('meta[name="csrf-token"]').attr('content'));
-            const otp = $('.otp-field input').map(function () {
-                return $(this).val();
-            }).get().join(''); // Join all OTP inputs
-
-            $.ajax({
-                url: '/verify-otp',
-            method: 'POST',
-            headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-             },
-
-            data: {
-                    otp: otp, // Send the joined OTP
-                    phone_number: $('#phone_number').val() // Send the phone number for context
-                },
-            success: function (response) {
-                console.log(response);
-                if (response.success) {
-                    alert('OTP verified successfully!'); // Handle successful verification
-                    // You can redirect or perform additional actions here
-                } else {
-                    alert(response.message); // Show error message if OTP verification fails
-                }
-            },
-            error: function (xhr) {
-                let errorMessage = 'An error occurred.';
-                if (xhr.responseJSON && xhr.responseJSON.message) {
-                    errorMessage = xhr.responseJSON.message; // Use the error message from the response
-                } else if (xhr.status === 400) {
-                    errorMessage = 'Bad request. Please try again.'; // Example for bad requests
-                } else if (xhr.status === 500) {
-                    errorMessage = 'Server error. Please try again later.'; // Example for server errors
-                }
-                alert(errorMessage); // Show error message
-            }
-            });
-        });
+                    $.ajax({
+                        url: $(this).attr('action'), // Use the form action URL
+                        method: 'POST',
+                        data: $(this).serialize(), // Serialize the form data
+                        success: function (response) {
+                            if (response.success) {
+                                $('#MyModa2').modal('show'); // Show the OTP modal
+                            } else {
+                                alert(response.message); // Show error message if OTP not sent
+                            }
+                        },
+                        error: function (xhr) {
+                            const errorMessage = xhr.responseJSON.message || 'An error occurred.';
+                            alert(errorMessage); // Show error message if request fails
+                        }
+                    });
+                });
 
     });
 
+    </script>
 
-</script>
 
-
-@endsection
