@@ -56,10 +56,10 @@ class LoginController extends Controller
                     'template_id' => config('services.kaleyra.template_id'),
                 ],
             ]);
-            
+
             $responseData = json_decode($response->getBody(), true);
             // dd($responseData);
-            if ($response->getStatusCode() == 202 ||$response->getStatusCode() == 200 && isset($responseData['data'])) {
+            if ($response->getStatusCode() == 202 || $response->getStatusCode() == 200 && isset($responseData['data'])) {
                 return response()->json(['success' => true, 'message' => 'OTP sent successfully!']);
             } else {
                 return response()->json(['success' => false, 'message' => 'Failed to send OTP.'], 500);
@@ -73,7 +73,6 @@ class LoginController extends Controller
     //verify otp
     public function verifyOtp(Request $request)
     {
-       return $request->all();
+        return $request->all();
     }
-
 }
