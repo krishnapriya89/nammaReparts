@@ -19,6 +19,7 @@ class LoginController extends Controller
             'phone_number' => 'required|digits:10',
         ]);
 
+
         // Get the phone number and generate the OTP
         $phoneNumber = $request->phone_number;
         $otp = rand(1000, 9999);
@@ -38,22 +39,24 @@ class LoginController extends Controller
         // Send the OTP to the phone number via Kaleyra API
         try {
             $client = new Client();
-            $url = 'https://api.kaleyra.io/v1/' . env('KALEYRA_ACCOUNT_ID') . '/messages';
+            // $url = 'https://api.kaleyra.io/v1/' . env('KALEYRA_ACCOUNT_ID') . '/messages';
+
+            $url = 'https://api.kaleyra.io/v1/' . config('services.kaleyra.account_id') . '/messages';
 
             $response = $client->post($url, [
                 'headers' => [
-                    'api-key' => env('KALEYRA_API_KEY'),
+                    'api-key' => config('services.kaleyra.api_key'),
                     'Content-Type' => 'application/json',
                 ],
                 'json' => [
                     'to' => '91' . $phoneNumber, // Make sure to prepend '91' for Indian numbers or other country codes.
-                    'sender' => env('KALEYRA_SENDER_ID'),
+                    'sender' => config('services.kaleyra.sender_id'),
                     'body' => 'Dear Customer, Your OTP is ' . $otp . '. Treat this as confidential - AAKRI',
                     'type' => 'TXN', // Transactional SMS type
-                    'template_id' => env('KALEYRA_TEMPLATE_ID'),
+                    'template_id' => config('services.kaleyra.template_id'),
                 ],
             ]);
-
+            
             $responseData = json_decode($response->getBody(), true);
             // dd($responseData);
             if ($response->getStatusCode() == 202 ||$response->getStatusCode() == 200 && isset($responseData['data'])) {

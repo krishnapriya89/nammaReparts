@@ -13,17 +13,14 @@
     <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+
   </head>
   <body>
 @yield('content')
     <script src="{{asset('frontend/js/jquery.min.js')}}"></script>
 
     <script src="{{asset('frontend/js/bootstrap.bundle.min.js')}}"></script>
-
-    <script>
-
-    </script>
 
 
 
