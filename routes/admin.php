@@ -17,6 +17,10 @@ Route::prefix('admin-auth')->group(function(){
     // });
     Route::middleware(['auth:admin', AdminAuthenticate::class])->group(function () {
         Route::get('dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+        //category
+        Route::resource('category',CategoryController::class);
+
+
     });
 
 
