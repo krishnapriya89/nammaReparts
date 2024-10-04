@@ -19,5 +19,9 @@ Route::prefix('admin-auth')->group(function () {
         Route::get('dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
         // vehicle crud
         Route::get('vehicle', [VehicleController::class, 'vehicle'])->name('admin.vehicle');
+        //category
+        Route::resource('category',CategoryController::class);
+
+
     });
 });

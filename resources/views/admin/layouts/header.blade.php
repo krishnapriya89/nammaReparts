@@ -1,4 +1,3 @@
-<!--start header -->
 <header>
     <div class="topbar d-flex align-items-center">
         <nav class="navbar navbar-expand gap-3">
@@ -12,39 +11,39 @@
 
               <div class="top-menu ms-auto">
                 <ul class="navbar-nav align-items-center gap-1">
-                    {{-- <li class="nav-item mobile-search-icon d-flex d-lg-none" data-bs-toggle="modal" data-bs-target="#SearchModal">
+                    <li class="nav-item mobile-search-icon d-flex d-lg-none" data-bs-toggle="modal" data-bs-target="#SearchModal">
                         <a class="nav-link" href="avascript:;"><i class='bx bx-search'></i>
                         </a>
-                    </li> --}}
-                    {{-- <li class="nav-item dropdown dropdown-laungauge d-none d-sm-flex">
-                        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="avascript:;" data-bs-toggle="dropdown"><img src="{{asset('backend/images/county/02.png')}}" width="22" alt="">
+                    </li>
+                    <li class="nav-item dropdown dropdown-laungauge d-none d-sm-flex">
+                        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="avascript:;" data-bs-toggle="dropdown"><img src="assets/images/county/02.png" width="22" alt="">
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item d-flex align-items-center py-2" href="javascript:;"><img src="{{asset('backend/images/county/01.png')}}" width="20" alt=""><span class="ms-2">English</span></a>
+                            <li><a class="dropdown-item d-flex align-items-center py-2" href="javascript:;"><img src="assets/images/county/01.png" width="20" alt=""><span class="ms-2">English</span></a>
                             </li>
-                            <li><a class="dropdown-item d-flex align-items-center py-2" href="javascript:;"><img src="{{asset('backend/images/county/02.png')}}" width="20" alt=""><span class="ms-2">Catalan</span></a>
+                            <li><a class="dropdown-item d-flex align-items-center py-2" href="javascript:;"><img src="assets/images/county/02.png" width="20" alt=""><span class="ms-2">Catalan</span></a>
                             </li>
-                            <li><a class="dropdown-item d-flex align-items-center py-2" href="javascript:;"><img src="{{asset('backend/images/county/03.png')}}" width="20" alt=""><span class="ms-2">French</span></a>
+                            <li><a class="dropdown-item d-flex align-items-center py-2" href="javascript:;"><img src="assets/images/county/03.png" width="20" alt=""><span class="ms-2">French</span></a>
                             </li>
-                            <li><a class="dropdown-item d-flex align-items-center py-2" href="javascript:;"><img src="{{asset('backend/images/county/04.png')}}" width="20" alt=""><span class="ms-2">Belize</span></a>
+                            <li><a class="dropdown-item d-flex align-items-center py-2" href="javascript:;"><img src="assets/images/county/04.png" width="20" alt=""><span class="ms-2">Belize</span></a>
                             </li>
-                            <li><a class="dropdown-item d-flex align-items-center py-2" href="javascript:;"><img src="{{asset('backend/images/county/05.png')}}" width="20" alt=""><span class="ms-2">Colombia</span></a>
+                            <li><a class="dropdown-item d-flex align-items-center py-2" href="javascript:;"><img src="assets/images/county/05.png" width="20" alt=""><span class="ms-2">Colombia</span></a>
                             </li>
-                            <li><a class="dropdown-item d-flex align-items-center py-2" href="javascript:;"><img src="{{asset('backend/images/county/06.png')}}" width="20" alt=""><span class="ms-2">Spanish</span></a>
+                            <li><a class="dropdown-item d-flex align-items-center py-2" href="javascript:;"><img src="assets/images/county/06.png" width="20" alt=""><span class="ms-2">Spanish</span></a>
                             </li>
-                            <li><a class="dropdown-item d-flex align-items-center py-2" href="javascript:;"><img src="{{asset('backend/images/county/07.png')}}" width="20" alt=""><span class="ms-2">Georgian</span></a>
+                            <li><a class="dropdown-item d-flex align-items-center py-2" href="javascript:;"><img src="assets/images/county/07.png" width="20" alt=""><span class="ms-2">Georgian</span></a>
                             </li>
-                            <li><a class="dropdown-item d-flex align-items-center py-2" href="javascript:;"><img src="{{asset('backend/images/county/08.png')}}" width="20" alt=""><span class="ms-2">Hindi</span></a>
+                            <li><a class="dropdown-item d-flex align-items-center py-2" href="javascript:;"><img src="assets/images/county/08.png" width="20" alt=""><span class="ms-2">Hindi</span></a>
                             </li>
                         </ul>
-                    </li> --}}
-                    {{-- <li class="nav-item dark-mode d-none d-sm-flex">
-                        <a class="nav-link dark-mode-icon" href="javascript:;"><i class='bx bx-moon'></i>
-                        </a>
-                    </li> --}}
+                    </li>
+                    <li class="nav-item dark-mode d-none d-sm-flex">
+                        {{-- <a class="nav-link dark-mode-icon" href="javascript:;"><i class='bx bx-moon'></i>
+                        </a> --}}
+                    </li>
 
-                    {{-- <li class="nav-item dropdown dropdown-app">
-                        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown" href="javascript:;"><i class='bx bx-grid-alt'></i></a>
+                    <li class="nav-item dropdown dropdown-app">
+                        {{-- <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown" href="javascript:;"><i class='bx bx-grid-alt'></i></a> --}}
                         <div class="dropdown-menu dropdown-menu-end p-0">
                             <div class="app-container p-2 my-2">
                               <div class="row gx-0 gy-2 row-cols-3 justify-content-center p-2">
@@ -52,7 +51,7 @@
                                   <a href="javascript:;">
                                     <div class="app-box text-center">
                                       <div class="app-icon">
-                                          <img src="{{asset('backend/images/app/slack.png')}}" width="30" alt="">
+                                          <img src="assets/images/app/slack.png" width="30" alt="">
                                       </div>
                                       <div class="app-name">
                                           <p class="mb-0 mt-1">Slack</p>
@@ -64,7 +63,7 @@
                                   <a href="javascript:;">
                                     <div class="app-box text-center">
                                       <div class="app-icon">
-                                          <img src="{{asset('backend/images/app/behance.png')}}" width="30" alt="">
+                                          <img src="assets/images/app/behance.png" width="30" alt="">
                                       </div>
                                       <div class="app-name">
                                           <p class="mb-0 mt-1">Behance</p>
@@ -76,7 +75,7 @@
                                   <a href="javascript:;">
                                     <div class="app-box text-center">
                                       <div class="app-icon">
-                                        <img src="{{asset('backend/images/app/google-drive.png')}}" width="30" alt="">
+                                        <img src="assets/images/app/google-drive.png" width="30" alt="">
                                       </div>
                                       <div class="app-name">
                                           <p class="mb-0 mt-1">Dribble</p>
@@ -88,7 +87,7 @@
                                   <a href="javascript:;">
                                     <div class="app-box text-center">
                                       <div class="app-icon">
-                                          <img src="{{asset('backend/images/app/outlook.png')}}" width="30" alt="">
+                                          <img src="assets/images/app/outlook.png" width="30" alt="">
                                       </div>
                                       <div class="app-name">
                                           <p class="mb-0 mt-1">Outlook</p>
@@ -100,7 +99,7 @@
                                   <a href="javascript:;">
                                     <div class="app-box text-center">
                                       <div class="app-icon">
-                                          <img src="{{asset('backend/images/app/github.png')}}" width="30" alt="">
+                                          <img src="assets/images/app/github.png" width="30" alt="">
                                       </div>
                                       <div class="app-name">
                                           <p class="mb-0 mt-1">GitHub</p>
@@ -112,7 +111,7 @@
                                   <a href="javascript:;">
                                     <div class="app-box text-center">
                                       <div class="app-icon">
-                                          <img src="{{asset('backend/images/app/stack-overflow.png')}}" width="30" alt="">
+                                          <img src="assets/images/app/stack-overflow.png" width="30" alt="">
                                       </div>
                                       <div class="app-name">
                                           <p class="mb-0 mt-1">Stack</p>
@@ -124,7 +123,7 @@
                                   <a href="javascript:;">
                                     <div class="app-box text-center">
                                       <div class="app-icon">
-                                          <img src="{{asset('backend/images/app/figma.png')}}" width="30" alt="">
+                                          <img src="assets/images/app/figma.png" width="30" alt="">
                                       </div>
                                       <div class="app-name">
                                           <p class="mb-0 mt-1">Stack</p>
@@ -136,7 +135,7 @@
                                   <a href="javascript:;">
                                     <div class="app-box text-center">
                                       <div class="app-icon">
-                                          <img src="{{asset('backend/images/app/twitter.png')}}" width="30" alt="">
+                                          <img src="assets/images/app/twitter.png" width="30" alt="">
                                       </div>
                                       <div class="app-name">
                                           <p class="mb-0 mt-1">Twitter</p>
@@ -148,7 +147,7 @@
                                   <a href="javascript:;">
                                     <div class="app-box text-center">
                                       <div class="app-icon">
-                                          <img src="{{asset('backend/images/app/google-calendar.png')}}" width="30" alt="">
+                                          <img src="assets/images/app/google-calendar.png" width="30" alt="">
                                       </div>
                                       <div class="app-name">
                                           <p class="mb-0 mt-1">Calendar</p>
@@ -160,7 +159,7 @@
                                   <a href="javascript:;">
                                     <div class="app-box text-center">
                                       <div class="app-icon">
-                                          <img src="{{asset('backend/images/app/spotify.png')}}" width="30" alt="">
+                                          <img src="assets/images/app/spotify.png" width="30" alt="">
                                       </div>
                                       <div class="app-name">
                                           <p class="mb-0 mt-1">Spotify</p>
@@ -172,7 +171,7 @@
                                   <a href="javascript:;">
                                     <div class="app-box text-center">
                                       <div class="app-icon">
-                                          <img src="{{asset('backend/images/app/google-photos.png')}}" width="30" alt="">
+                                          <img src="assets/images/app/google-photos.png" width="30" alt="">
                                       </div>
                                       <div class="app-name">
                                           <p class="mb-0 mt-1">Photos</p>
@@ -184,7 +183,7 @@
                                   <a href="javascript:;">
                                     <div class="app-box text-center">
                                       <div class="app-icon">
-                                          <img src="{{asset('backend/images/app/pinterest.png')}}" width="30" alt="">
+                                          <img src="assets/images/app/pinterest.png" width="30" alt="">
                                       </div>
                                       <div class="app-name">
                                           <p class="mb-0 mt-1">Photos</p>
@@ -196,7 +195,7 @@
                                   <a href="javascript:;">
                                     <div class="app-box text-center">
                                       <div class="app-icon">
-                                          <img src="{{asset('backend/images/app/linkedin.png')}}" width="30" alt="">
+                                          <img src="assets/images/app/linkedin.png" width="30" alt="">
                                       </div>
                                       <div class="app-name">
                                           <p class="mb-0 mt-1">linkedin</p>
@@ -208,7 +207,7 @@
                                   <a href="javascript:;">
                                     <div class="app-box text-center">
                                       <div class="app-icon">
-                                          <img src="{{asset('backend/images/app/dribble.png')}}" width="30" alt="">
+                                          <img src="assets/images/app/dribble.png" width="30" alt="">
                                       </div>
                                       <div class="app-name">
                                           <p class="mb-0 mt-1">Dribble</p>
@@ -220,7 +219,7 @@
                                   <a href="javascript:;">
                                     <div class="app-box text-center">
                                       <div class="app-icon">
-                                          <img src="{{asset('backend/images/app/youtube.png')}}" width="30" alt="">
+                                          <img src="assets/images/app/youtube.png" width="30" alt="">
                                       </div>
                                       <div class="app-name">
                                           <p class="mb-0 mt-1">YouTube</p>
@@ -232,7 +231,7 @@
                                   <a href="javascript:;">
                                     <div class="app-box text-center">
                                       <div class="app-icon">
-                                          <img src="{{asset('backend/images/app/google.png')}}" width="30" alt="">
+                                          <img src="assets/images/app/google.png" width="30" alt="">
                                       </div>
                                       <div class="app-name">
                                           <p class="mb-0 mt-1">News</p>
@@ -244,7 +243,7 @@
                                   <a href="javascript:;">
                                     <div class="app-box text-center">
                                       <div class="app-icon">
-                                          <img src="{{asset('backend/images/app/envato.png')}}" width="30" alt="">
+                                          <img src="assets/images/app/envato.png" width="30" alt="">
                                       </div>
                                       <div class="app-name">
                                           <p class="mb-0 mt-1">Envato</p>
@@ -256,7 +255,7 @@
                                   <a href="javascript:;">
                                     <div class="app-box text-center">
                                       <div class="app-icon">
-                                          <img src="{{asset('backend/images/app/safari.png')}}" width="30" alt="">
+                                          <img src="assets/images/app/safari.png" width="30" alt="">
                                       </div>
                                       <div class="app-name">
                                           <p class="mb-0 mt-1">Safari</p>
@@ -269,12 +268,12 @@
 
                             </div>
                         </div>
-                    </li> --}}
+                    </li>
 
-                    {{-- <li class="nav-item dropdown dropdown-large">
-                        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="#" data-bs-toggle="dropdown"><span class="alert-count">7</span>
+                    <li class="nav-item dropdown dropdown-large">
+                        {{-- <a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="#" data-bs-toggle="dropdown"><span class="alert-count">7</span>
                             <i class='bx bx-bell'></i>
-                        </a>
+                        </a> --}}
                         <div class="dropdown-menu dropdown-menu-end">
                             <a href="javascript:;">
                                 <div class="msg-header">
@@ -286,7 +285,7 @@
                                 <a class="dropdown-item" href="javascript:;">
                                     <div class="d-flex align-items-center">
                                         <div class="user-online">
-                                            <img src="{{asset('backend/images/avatars/avatar-1.png')}}" class="msg-avatar" alt="user avatar">
+                                            <img src="assets/images/avatars/avatar-1.png" class="msg-avatar" alt="user avatar">
                                         </div>
                                         <div class="flex-grow-1">
                                             <h6 class="msg-name">Daisy Anderson<span class="msg-time float-end">5 sec
@@ -309,7 +308,7 @@
                                 <a class="dropdown-item" href="javascript:;">
                                     <div class="d-flex align-items-center">
                                         <div class="user-online">
-                                            <img src="{{asset('backend/images/avatars/avatar-2.png')}}" class="msg-avatar" alt="user avatar">
+                                            <img src="assets/images/avatars/avatar-2.png" class="msg-avatar" alt="user avatar">
                                         </div>
                                         <div class="flex-grow-1">
                                             <h6 class="msg-name">Althea Cabardo <span class="msg-time float-end">14
@@ -321,7 +320,7 @@
                                 <a class="dropdown-item" href="javascript:;">
                                     <div class="d-flex align-items-center">
                                         <div class="notify bg-light-success text-success">
-                                            <img src="{{asset('backend/images/app/outlook.png')}}" width="25" alt="user avatar">
+                                            <img src="assets/images/app/outlook.png" width="25" alt="user avatar">
                                         </div>
                                         <div class="flex-grow-1">
                                             <h6 class="msg-name">Account Created<span class="msg-time float-end">28 min
@@ -344,7 +343,7 @@
                                 <a class="dropdown-item" href="javascript:;">
                                     <div class="d-flex align-items-center">
                                         <div class="user-online">
-                                            <img src="{{asset('backend/images/avatars/avatar-4.png')}}" class="msg-avatar" alt="user avatar">
+                                            <img src="assets/images/avatars/avatar-4.png" class="msg-avatar" alt="user avatar">
                                         </div>
                                         <div class="flex-grow-1">
                                             <h6 class="msg-name">Katherine Pechon <span class="msg-time float-end">15
@@ -367,7 +366,7 @@
                                 <a class="dropdown-item" href="javascript:;">
                                     <div class="d-flex align-items-center">
                                         <div class="notify bg-light-primary">
-                                            <img src="{{asset('backend/images/app/github.png')}}" width="25" alt="user avatar">
+                                            <img src="assets/images/app/github.png" width="25" alt="user avatar">
                                         </div>
                                         <div class="flex-grow-1">
                                             <h6 class="msg-name">New 24 authors<span class="msg-time float-end">1 day
@@ -379,7 +378,7 @@
                                 <a class="dropdown-item" href="javascript:;">
                                     <div class="d-flex align-items-center">
                                         <div class="user-online">
-                                            <img src="{{asset('backend/images/avatars/avatar-8.png')}}" class="msg-avatar" alt="user avatar">
+                                            <img src="assets/images/avatars/avatar-8.png" class="msg-avatar" alt="user avatar">
                                         </div>
                                         <div class="flex-grow-1">
                                             <h6 class="msg-name">Peter Costanzo <span class="msg-time float-end">6 hrs
@@ -397,9 +396,9 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown dropdown-large">
-                        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <span class="alert-count">8</span>
+                        {{-- <a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <span class="alert-count">8</span>
                             <i class='bx bx-shopping-bag'></i>
-                        </a>
+                        </a> --}}
                         <div class="dropdown-menu dropdown-menu-end">
                             <a href="javascript:;">
                                 <div class="msg-header">
@@ -412,7 +411,7 @@
                                     <div class="d-flex align-items-center gap-3">
                                         <div class="position-relative">
                                             <div class="cart-product rounded-circle bg-light">
-                                                <img src="{{asset('backend/images/products/11.png')}}" class="" alt="product image">
+                                                <img src="assets/images/products/11.png" class="" alt="product image">
                                             </div>
                                         </div>
                                         <div class="flex-grow-1">
@@ -430,7 +429,7 @@
                                     <div class="d-flex align-items-center gap-3">
                                         <div class="position-relative">
                                             <div class="cart-product rounded-circle bg-light">
-                                                <img src="{{asset('backend/images/products/02.png')}}" class="" alt="product image">
+                                                <img src="assets/images/products/02.png" class="" alt="product image">
                                             </div>
                                         </div>
                                         <div class="flex-grow-1">
@@ -448,7 +447,7 @@
                                     <div class="d-flex align-items-center gap-3">
                                         <div class="position-relative">
                                             <div class="cart-product rounded-circle bg-light">
-                                                <img src="{{asset('backend/images/products/03.png')}}" class="" alt="product image">
+                                                <img src="assets/images/products/03.png" class="" alt="product image">
                                             </div>
                                         </div>
                                         <div class="flex-grow-1">
@@ -466,7 +465,7 @@
                                     <div class="d-flex align-items-center gap-3">
                                         <div class="position-relative">
                                             <div class="cart-product rounded-circle bg-light">
-                                                <img src="{{asset('backend/images/products/04.png')}}" class="" alt="product image">
+                                                <img src="assets/images/products/04.png" class="" alt="product image">
                                             </div>
                                         </div>
                                         <div class="flex-grow-1">
@@ -484,7 +483,7 @@
                                     <div class="d-flex align-items-center gap-3">
                                         <div class="position-relative">
                                             <div class="cart-product rounded-circle bg-light">
-                                                <img src="{{asset('backend/images/products/05.png')}}" class="" alt="product image">
+                                                <img src="assets/images/products/05.png" class="" alt="product image">
                                             </div>
                                         </div>
                                         <div class="flex-grow-1">
@@ -502,7 +501,7 @@
                                     <div class="d-flex align-items-center gap-3">
                                         <div class="position-relative">
                                             <div class="cart-product rounded-circle bg-light">
-                                                <img src="{{asset('backend/images/products/06.png')}}" class="" alt="product image">
+                                                <img src="assets/images/products/06.png" class="" alt="product image">
                                             </div>
                                         </div>
                                         <div class="flex-grow-1">
@@ -520,7 +519,7 @@
                                     <div class="d-flex align-items-center gap-3">
                                         <div class="position-relative">
                                             <div class="cart-product rounded-circle bg-light">
-                                                <img src="{{asset('backend/images/products/07.png')}}" class="" alt="product image">
+                                                <img src="assets/images/products/07.png" class="" alt="product image">
                                             </div>
                                         </div>
                                         <div class="flex-grow-1">
@@ -538,7 +537,7 @@
                                     <div class="d-flex align-items-center gap-3">
                                         <div class="position-relative">
                                             <div class="cart-product rounded-circle bg-light">
-                                                <img src="{{asset('backend/images/products/08.png')}}" class="" alt="product image">
+                                                <img src="assets/images/products/08.png" class="" alt="product image">
                                             </div>
                                         </div>
                                         <div class="flex-grow-1">
@@ -556,7 +555,7 @@
                                     <div class="d-flex align-items-center gap-3">
                                         <div class="position-relative">
                                             <div class="cart-product rounded-circle bg-light">
-                                                <img src="{{asset('backend/images/products/09.png')}}" class="" alt="product image">
+                                                <img src="assets/images/products/09.png" class="" alt="product image">
                                             </div>
                                         </div>
                                         <div class="flex-grow-1">
@@ -581,41 +580,23 @@
                                 </div>
                             </a>
                         </div>
-                    </li> --}}
+                    </li>
                 </ul>
             </div>
             <div class="user-box dropdown px-3">
                 <a class="d-flex align-items-center nav-link dropdown-toggle gap-3 dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="{{asset('backend/images/avatars/avatar-2.png')}}" class="user-img" alt="user avatar">
                     <div class="user-info">
-                        <p class="user-name mb-0">Admin</p>
-                        <p class="designattion mb-0">Namma Reparts</p>
+                        <p class="user-name mb-0">Pauline Seitz</p>
+                        <p class="designattion mb-0">Web Designer</p>
                     </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
-                    {{-- <li><a class="dropdown-item d-flex align-items-center" href="javascript:;"><i class="bx bx-user fs-5"></i><span>Profile</span></a>
-                    </li>
-                    <li><a class="dropdown-item d-flex align-items-center" href="javascript:;"><i class="bx bx-cog fs-5"></i><span>Settings</span></a>
-                    </li>
-                    <li><a class="dropdown-item d-flex align-items-center" href="javascript:;"><i class="bx bx-home-circle fs-5"></i><span>Dashboard</span></a>
-                    </li>
-                    <li><a class="dropdown-item d-flex align-items-center" href="javascript:;"><i class="bx bx-dollar-circle fs-5"></i><span>Earnings</span></a>
-                    </li>
-                    <li><a class="dropdown-item d-flex align-items-center" href="javascript:;"><i class="bx bx-download fs-5"></i><span>Downloads</span></a>
-                    </li>
-                    <li>
-                        <div class="dropdown-divider mb-0"></div>
-                    </li> --}}
-                    <li>
-                        <a class="dropdown-item d-flex align-items-center" href="j{{ route('admin.logout') }}"  onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="bx bx-log-out-circle"></i><span>Logout</span>
-                            <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </a>
+
+                    <li><a class="dropdown-item d-flex align-items-center" href="javascript:;"><i class="bx bx-log-out-circle"></i><span>Logout</span></a>
                     </li>
                 </ul>
             </div>
         </nav>
     </div>
 </header>
-<!--end header -->
