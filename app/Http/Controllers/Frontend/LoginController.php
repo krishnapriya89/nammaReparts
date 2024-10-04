@@ -73,13 +73,13 @@ class LoginController extends Controller
     //verify otp
     public function verifyOtp(Request $request)
     {
-       $otp = $request->otp;
-       $phone_number = $request->phone_number;
+        $otp = $request->otp;
+        $phone_number = $request->phone_number;
 
-       $verify_otp = Otplog::where('phone_number', $phone_number)
-        ->where('otp', $otp)
-        ->where('expiry_time', '>', Carbon::now())
-        ->first();
+        $verify_otp = Otplog::where('phone_number', $phone_number)
+            ->where('otp', $otp)
+            ->where('expiry_time', '>', Carbon::now())
+            ->first();
 
         if ($verify_otp) {
             Log::info('OTP verification successful', [
