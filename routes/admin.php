@@ -19,6 +19,8 @@ Route::prefix('admin-auth')->group(function(){
         Route::get('dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
         //category
         Route::resource('category',CategoryController::class);
+        //subcategory
+        Route::resource('subcategory',SubcategoryController::class);
 
 
     });

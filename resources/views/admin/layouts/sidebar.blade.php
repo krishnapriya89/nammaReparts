@@ -19,13 +19,20 @@
             </a>
 
         </li>
-            <li>
-                <a href="{{route('category.index')}}">
-                    <div class="parent-icon"><i class='bx bx-cookie'></i>
-                    </div>
-                    <div class="menu-title">Category</div>
-                </a>
-            </li>
+        <li>
+            <a href="{{route('category.index')}}">
+                <div class="parent-icon"><i class='bx bx-wrench'></i>
+                </div>
+                <div class="menu-title">Category</div>
+            </a>
+        </li>
+        <li>
+            <a href="{{route('subcategory.index')}}">
+                <div class="parent-icon"><i class='bx bx-cog'></i>
+                </div>
+                <div class="menu-title">Sub Category</div>
+            </a>
+        </li>
 
     </ul>
     <!--end navigation-->
