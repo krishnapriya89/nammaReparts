@@ -9,7 +9,9 @@ use App\Models\Category;
 class CategoryController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of all Categories.
+     * @param null.
+     * 
      */
     public function index()
     {
@@ -18,7 +20,9 @@ class CategoryController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a category.
+     * @param null.
+     *
      */
     public function create()
     {
@@ -26,7 +30,9 @@ class CategoryController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store Category.
+     * @param Request $request.
+     *
      */
     public function store(Request $request)
     {
@@ -57,7 +63,9 @@ class CategoryController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Edit category Details.
+     * @param $id.
+     *
      */
     public function edit(string $id)
     {
@@ -66,7 +74,9 @@ class CategoryController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update Category Details.
+     * @param Request $request ,$id.
+     *
      */
     public function update(Request $request, string $id)
     {

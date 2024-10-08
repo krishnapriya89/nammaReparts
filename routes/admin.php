@@ -27,6 +27,10 @@ Route::prefix('admin-auth')->group(function () {
         // Route::post('vehicle/update/{id}', [VehicleController::class, 'update'])->name('update');
         Route::resource('vehicle_brand', VehicleBrandController::class);
         //category
-        Route::resource('category', CategoryController::class);
+        Route::resource('category',CategoryController::class);
+        //subcategory
+        Route::resource('subcategory',SubcategoryController::class);
+
+
     });
 });
