@@ -48,6 +48,17 @@
                                 <input type="text" class="form-control" id="brand_name" name="brand_name"
                                     placeholder="Enter Brand">
                             </div>
+                            <div class="col-md-6">
+                                <label for="active_status" class="form-label">Status</label>
+                                <select id="active_status" class="form-select" name="active_status">
+                                    <option value="1">Active</option>
+                                    <option value="0">Inactive</option>
+                                </select>
+                                <br>
+                                @error('active_status')
+                                <small class="red-text">Please Enter Category Name </small>
+                                @enderror
+                            </div>
                             <div class="col-md-12">
                                 <div class="d-md-flex d-grid align-items-center gap-3">
                                     <button type="submit" class="btn btn-primary px-4">Submit</button>

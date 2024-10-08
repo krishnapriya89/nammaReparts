@@ -4,11 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 use App\Models\VehicleBrand;
-use App\Models\Vehicletype;
 
 class VehicleBrandController extends Controller
 {
@@ -17,7 +15,7 @@ class VehicleBrandController extends Controller
      */
     public function index()
     {
-        $vehiclelist = VehicleBrand::where('active_status', 1)->get();
+        $vehiclelist = VehicleBrand::orderBy('id','desc')->get();
         // Pass the data to the view
         return view('admin.vehiclebrand.index', compact('vehiclelist'));
         //return view('admin.vehiclebrand.index');
@@ -38,7 +36,8 @@ class VehicleBrandController extends Controller
     {
         $request->validate([
             'logo' => 'required|image|mimes:jpeg,png,jpg,svg|max:3048',
-            'brand_name' => 'required'
+            'brand_name' => 'required',
+            'active_status' => 'required'
         ]);
 
         if ($request->hasFile('logo')) {
@@ -51,18 +50,18 @@ class VehicleBrandController extends Controller
             $data = [
                 'logo' => $fileUrl,
                 'brand_name' => $request->brand_name,
-                'active_status' => 1,
+                'active_status' => $request->active_status,
 
             ];
             $vehicle = VehicleBrand::create($data);
 
             if ($vehicle) {
-                return to_route('vehicle_brand')->with('success', 'Vehicle Brand Created Successfully!');
+                return to_route('vehicle_brand.index')->with('success', 'Vehicle Brand Created Successfully!');
             } else {
-                return to_route('vehicle_brand')->with('error', 'Failed to Create Vehicle Brand');
+                return to_route('vehicle_brand.index')->with('error', 'Failed to Create Vehicle Brand');
             }
         } else {
-            return to_route('vehicle_brand')->with('error', 'Image is required');
+            return to_route('vehicle_brand.index')->with('error', 'Image is required');
         }
     }
 
@@ -71,9 +70,7 @@ class VehicleBrandController extends Controller
      */
     public function show(string $id)
     {
-        $vehiclelist = VehicleBrand::where('active_status', 1)->get();
-        // Pass the data to the view
-        return view('admin.vehiclebrand.index', compact('vehiclelist'));
+        //
     }
 
     /**
@@ -95,7 +92,8 @@ class VehicleBrandController extends Controller
         // Validate the request
         $request->validate([
             'logo' => 'nullable|image|mimes:jpeg,png,jpg,svg|max:3048', // Make logo nullable in case user doesn't want to update it
-            'brand_name' => 'required'
+            'brand_name' => 'required',
+            'active_status' => 'required'
         ]);
 
         // Find the existing vehicle brand by ID
@@ -104,7 +102,7 @@ class VehicleBrandController extends Controller
         // Prepare the data array for updating the record
         $data = [
             'brand_name' => $request->brand_name,
-            'active_status' => $vehicle->active_status // Keep the existing active_status unless you want to update it
+            'active_status' => $request->active_status // Keep the existing active_status unless you want to update it
         ];
 
         // Check if a new logo is uploaded
