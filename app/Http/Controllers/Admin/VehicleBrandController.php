@@ -1,0 +1,153 @@
+<?php
+
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+
+use App\Models\VehicleBrand;
+use App\Models\Vehicletype;
+
+class VehicleBrandController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        $vehiclelist = VehicleBrand::where('active_status', 1)->get();
+        // Pass the data to the view
+        return view('admin.vehiclebrand.index', compact('vehiclelist'));
+        //return view('admin.vehiclebrand.index');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        return view('admin.vehiclebrand.add');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        $request->validate([
+            'logo' => 'required|image|mimes:jpeg,png,jpg,svg|max:3048',
+            'brand_name' => 'required'
+        ]);
+
+        if ($request->hasFile('logo')) {
+            $file = $request->file('logo');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $filePath = $file->storeAs('vehiclelogo images', $fileName, 'public');
+
+            $fileUrl = asset('storage/' . $filePath);
+
+            $data = [
+                'logo' => $fileUrl,
+                'brand_name' => $request->brand_name,
+                'active_status' => 1,
+
+            ];
+            $vehicle = VehicleBrand::create($data);
+
+            if ($vehicle) {
+                return to_route('vehicle_brand')->with('success', 'Vehicle Brand Created Successfully!');
+            } else {
+                return to_route('vehicle_brand')->with('error', 'Failed to Create Vehicle Brand');
+            }
+        } else {
+            return to_route('vehicle_brand')->with('error', 'Image is required');
+        }
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        $vehiclelist = VehicleBrand::where('active_status', 1)->get();
+        // Pass the data to the view
+        return view('admin.vehiclebrand.index', compact('vehiclelist'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
+    {
+        $vehicleBrand = VehicleBrand::findOrFail($id);
+
+        // Pass the data to the edit view
+        return view('admin.vehiclebrand.edit', compact('vehicleBrand'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, $id)
+    {
+        // Validate the request
+        $request->validate([
+            'logo' => 'nullable|image|mimes:jpeg,png,jpg,svg|max:3048', // Make logo nullable in case user doesn't want to update it
+            'brand_name' => 'required'
+        ]);
+
+        // Find the existing vehicle brand by ID
+        $vehicle = VehicleBrand::findOrFail($id);
+
+        // Prepare the data array for updating the record
+        $data = [
+            'brand_name' => $request->brand_name,
+            'active_status' => $vehicle->active_status // Keep the existing active_status unless you want to update it
+        ];
+
+        // Check if a new logo is uploaded
+        if ($request->hasFile('logo')) {
+            // Delete old logo if exists (optional)
+            if ($vehicle->logo) {
+                // Remove the old image file if you want
+                $oldFilePath = str_replace(asset('storage'), '', $vehicle->logo); // Get relative path
+                Storage::disk('public')->delete($oldFilePath);
+            }
+
+            // Handle the new logo upload
+            $file = $request->file('logo');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $filePath = $file->storeAs('vehiclelogo images', $fileName, 'public');
+            $fileUrl = asset('storage/' . $filePath);
+
+            // Add logo URL to the data array
+            $data['logo'] = $fileUrl;
+        }
+
+        // Update the vehicle brand record with new data
+        $vehicle->update($data);
+
+        // Check if update was successful and return a response
+        if ($vehicle) {
+            return to_route('vehicle_brand.index')->with('success', 'Vehicle Brand Updated Successfully!');
+        } else {
+            return to_route('vehicle_brand.index')->with('error', 'Failed to Update Vehicle Brand');
+        }
+    }
+
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        $vehicle = VehicleBrand::find($id);
+        if($vehicle->delete())
+        {
+            return to_route('vehicle_brand.index')->with('success','Vehicle Brand Deleted Successfully!');
+        }
+        return to_route('vehicle_brand.index')->with('error','Failed to Delete Vehicle Brand');
+    }
+}
