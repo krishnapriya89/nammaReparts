@@ -20,4 +20,9 @@ class Vehicletype extends Model
         'created_on',  // Add this if you need to insert `created_on` manually
         'modified_on', // Add this if you need to insert `modified_on` manually
     ];
+
+    public function vehicles()
+    {
+        return $this->hasMany(VehicleModel::class, 'vehicle_type');
+    }
 }

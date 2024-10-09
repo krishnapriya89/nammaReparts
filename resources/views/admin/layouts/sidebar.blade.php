@@ -40,6 +40,13 @@
                 <div class="menu-title">Vehicle Brand</div>
             </a>
         </li>
+        <li>
+            <a href="{{route('vehicle_model.index')}}">
+                <div class="parent-icon"><i class='bx bx-cookie'></i>
+                </div>
+                <div class="menu-title">Vehicle Model</div>
+            </a>
+        </li>
 
     </ul>
     <!--end navigation-->

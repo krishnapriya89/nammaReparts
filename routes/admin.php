@@ -17,15 +17,10 @@ Route::prefix('admin-auth')->group(function () {
     // });
     Route::middleware(['auth:admin', AdminAuthenticate::class])->group(function () {
         Route::get('dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
-        // vehicle crud
-        // Route::get('vehicle', [VehicleController::class, 'vehicle'])->name('admin.vehicle');
-        // Route::post('vehicle/store', [VehicleController::class, 'store'])->name('vehicle.store');
-
-        // Route::get('vehicle/list', [VehicleController::class, 'list'])->name('vehicle.list');
-
-        // Route::get('vehicle/vehicleupdate/{id}', [VehicleController::class, 'vehicleupdate'])->name('vehicle.vehicleupdate');
-        // Route::post('vehicle/update/{id}', [VehicleController::class, 'update'])->name('update');
+        //vehicle brand
         Route::resource('vehicle_brand', VehicleBrandController::class);
+        //vehicle model
+        Route::resource('vehicle_model', VehicleModelController::class);
         //category
         Route::resource('category',CategoryController::class);
         //subcategory
