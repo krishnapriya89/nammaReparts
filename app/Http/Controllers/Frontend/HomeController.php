@@ -12,4 +12,10 @@ class HomeController extends Controller
     {
         return view('frontend.home');
     }
+
+    //listing page
+    public function listingPage()
+    {
+        return view('frontend.listingpage');
+    }
 }

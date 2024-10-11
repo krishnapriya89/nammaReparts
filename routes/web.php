@@ -6,11 +6,11 @@ use Illuminate\Support\Facades\Route;
 
 require __DIR__ . '/admin.php';
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
+//home page
 Route::get('/',[HomeController::class,'home'])->name('home');
+ //listing page
+ Route::get('/listing-page',[HomeController::class,'listingPage'])->name('listing-page');
 
 
  //submit registration details
@@ -19,3 +19,4 @@ Route::get('/',[HomeController::class,'home'])->name('home');
  Route::post('login',[LoginController::class,'login'])->name('login');
  // otp verification
  Route::post('verify-otp',[LoginController::class,'verifyOtp'])->name('verify-otp');
+

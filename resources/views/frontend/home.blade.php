@@ -200,92 +200,84 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo1.png')}}" alt="logo"> <span>Mercedes Benz</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo1.png')}}" alt="logo"> <span>Mercedes Benz</span></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo2.png')}}" alt="logo"> <span>BMW</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo2.png')}}" alt="logo"> <span>BMW</span></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo3.png')}}" alt="logo"> <span>Infinity</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo3.png')}}" alt="logo"> <span>Infinity</span></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo4.png')}}" alt="logo"> <span>Audi</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo4.png')}}" alt="logo"> <span>Audi</span></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo5.png')}}" alt="logo"> <span>Honda</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo5.png')}}" alt="logo"> <span>Honda</span></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo6.png')}}" alt="logo"> <span>Volkswagen</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo6.png')}}" alt="logo"> <span>Volkswagen</span></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo7.png')}}" alt="logo"> <span>Ford</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo7.png')}}" alt="logo"> <span>Ford</span></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo8.png')}}" alt="logo"> <span>Mitsubishi</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo8.png')}}" alt="logo"> <span>Mitsubishi</span></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo9.png')}}" alt="logo"> <span>Chevrolet</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo9.png')}}" alt="logo"> <span>Chevrolet</span></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo10.png')}}" alt="logo"> <span>Subaru</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo10.png')}}" alt="logo"> <span>Subaru</span></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo11.png')}}" alt="logo"> <span>Nissan</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo11.png')}}" alt="logo"> <span>Nissan</span></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo12.png')}}" alt="logo"> <span>KIA</span></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
-                        <div class="brand-container">
-                            <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo13.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo12.png')}}" alt="logo"> <span>KIA</span></a>
                             </div>
                         </div>
                     </div>
@@ -293,7 +285,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo14.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo13.png')}}" alt="logo"> <span>KIA</span></a>
                             </div>
                         </div>
                     </div>
@@ -301,7 +293,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo15.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo14.png')}}" alt="logo"> <span>KIA</span></a>
                             </div>
                         </div>
                     </div>
@@ -309,7 +301,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo16.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo15.png')}}" alt="logo"> <span>KIA</span></a>
                             </div>
                         </div>
                     </div>
@@ -317,7 +309,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo17.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo16.png')}}" alt="logo"> <span>KIA</span></a>
                             </div>
                         </div>
                     </div>
@@ -325,7 +317,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo18.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo17.png')}}" alt="logo"> <span>KIA</span></a>
                             </div>
                         </div>
                     </div>
@@ -333,7 +325,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo19.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo18.png')}}" alt="logo"> <span>KIA</span></a>
                             </div>
                         </div>
                     </div>
@@ -341,7 +333,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo19.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo19.png')}}" alt="logo"> <span>KIA</span></a>
                             </div>
                         </div>
                     </div>
@@ -349,7 +341,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo20.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo19.png')}}" alt="logo"> <span>KIA</span></a>
                             </div>
                         </div>
                     </div>
@@ -357,7 +349,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo21.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo20.png')}}" alt="logo"> <span>KIA</span></a>
                             </div>
                         </div>
                     </div>
@@ -365,7 +357,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo22.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo21.png')}}" alt="logo"> <span>KIA</span></a>
                             </div>
                         </div>
                     </div>
@@ -373,7 +365,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo23.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo22.png')}}" alt="logo"> <span>KIA</span></a>
                             </div>
                         </div>
                     </div>
@@ -381,7 +373,15 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo24.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo23.png')}}" alt="logo"> <span>KIA</span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                        <div class="brand-container">
+                            <div class="brand-logo">
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo24.png')}}" alt="logo"> <span>KIA</span></a>
                             </div>
                         </div>
                     </div>
@@ -401,42 +401,42 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo1.png')}}" alt="logo"> <span>Mercedes Benz</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo1.png')}}" alt="logo"> <span>Mercedes Benz</span></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo2.png')}}" alt="logo"> <span>BMW</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo2.png')}}" alt="logo"> <span>BMW</span></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/four-1.png')}}" alt="logo"> <span>Infinity</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/four-1.png')}}" alt="logo"> <span>Infinity</span></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/four-2.png')}}" alt="logo"> <span>Audi</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/four-2.png')}}" alt="logo"> <span>Audi</span></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo7.png')}}" alt="logo"> <span>Honda</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo7.png')}}" alt="logo"> <span>Honda</span></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/four-3.png')}}" alt="logo"> <span>Volkswagen</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/four-3.png')}}" alt="logo"> <span>Volkswagen</span></a>
                             </div>
                         </div>
                     </div>
@@ -450,43 +450,35 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/four-5.png')}}" alt="logo"> <span>Mitsubishi</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/four-5.png')}}" alt="logo"> <span>Mitsubishi</span></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/four-6.png')}}" alt="logo"> <span>Chevrolet</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/four-6.png')}}" alt="logo"> <span>Chevrolet</span></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo11.png')}}" alt="logo"> <span>Subaru</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo11.png')}}" alt="logo"> <span>Subaru</span></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/four-7.png')}}" alt="logo"> <span>Nissan</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/four-7.png')}}" alt="logo"> <span>Nissan</span></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/four-8.png')}}" alt="logo"> <span>KIA</span></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
-                        <div class="brand-container">
-                            <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/four-9.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/four-8.png')}}" alt="logo"> <span>KIA</span></a>
                             </div>
                         </div>
                     </div>
@@ -494,7 +486,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/four-10.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/four-9.png')}}" alt="logo"> <span>KIA</span></a>
                             </div>
                         </div>
                     </div>
@@ -502,7 +494,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/four-11.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/four-10.png')}}" alt="logo"> <span>KIA</span></a>
                             </div>
                         </div>
                     </div>
@@ -510,7 +502,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/four-12.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/four-11.png')}}" alt="logo"> <span>KIA</span></a>
                             </div>
                         </div>
                     </div>
@@ -518,7 +510,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/four-12.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/four-12.png')}}" alt="logo"> <span>KIA</span></a>
                             </div>
                         </div>
                     </div>
@@ -526,7 +518,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo18.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/four-12.png')}}" alt="logo"> <span>KIA</span></a>
                             </div>
                         </div>
                     </div>
@@ -534,7 +526,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo19.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo18.png')}}" alt="logo"> <span>KIA</span></a>
                             </div>
                         </div>
                     </div>
@@ -542,7 +534,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo19.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo19.png')}}" alt="logo"> <span>KIA</span></a>
                             </div>
                         </div>
                     </div>
@@ -550,7 +542,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo20.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo19.png')}}" alt="logo"> <span>KIA</span></a>
                             </div>
                         </div>
                     </div>
@@ -558,7 +550,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo21.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo20.png')}}" alt="logo"> <span>KIA</span></a>
                             </div>
                         </div>
                     </div>
@@ -566,7 +558,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo22.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo21.png')}}" alt="logo"> <span>KIA</span></a>
                             </div>
                         </div>
                     </div>
@@ -574,7 +566,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo23.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo22.png')}}" alt="logo"> <span>KIA</span></a>
                             </div>
                         </div>
                     </div>
@@ -582,7 +574,15 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/logo24.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo23.png')}}" alt="logo"> <span>KIA</span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                        <div class="brand-container">
+                            <div class="brand-logo">
+                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo24.png')}}" alt="logo"> <span>KIA</span></a>
                             </div>
                         </div>
                     </div>
