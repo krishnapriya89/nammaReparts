@@ -22,8 +22,6 @@ class VehiclePart extends Model
         'sub_category_id',
         'vehicle_id',
         'fuel_type',
-        'power',
-        'specification',
         'year',
         'status'
     ];
