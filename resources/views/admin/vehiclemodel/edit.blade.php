@@ -51,16 +51,9 @@
                                 <input type="text" class="form-control" id="vehicle_name" name="vehicle_name" value="{{ $vehicleModel->vehicle_name }}">
                             </div>
 
-                            <!-- Vehicle Image -->
                             <div class="col-md-6">
-                                <label for="vehicle_image" class="col-sm-3 col-form-label">Vehicle Image</label>
-                                <input type="file" id="vehicle_image" name="vehicle_image">
-                                @if($vehicleModel->vehicle_image)
-                                <br>
-                                <img src="{{ $vehicleModel->vehicle_image }}" alt="Vehicle Image" style="max-width: 100px;">
-                                @else
-                                <p>No Image Available</p>
-                                @endif
+                                <label for="vehicle_name" class="col-sm-3 col-form-label">Power</label>
+                                <input type="text" class="form-control" id="power" name="power" value="{{ $vehicleModel->power }}">
                             </div>
 
                             <!-- Vehicle Model -->
@@ -90,8 +83,8 @@
 
                             <!-- Engine Type -->
                             <div class="col-md-6">
-                                <label for="engine_type" class="col-sm-3 col-form-label">Engine Type</label>
-                                <input type="text" class="form-control" id="engine_type" name="engine_type" value="{{ $vehicleModel->engine_type }}">
+                                <label for="engine" class="col-sm-3 col-form-label">Engine</label>
+                                <input type="text" class="form-control" id="engine" name="engine" value="{{ $vehicleModel->engine_type }}">
                             </div>
 
                             <!-- Select Vehicle Type -->
@@ -115,7 +108,17 @@
                                     <option value="0" {{ $vehicleModel->status == 0 ? 'selected' : '' }}>Inactive</option>
                                 </select>
                             </div>
-
+                              <!-- Vehicle Image -->
+                              <div class="col-md-6">
+                                <label for="vehicle_image" class="col-sm-3 col-form-label">Vehicle Image</label>
+                                <input type="file" id="vehicle_image" name="vehicle_image">
+                                @if($vehicleModel->vehicle_image)
+                                <br>
+                                <img src="{{ $vehicleModel->vehicle_image }}" alt="Vehicle Image" style="max-width: 100px;">
+                                @else
+                                <p>No Image Available</p>
+                                @endif
+                            </div>
                             <!-- Submit and Reset Buttons -->
                             <div class="col-md-12">
                                 <div class="d-md-flex d-grid align-items-center gap-3">

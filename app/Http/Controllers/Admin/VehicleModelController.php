@@ -40,11 +40,12 @@ class VehicleModelController extends Controller
         $request->validate([
             'brand_id' => 'required',
             'vehicle_name' => 'required|max:255',
-            'vehicle_image' => 'required|image|mimes:jpeg,png,jpg,svg|max:4048',
+            'power'=>'required',
+            'vehicle_image' => 'required|image|mimes:jpeg,png,jpg,svg,webp|max:4048',
             'model' => 'required|max:255',
             'year' => 'required',
             'fuel_type' => 'required',
-            'engine_type' => 'required|max:255',
+            'engine' => 'required|max:255',
             'vehicle_type' => 'required',
             'status' => 'required'
         ]);
@@ -63,7 +64,8 @@ class VehicleModelController extends Controller
                 'model' => $request->model,
                 'year' => $request->year,
                 'fuel_type' => $request->fuel_type,
-                'engine_type' => $request->engine_type,
+                'engine' => $request->engine,
+                'power'=>$request->power,
                 'vehicle_type' => $request->vehicle_type,
                 'status' => $request->status
 
@@ -108,14 +110,16 @@ class VehicleModelController extends Controller
      */
     public function update(Request $request, string $id)
     {
+
         $request->validate([
             'brand_id' => 'required',
             'vehicle_name' => 'required|max:255',
-            'vehicle_image' => 'nullable|image|mimes:jpeg,png,jpg|max:4048', // Nullable because the image may not always be updated
+            'power'=>'required',
+            'vehicle_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:4048', // Nullable because the image may not always be updated
             'model' => 'required|max:255',
             'year' => 'required',
             'fuel_type' => 'required',
-            'engine_type' => 'required|max:255',
+            'engine' => 'required|max:255',
             'vehicle_type' => 'required',
             'status' => 'required'
         ]);
@@ -124,15 +128,18 @@ class VehicleModelController extends Controller
         $vehicleModel = VehicleModel::findOrFail($id);
 
         // Check if a new image is uploaded
-        if ($request->hasFile('vehicle_image')) {
+        if ($request->filled('vehicle_image')) {
+
             $file = $request->file('vehicle_image');
             $fileName = time() . '_' . $file->getClientOriginalName();
             $filePath = $file->storeAs('vehicle images', $fileName, 'public');
             $fileUrl = asset('storage/' . $filePath);
         } else {
+
             // Keep the current image if not updated
             $fileUrl = $vehicleModel->vehicle_image;
         }
+
 
         // Update the vehicle model data
         $vehicleModel->update([
@@ -142,7 +149,8 @@ class VehicleModelController extends Controller
             'model' => $request->model,
             'year' => $request->year,
             'fuel_type' => $request->fuel_type,
-            'engine_type' => $request->engine_type,
+            'engine' => $request->engine,
+            'power'=>$request->power,
             'vehicle_type' => $request->vehicle_type,
             'status' => $request->status
         ]);

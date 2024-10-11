@@ -19,7 +19,8 @@ class VehicleModel extends Model
         'model',
         'year',
         'fuel_type',
-        'engine_type',
+        'engine',
+        'power',
         'vehicle_type',
         'status'
     ];

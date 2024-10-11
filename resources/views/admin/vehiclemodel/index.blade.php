@@ -59,7 +59,7 @@
                                 <td>{{$vehicleModel->model}}</td>
                                 <td>{{$vehicleModel->year}}</td>
                                 <td>{{$vehicleModel->fuel->fuel_type}}</td>
-                                <td>{{$vehicleModel->engine_type}}</td>
+                                <td>{{$vehicleModel->engine}}</td>
                                 <td>{{$vehicleModel->type->wheels}}</td>
                                 <td>
                                     @if($vehicleModel->status == 1)
