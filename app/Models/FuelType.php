@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class FuelType extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['fuel_type'];
+    
+    public function vehicles()
+    {
+        return $this->hasMany(VehicleModel::class, 'fuel_type');
+    }
 }

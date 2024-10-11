@@ -59,7 +59,7 @@ class LoginController extends Controller
 
             $responseData = json_decode($response->getBody(), true);
             // dd($responseData);
-            if ($response->getStatusCode() == 202 ||$response->getStatusCode() == 200 && isset($responseData['data'])) {
+            if ($response->getStatusCode() == 202 || $response->getStatusCode() == 200 && isset($responseData['data'])) {
                 return response()->json(['success' => true, 'message' => 'OTP sent successfully!']);
             } else {
                 return response()->json(['success' => false, 'message' => 'Failed to send OTP.'], 500);
@@ -73,13 +73,13 @@ class LoginController extends Controller
     //verify otp
     public function verifyOtp(Request $request)
     {
-       $otp = $request->otp;
-       $phone_number = $request->phone_number;
+        $otp = $request->otp;
+        $phone_number = $request->phone_number;
 
-       $verify_otp = Otplog::where('phone_number', $phone_number)
-        ->where('otp', $otp)
-        ->where('expiry_time', '>', Carbon::now())
-        ->first();
+        $verify_otp = Otplog::where('phone_number', $phone_number)
+            ->where('otp', $otp)
+            ->where('expiry_time', '>', Carbon::now())
+            ->first();
 
         if ($verify_otp) {
             Log::info('OTP verification successful', [
@@ -96,5 +96,4 @@ class LoginController extends Controller
             return response()->json(['success' => false, 'message' => 'Invalid or expired OTP'], 400);
         }
     }
-
 }
