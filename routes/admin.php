@@ -22,10 +22,10 @@ Route::prefix('admin-auth')->group(function () {
         //vehicle model
         Route::resource('vehicle_model', VehicleModelController::class);
         //category
-        Route::resource('category',CategoryController::class);
+        Route::resource('category', CategoryController::class);
         //subcategory
-        Route::resource('subcategory',SubcategoryController::class);
-
-
+        Route::resource('subcategory', SubcategoryController::class);
+        //Vehicle Parts
+        Route::resource('vehicle_part', VehiclePartController::class);
     });
 });

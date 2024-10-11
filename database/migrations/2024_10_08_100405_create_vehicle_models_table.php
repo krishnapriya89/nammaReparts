@@ -21,9 +21,10 @@ return new class extends Migration
             $table->date('year');
             $table->unsignedBigInteger('fuel_type');
             $table->foreign('fuel_type')->references('id')->on('fuel_types');
-            $table->string('engine_type', $precision = 0)->nullable();
+            $table->string('engine', $precision = 0)->nullable();
+            $table->string('power', $precision = 0)->nullable();
             $table->unsignedBigInteger('vehicle_type');
-            $table->foreign('vehicle_type')->references('id')->on('vehicletype');
+            $table->foreign('vehicle_type')->references('id')->on('vehicletype');   //2 wheeler,3 wheeler
             $table->tinyInteger('status')->default(1)->comment('1:active,0:inactive');
             $table->timestamps();
             $table->softDeletes();
