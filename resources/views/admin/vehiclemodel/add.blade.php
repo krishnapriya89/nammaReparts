@@ -53,9 +53,10 @@
                                 <input type="text" class="form-control" id="vehicle_name" name="vehicle_name">
                             </div>
                             <div class="col-md-6">
-                                <label for="vehicle_image" class="col-sm-3 col-form-label">Vehicle Image</label>
-                                <input type="file" id="vehicle_image" name="vehicle_image" multiple>
+                                <label for="power" class="col-sm-3 col-form-label">Power</label>
+                                <input type="text" class="form-control" id="power" name="power">
                             </div>
+
                             <div class="col-md-6">
                                 <label for="model" class="col-sm-3 col-form-label">Vehicle Model</label>
                                 <input type="text" class="form-control" id="model" name="model">
@@ -74,8 +75,8 @@
                                 </select>
                             </div>
                             <div class="col-md-6">
-                                <label for="engine_type" class="col-sm-3 col-form-label">Engine Type</label>
-                                <input type="text" class="form-control" id="engine_type" name="engine_type">
+                                <label for="engine" class="col-sm-3 col-form-label">Engine</label>
+                                <input type="text" class="form-control" id="engine_type" name="engine">
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label">Select Vehicle Type</label>
@@ -96,6 +97,10 @@
                                 @error('status')
                                 <small class="red-text">Please Enter Category Name </small>
                                 @enderror
+                            </div>
+                            <div class="col-md-6">
+                                <label for="vehicle_image" class="col-sm-3 col-form-label">Vehicle Image</label>
+                                <input type="file" id="vehicle_image" name="vehicle_image" multiple>
                             </div>
                             <div class="col-md-12">
                                 <div class="d-md-flex d-grid align-items-center gap-3">

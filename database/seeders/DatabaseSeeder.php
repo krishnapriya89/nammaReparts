@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\FuelType;
 use App\Models\User;
+use App\Models\VehicleType;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -22,5 +23,6 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call( AdminSeeder::class);
         $this->call(FuelTypeSeeder::class);
+        $this->call(VehicletypeSeeder::class);
     }
 }
