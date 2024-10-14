@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('categories', function (Blueprint $table) {
-            $table->unsignedBigInteger('vehicle_model_id')->after('id');
+            $table->unsignedBigInteger('vehicle_model_id')->nullable()->after('id');
             $table->foreign('vehicle_model_id')->references('id')->on('vehicle_models');
         });
     }
@@ -24,7 +24,7 @@ return new class extends Migration
     {
         Schema::table('categories', function (Blueprint $table) {
             $table->dropForeign(['vehicle_model_id']);  // Drop the foreign key
-            $table->dropColumn('vehicle_model_id');  
+            $table->dropColumn('vehicle_model_id');
         });
     }
 };
