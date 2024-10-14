@@ -22,7 +22,7 @@ Route::get('/details_four', [HomeController::class, 'detailsFour'])->name('detai
 //details 5 page
 Route::get('/details_five', [HomeController::class, 'detailsFive'])->name('details_five');
 //shipping address page
-Route::get('/shipping_address', [HomeController::class, 'shipping_address'])->name('shipping_address');
+Route::get('/shipping_address', [HomeController::class, 'shippingAddress'])->name('shipping_address');
 
 
 //submit registration details

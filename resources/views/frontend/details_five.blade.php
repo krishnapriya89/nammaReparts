@@ -52,8 +52,8 @@
                 <div class="divider mt-3 mb-3"></div>
 
                 <div>
-                    <a href="{{route('shipping_address')}}" class="btn btn-primary"> Add to cart </a>
-                    <a href="Shipping-Address.html" class="btn verify-account-btn"> Buy now </a>
+                    <a href="javascript:;" class="btn btn-primary"> Add to cart </a>
+                    <a href="{{route('shipping_address')}}" class="btn verify-account-btn"> Buy now </a>
                 </div>
 
             </div>
