@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+
 use App\Http\Middleware\AdminAuthenticate;
 // use App\Http\Controllers\Admin\DashboardController;
 use Illuminate\Support\Facades\Route;
@@ -31,7 +32,8 @@ Route::prefix('admin-auth')->group(function () {
         Route::get('categories', [VehicleModelController::class, 'getCategory'])->name('categories');
         //select sub categories under category-ajax call
         Route::get('subcategories',[VehicleModelController::class,'getSubcategory'])->name('subcategories');
-
+        //parts specification for vehicle parts
+        Route::resource('part_specification',PartsSpecificationController::class);
 
     });
 });

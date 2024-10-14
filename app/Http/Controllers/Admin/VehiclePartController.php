@@ -42,7 +42,7 @@ class VehiclePartController extends Controller
         $request->validate([
             'part_name' => 'required|max:255',
             'part_image' => 'required|image|mimes:jpeg,png,jpg,webp|max:4096',
-            'description' => 'required|max:255',
+            // 'description' => 'required|max:255',
             'price' => 'required',
             'condition' => 'required',
             'vehicle_id' => 'required',
@@ -50,7 +50,7 @@ class VehiclePartController extends Controller
             'year' => 'required',
             'status' => 'required',
         ]);
-dd($request->all());
+
         if ($request->hasFile('part_image')) {
             $file = $request->file('part_image');
             $fileName = time() . '_' . $file->getClientOriginalName();

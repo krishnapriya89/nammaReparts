@@ -48,9 +48,21 @@
                                 @endif
                             </div>
 
-                            <div class="col-md-6">
+                            {{-- <div class="col-md-6">
                                 <label for="description" class="col-sm-3 col-form-label">Description</label>
                                 <textarea class="form-control" id="description" name="description" rows="4" cols="50">{{ old('description', $vehicleparts->description) }}</textarea>
+                            </div> --}}
+                            <div class="col-md-6">
+                                <label for="description" class="col-form-label">Description</label>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div id="editor">
+
+                                        </div>
+                                        <textarea id="description" name="description" style="display: none;">{{ old('description', $vehicleparts->description) }}</textarea>
+                                    </div>
+                                </div>
+
                             </div>
 
                             <div class="col-md-6">
@@ -149,4 +161,45 @@
 
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+    // Initialize the Quill editor on DOM ready
+   var quill = new Quill('#editor', {
+        theme: 'snow'
+    });
+
+    // Set old value to Quill editor if it exists
+    var oldDescription = $('#description').val();
+    if (oldDescription) {
+        quill.root.innerHTML = oldDescription; // Set old description in the editor
+    }
+
+
+    // Form submission logic
+    $('#vehicle_part_form').on('submit', function(e) {
+        e.preventDefault(); // Prevent default form submission
+
+        // Check if quill is initialized
+        if (!quill) {
+            console.error("Quill editor is not initialized!");
+            return;
+        }
+
+        // Use Quill API to get editor content
+        var editorContent = quill.root.innerHTML;
+        console.log("Editor content: ", editorContent); // Debugging
+
+        // Set content to the hidden textarea
+        $('#description').val(editorContent);
+
+        // Ensure value is set
+        console.log("Textarea value: ", $('#description').val());
+
+        // Submit the form after setting the textarea value
+        this.submit();
+    });
+});
+
+</script>
 @endsection
