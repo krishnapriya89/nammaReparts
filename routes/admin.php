@@ -27,5 +27,11 @@ Route::prefix('admin-auth')->group(function () {
         Route::resource('subcategory', SubcategoryController::class);
         //Vehicle Parts
         Route::resource('vehicle_part', VehiclePartController::class);
+        //select category under vehicle model-ajax call
+        Route::get('categories', [VehicleModelController::class, 'getCategory'])->name('categories');
+        //select sub categories under category-ajax call
+        Route::get('subcategories',[VehicleModelController::class,'getSubcategory'])->name('subcategories');
+
+
     });
 });

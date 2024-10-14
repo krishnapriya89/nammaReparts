@@ -31,6 +31,7 @@
                         <thead>
                             <tr>
                                 <th>Sl No:</th>
+                                <th>Vehicle Model </th>
                                 <th>Category</th>
                                 <th>Category Name</th>
                                 <th>Status</th>
@@ -41,7 +42,8 @@
                             @foreach($subcategories as $item)
                             <tr>
                                 <td>{{$loop->iteration}}</td>
-                                <td>{{$item->category->category_name}}</td>
+                                <td>{{@$item->vehicleModel->model}}</td>
+                                <td>{{@$item->category->category_name}}</td>
                                 <td>{{ $item->subcategory_name}}</td>
                                 <td>
                                     @if($item->status == 1)

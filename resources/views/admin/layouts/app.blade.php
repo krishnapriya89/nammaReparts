@@ -29,6 +29,9 @@
 	<link rel="stylesheet" href="{{asset('backend/css/dark-theme.css')}}" />
 	<link rel="stylesheet" href="{{asset('backend/css/semi-dark.css')}}" />
 	<link rel="stylesheet" href="{{asset('backend/css/header-colors.css')}}" />
+    {{-- quill --}}
+    <link href="{{asset('backend/plugins/metismenu/css/metisMenu.min.css')}}" rel="stylesheet" />
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
       {{-- toastr --}}
       <link rel="stylesheet" href="{{asset('backend/plugins/toastr/toastr.min.css')}}">
       {{-- data table --}}
@@ -179,12 +182,22 @@
 
       <script src="{{asset('backend/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
 	<script src="{{asset('backend/plugins/datatable/js/dataTables.bootstrap5.min.js')}}"></script>
-
+{{-- quill.js --}}
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script src="{{asset('backend/plugins/metismenu/js/metisMenu.min.js')}}"></script>
     <script>
 		$(document).ready(function() {
 			$('#example').DataTable();
 		  } );
 	</script>
+     <script>
+        var quill = new Quill('#editor', {
+            theme: 'snow'
+        });
+        var quill = new Quill('#specification', {
+            theme: 'snow'
+        });
+    </script>
       @include('admin.layouts.toastr-message')
 
 </body>

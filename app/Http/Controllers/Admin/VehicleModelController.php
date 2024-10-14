@@ -9,6 +9,8 @@ use App\Models\VehicleBrand;
 use App\Models\FuelType;
 use App\Models\VehicleType;
 use App\Models\VehicleModel;
+use App\Models\Category;
+use App\Models\SubCategory;
 
 class VehicleModelController extends Controller
 {
@@ -170,5 +172,28 @@ class VehicleModelController extends Controller
             return to_route('vehicle_model.index')->with('success','Vehicle Model Deleted Successfully!');
         }
         return to_route('vehicle_model.index')->with('error','Failed to Delete Vehicle Model');
+    }
+
+    /**
+     * select categorirs under vehiclemodel
+     * @param $vehicle_id
+     * @return mixed|\Illuminate\Http\JsonResponse
+     */
+    public function getCategory(Request $request)
+    {
+        $vehicle_id = $request->vehicleId;
+       $categories = Category::where('vehicle_model_id',$vehicle_id)->get();
+       return response()->json($categories);
+    }
+    /**
+     * select subcategories unde category
+     * @param $categoryId.
+     * @return mixed|\Illuminate\Http\JsonResponse
+     */
+    public function getSubcategory(request $request)
+    {
+        $categoryId= $request->categoryId;
+        $subcategories = SubCategory::where('category_id',$categoryId)->get();
+        return response()->json($subcategories);
     }
 }

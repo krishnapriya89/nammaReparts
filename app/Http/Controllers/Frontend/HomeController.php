@@ -18,4 +18,10 @@ class HomeController extends Controller
     {
         return view('frontend.listingpage');
     }
+
+    //details one page
+    public function detailsOne()
+    {
+        return view('frontend.details_one');
+    }
 }

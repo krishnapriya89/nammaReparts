@@ -33,7 +33,7 @@
                         <div class="image"><img src="{{asset('frontend/images/72b0977.webp')}}" alt="parts"></div>
                     </div>
                     <div class="product-list-one-cintent">
-                        <h4 class=""><a href="#" class="listing-label">MARUTI 1000</a></h4>
+                        <h4 class=""><a href="{{route('details_one')}}" class="listing-label">MARUTI 1000</a></h4>
                         <h5 class="listing-date">10.1990 - 05.2000 </h5>
                         {{-- <select class="form-control sele-opt" >
                             <option value="1">Select your Car</option>

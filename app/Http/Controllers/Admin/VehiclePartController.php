@@ -42,19 +42,16 @@ class VehiclePartController extends Controller
         $request->validate([
             'part_name' => 'required|max:255',
             'part_image' => 'required|image|mimes:jpeg,png,jpg|max:4096',
-            'description' => 'required|max:255',
+            // 'description' => 'required|max:255',
             'price' => 'required',
             'condition' => 'required',
-            'category_id' => 'required',
-            'sub_category_id' => 'required',
             'vehicle_id' => 'required',
             'fuel_type' => 'required',
             'power' => 'required|max:255',
-            'specification' => 'required|max:255',
             'year' => 'required',
             'status' => 'required',
         ]);
-
+dd($request->all());
         if ($request->hasFile('part_image')) {
             $file = $request->file('part_image');
             $fileName = time() . '_' . $file->getClientOriginalName();

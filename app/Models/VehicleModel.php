@@ -39,4 +39,9 @@ class VehicleModel extends Model
     {
         return $this->belongsTo(VehicleType::class, 'vehicle_type');
     }
+
+    public function category()
+    {
+        return $this->hasMany(Category::class);
+    }
 }

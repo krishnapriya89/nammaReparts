@@ -31,6 +31,7 @@
                         <thead>
                             <tr>
                                 <th>Sl No:</th>
+                                <th>Vehicle Model</th>
                                 <th>Category Name</th>
                                 <th>Status</th>
                                 <th>Action</th>
@@ -39,8 +40,9 @@
                         <tbody>
                             @foreach($categories as $category)
                             <tr>
-                                <td>{{$loop->iteration}}</td>
-                                <td>{{$category->category_name}}</td>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $category->vehicleModel ? $category->vehicleModel->vehicle_name :''}}</td>
+                                <td>{{ $category->category_name }}</td>
                                 <td>
                                     @if($category->status == 1)
                                     <button class="btn btn-success">Active</button>

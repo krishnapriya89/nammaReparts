@@ -40,13 +40,29 @@
                         {{-- <h5 class="mb-4">Add Category</h5> --}}
                         <form class="row g-3" action="{{route('category.store')}}" method="POST">
                             @csrf
-                            <div class="col-md-6">
-                                <label for="input1" class="form-label">Category Name</label>
-                                <input type="text" class="form-control" id="input1" placeholder="Category Name" name="category_name">
-                                <br>
-                                @error('category_name')
-                                <small class="red-text">Please Enter Category Name </small>
-                                @enderror
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="input7" class="form-label">Select vehicle Model</label>
+                                    <select id="input7" class="form-select" name="vehicle_model">
+                                        <option value="">Select Model</option>
+                                        @foreach($vehicle_models as $model)
+                                        <option value="{{ $model->id }}">{{ $model->vehicle_name }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('vehicle_model')
+                                    <small class="red-text">Please Enter Vehicle Model</small>
+                                    @enderror
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="input1" class="form-label">Category Name</label>
+                                    <input type="text" class="form-control" id="input1" placeholder="Category Name" name="category_name">
+                                    <br>
+                                    @error('category_name')
+                                    <small class="red-text">Please Enter Category Name </small>
+                                    @enderror
+                                </div>
+
+
                             </div>
 
                             <div class="col-md-6">
@@ -57,7 +73,7 @@
                                 </select>
                                 <br>
                                 @error('status')
-                                <small class="red-text">Please Enter Category Name </small>
+                                <small class="red-text">Please Enter Status </small>
                                 @enderror
                             </div>
 

@@ -19,4 +19,9 @@ class SubCategory extends Model
     public function category(){
         return $this->belongsTo(Category::class,'category_id');
     }
+
+    public function vehicleModel()
+    {
+        return $this->hasOneThrough(VehicleModel::class,Category::class,'id','id','category_id', 'vehicle_model_id');
+    }
 }

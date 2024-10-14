@@ -12,5 +12,10 @@ class Category extends Model
 
     protected $table="categories";
 
-    protected $fillable=['category_name','status'];
+    protected $fillable=['vehicle_model_id','category_name','status'];
+
+    public function vehicleModel()
+    {
+        return $this->belongsTo(VehicleModel::class);
+    }
 }

@@ -5,17 +5,18 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\models\VehicleModel;
 
 class CategoryController extends Controller
 {
     /**
      * Display a listing of all Categories.
      * @param null.
-     * 
+     *
      */
     public function index()
     {
-        $categories = Category::orderBy('id','desc')->get();
+        $categories = Category::with('vehicleModel')->orderBy('id','desc')->get();
        return view('admin.category.index',compact('categories'));
     }
 
@@ -26,7 +27,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.category.add');
+        $vehicle_models = VehicleModel::where('status',1)->get();
+        return view('admin.category.add',compact('vehicle_models'));
     }
 
     /**
@@ -38,10 +40,12 @@ class CategoryController extends Controller
     {
         $request->validate([
             'category_name'=>'required',
+            'vehicle_model'=>'required',
             'status'=>'required'
         ]);
 
         $data=[
+            'vehicle_model_id'=>$request->vehicle_model,
             'category_name'=>$request->category_name,
             'status'=>$request->status
 
@@ -70,7 +74,8 @@ class CategoryController extends Controller
     public function edit(string $id)
     {
         $category = Category::where('id',$id)->first();
-        return view('admin.category.edit',compact('category'));
+        $vehicle_models = VehicleModel::where('status',1)->get();
+        return view('admin.category.edit',compact('category','vehicle_models'));
     }
 
     /**
@@ -82,9 +87,11 @@ class CategoryController extends Controller
     {
         $request->validate([
             'category_name'=>'required',
+            'vehicle_model'=>'required',
             'status'=>'required'
         ]);
         $category = Category::find($id);
+        $category->vehicle_model_id = $request->vehicle_model;
         $category->category_name = $request->category_name;
         $category->status =  $request->status;
         if($category->save())

@@ -37,107 +37,105 @@
                 <div class="card">
                     <div class="card-body p-4">
                         {{-- <h5 class="mb-4">Add Vehicle Parts</h5> --}}
-                        <form class="row g-3" action="{{route('vehicle_part.store')}}" method="POST" enctype="multipart/form-data">
+
+                        <form class="row g-3" action="{{ route('vehicle_part.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
 
                             <div class="col-md-6">
-                                <label for="part_name" class="col-sm-3 col-form-label">Part Name</label>
-                                <input type="text" class="form-control" id="part_name" name="part_name">
-                            </div>
-
-                            <div class="col-md-6">
-                                <label for="part_image" class="col-sm-3 col-form-label">Part Image</label>
-                                <input type="file" class="form-control" id="part_image" name="part_image" multiple>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label for="desrcription" class="col-sm-3 col-form-label">Description</label>
-                                <textarea id="description" class="form-control" name="description" rows="4" cols="50"></textarea>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label for="price" class="col-sm-3 col-form-label">Price</label>
-                                <input type="text" class="form-control" id="price" name="price" multiple>
-                            </div>
-
-
-                            <div class="col-md-6">
-                                <label for="condition" class="col-sm-3 col-form-label">Condition</label>
-                                <div>
-                                    <input type="radio" id="good" name="condition" value="good">
-                                    <label for="good">Good</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="fair" name="condition" value="fair">
-                                    <label for="fair">Fair</label>
+                                <div class="form-group">
+                                    <label for="part_name" class="col-form-label">Part Name</label>
+                                    <input type="text" class="form-control" id="part_name" name="part_name" required>
                                 </div>
                             </div>
 
                             <div class="col-md-6">
-                                <label class="form-label">Select Part Category</label>
-                                <select id="category_id" class="form-select" name="category_id">
-                                    <option value="">Please Select Category</option>
-                                    @foreach($categorylists as $categorylist)
-                                    <option value="{{$categorylist->id}}">{{ $categorylist->category_name}}</option>
+                                <label for="part_image" class="col-form-label">Part Image</label>
+                                <input type="file" class="form-control" id="part_image" name="part_image" multiple required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="price" class="col-form-label">Price</label>
+                                <input type="text" class="form-control" id="price" name="price" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Select Vehicle Model</label>
+                                <select id="vehicle_id" class="form-select" name="vehicle_id" required>
+                                    <option value="">Please Select Vehicle Model</option>
+                                    @foreach($vehiclemodellists as $vehiclemodellist)
+                                        <option value="{{ $vehiclemodellist->id }}">{{ $vehiclemodellist->model }}</option>
                                     @endforeach
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Select Category</label>
+                                <select id="category_id" class="form-select" name="category_id" required>
+                                    <option value="">Please Select Category</option>
                                 </select>
                             </div>
 
                             <div class="col-md-6">
                                 <label class="form-label">Select Part Sub Category</label>
-                                <select id="sub_category_id" class="form-select" name="sub_category_id">
+                                <select id="sub_category_id" class="form-select" name="sub_category_id" required>
                                     <option value="">Please Select Sub Category</option>
-                                    @foreach($subCategorylists as $subCategorylist)
-                                    <option value="{{$subCategorylist->id}}">{{ $subCategorylist->subcategory_name}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label class="form-label">Select Vehicle Model</label>
-                                <select id="vehicle_id" class="form-select" name="vehicle_id">
-                                    <option value="">Please Select Vehicle Model</option>
-                                    @foreach($vehiclemodellists as $vehiclemodellist)
-                                    <option value="{{$vehiclemodellist->id}}">{{ $vehiclemodellist->vehicle_name}}</option>
-                                    @endforeach
                                 </select>
                             </div>
 
                             <div class="col-md-6">
                                 <label class="form-label">Select Fuel Type</label>
-                                <select id="fuel_type" class="form-select" name="fuel_type">
+                                <select id="fuel_type" class="form-select" name="fuel_type" required>
                                     <option value="">Please Select Fuel Type</option>
                                     @foreach($fuellists as $fuellist)
-                                    <option value="{{$fuellist->id}}">{{ $fuellist->fuel_type}}</option>
+                                        <option value="{{ $fuellist->id }}">{{ $fuellist->fuel_type }}</option>
                                     @endforeach
                                 </select>
                             </div>
 
                             <div class="col-md-6">
-                                <label for="power" class="col-sm-3 col-form-label">Power</label>
-                                <input type="text" class="form-control" id="power" name="power">
+                                <label for="power" class="col-form-label">Power</label>
+                                <input type="text" class="form-control" id="power" name="power" required>
                             </div>
 
                             <div class="col-md-6">
-                                <label for="specification" class="col-sm-3 col-form-label">Specification</label>
-                                <input type="text" class="form-control" id="specification" name="specification">
-                            </div>
-
-                            <div class="col-md-6">
-                                <label for="year" class="col-sm-3 col-form-label">Year</label>
-                                <input type="date" class="form-control datepicker" id="year" name="year" />
+                                <label for="year" class="col-form-label">Year</label>
+                                <input type="date" class="form-control" id="year" name="year" required />
                             </div>
 
                             <div class="col-md-6">
                                 <label for="status" class="form-label">Status</label>
-                                <select id="status" class="form-select" name="status">
+                                <select id="status" class="form-select" name="status" required>
                                     <option value="1">Active</option>
                                     <option value="0">Inactive</option>
                                 </select>
                                 <br>
                                 @error('status')
-                                <small class="red-text">Please Enter Category Name </small>
+                                    <small class="red-text">Please Enter Category Name </small>
                                 @enderror
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="description" class="col-form-label">Description</label>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div id="editor"></div>
+                                    </div>
+                                </div>
+                                <textarea id="description" name="description" style="display: none;"></textarea>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="col-form-label">Condition</label>
+                                    <div>
+                                        <input type="radio" id="good" name="condition" value="good" required>
+                                        <label for="good">Good</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="fair" name="condition" value="fair">
+                                        <label for="fair">Fair</label>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="col-md-12">
@@ -147,6 +145,7 @@
                                 </div>
                             </div>
                         </form>
+
                     </div>
                 </div>
             </div>
@@ -156,3 +155,55 @@
 
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#vehicle_id').change(function(){
+            const vehicleId = $(this).val();
+            $('#category_id').empty().append('<option value="">Please Select Category</option>');
+            $('#sub_category_id').empty().append('<option value="">Please Select Sub Category</option>');
+            if(vehicleId)
+        {
+            $.ajax({
+                type:'GET',
+                url:'/admin-auth/categories/',
+                data:{
+                    vehicleId:vehicleId,
+                },
+                success:function(data)
+                {
+                    console.log(data);
+                    data.forEach(function(category) {
+                        $('#category_id').append(`<option value="${category.id}">${category.category_name}</option>`);
+                    });
+
+                }
+            });
+        }
+        });
+        $('#category_id').change(function(){
+            const categoryId = $(this).val();
+            $('#sub_category_id').empty().append('<option value="">Please Select Sub Category</option>');
+            if(categoryId)
+        {
+            $.ajax({
+                url:'/admin-auth/subcategories/',
+                type:'GET',
+                data:{
+                    categoryId:categoryId
+                },
+                success:function(data)
+                {
+                    console.log(data);
+                    data.forEach(function(subcategory){
+                        $('#sub_category_id').append(`<option value="${subcategory.id}">${subcategory.subcategory_name}</option>`);
+                    });
+
+                }
+            });
+        }
+        });
+
+    });
+</script>
+@endsection

@@ -42,17 +42,32 @@
                             @csrf
                             @method('PUT')
                             <input type="hidden" value="{{$category->id}}">
-                            <div class="col-md-6">
-                                <label for="input1" class="form-label">Category Name</label>
-                                <input type="text" class="form-control" id="input1" value="{{$category->category_name}}" name="category_name">
-                                <br>
-                                @error('category_name')
-                                <small class="red-text">Please Enter Category Name </small>
-                                @enderror
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="input7" class="form-label">Select vehicle Model</label>
+                                    <select id="input7" class="form-select" name="vehicle_model">
+                                        <option value="">Select Model</option>
+                                        @foreach($vehicle_models as $model)
+                                        <option value="{{ $model->id }}" {{$category->vehicle_model_id == $model->id ? 'selected':''}}>{{ $model->vehicle_name }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('vehicle_model')
+                                    <small class="red-text">Please Enter Vehicle Model</small>
+                                    @enderror
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="input1" class="form-label">Category Name</label>
+                                    <input type="text" class="form-control" id="input1" value="{{$category->category_name}}" name="category_name">
+                                    <br>
+                                    @error('category_name')
+                                    <small class="red-text">Please Enter Category Name </small>
+                                    @enderror
+                                </div>
                             </div>
 
+
                              <div class="col-md-6">
-                                <label for="input7" class="form-label">Country</label>
+                                <label for="input7" class="form-label">Status</label>
                                 <select id="input7" class="form-select" name="status">
                                     <option value="1" {{ old('status',@$category->status) == '1' ? 'selected' : '' }}>Active</option>
                                     <option value="0" {{ old('status',@$category->status) == '0' ? 'selected' : ''}}>Inactive</option>
