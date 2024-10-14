@@ -41,13 +41,12 @@ class VehiclePartController extends Controller
     {
         $request->validate([
             'part_name' => 'required|max:255',
-            'part_image' => 'required|image|mimes:jpeg,png,jpg|max:4096',
-            // 'description' => 'required|max:255',
+            'part_image' => 'required|image|mimes:jpeg,png,jpg,webp|max:4096',
+            'description' => 'required|max:255',
             'price' => 'required',
             'condition' => 'required',
             'vehicle_id' => 'required',
             'fuel_type' => 'required',
-            'power' => 'required|max:255',
             'year' => 'required',
             'status' => 'required',
         ]);
@@ -69,8 +68,6 @@ dd($request->all());
                 'sub_category_id' => $request->sub_category_id,
                 'vehicle_id' => $request->vehicle_id,
                 'fuel_type' => $request->fuel_type,
-                'power' => $request->power,
-                'specification' => $request->specification,
                 'year' => $request->year,
                 'status' => $request->status
 
@@ -101,7 +98,13 @@ dd($request->all());
      */
     public function edit(string $id)
     {
-        //
+        $categorylists = Category::orderBy('id', 'desc')->get();
+        $subCategorylists = SubCategory::orderBy('id', 'desc')->get();
+        $vehiclemodellists = VehicleModel::orderBy('id', 'desc')->get();
+        $fuellists = FuelType::orderBy('id', 'desc')->get();
+        $vehicleparts = VehiclePart::with(['category', 'subcategory', 'vehicle', 'fuel'])->findOrFail($id);
+
+        return view('admin.vehiclepart.edit', compact('categorylists', 'subCategorylists', 'vehiclemodellists', 'fuellists', 'vehicleparts'));
     }
 
     /**
@@ -109,7 +112,51 @@ dd($request->all());
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'part_name' => 'required|max:255',
+            'part_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:4096',
+            'description' => 'required|max:255',
+            'price' => 'required',
+            'condition' => 'required',
+            'category_id' => 'required',
+            'sub_category_id' => 'required',
+            'vehicle_id' => 'required',
+            'fuel_type' => 'required',
+            'year' => 'required',
+            'status' => 'required',
+        ]);
+
+        // Find the existing vehicle model
+        $vehiclepart = VehiclePart::findOrFail($id);
+
+        // Check if a new image is uploaded
+        if ($request->hasFile('part_image')) {
+            $file = $request->file('part_image');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $filePath = $file->storeAs('vehicle parts image', $fileName, 'public');
+            $fileUrl = asset('storage/' . $filePath);
+        } else {
+            // Keep the current image if no new one is uploaded
+            $fileUrl = $vehiclepart->part_image;
+        }
+
+        // Update the vehicle part data
+        $vehiclepart->update([
+            'part_name' => $request->part_name,
+            'part_image' => $fileUrl,
+            'description' => $request->description,
+            'price' => $request->price,
+            'condition' => $request->condition,
+            'category_id' => $request->category_id,
+            'sub_category_id' => $request->sub_category_id,
+            'vehicle_id' => $request->vehicle_id,
+            'fuel_type' => $request->fuel_type,
+            'year' => $request->year,
+            'status' => $request->status,
+        ]);
+
+        // Redirect back to the index page with a success message
+        return to_route('vehicle_part.index')->with('success', 'Vehicle Part Updated Successfully!');
     }
 
     /**

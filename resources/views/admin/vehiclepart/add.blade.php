@@ -93,13 +93,8 @@
                             </div>
 
                             <div class="col-md-6">
-                                <label for="power" class="col-form-label">Power</label>
-                                <input type="text" class="form-control" id="power" name="power" required>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label for="year" class="col-form-label">Year</label>
-                                <input type="date" class="form-control" id="year" name="year" required />
+                                <label for="year" class="col-sm-3 col-form-label">Year</label>
+                                <input type="date" class="form-control datepicker" id="year" name="year" />
                             </div>
 
                             <div class="col-md-6">

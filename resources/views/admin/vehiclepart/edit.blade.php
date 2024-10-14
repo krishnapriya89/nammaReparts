@@ -28,91 +28,108 @@
             <div class="col-xl-12 mx-auto">
                 <div class="card">
                     <div class="card-body p-4">
-                        <form class="row g-3" action="{{ route('vehicle_part.update', $vehiclepart->id) }}" method="POST" enctype="multipart/form-data">
+                        <form class="row g-3" action="{{ route('vehicle_part.update', $vehicleparts->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
 
-                            <!-- Select Vehicle Brand -->
                             <div class="col-md-6">
-                                <label class="form-label">Select Vehicle Brand</label>
-                                <select id="brand_id" class="form-select" name="brand_id">
-                                    <option value="">Please Select Brand</option>
-                                    @foreach($vehiclebrandlists as $vehiclebrandlist)
-                                    <option value="{{$vehiclebrandlist->id}}" {{ $vehicleModel->brand_id == $vehiclebrandlist->id ? 'selected' : '' }}>
-                                        {{ $vehiclebrandlist->brand_name }}
-                                    </option>
-                                    @endforeach
-                                </select>
+                                <label for="part_name" class="col-sm-3 col-form-label">Part Name</label>
+                                <input type="text" class="form-control" id="part_name" name="part_name" value="{{ $vehicleparts->part_name }}">
                             </div>
 
-                            <!-- Vehicle Name -->
                             <div class="col-md-6">
-                                <label for="vehicle_name" class="col-sm-3 col-form-label">Vehicle Name</label>
-                                <input type="text" class="form-control" id="vehicle_name" name="vehicle_name" value="{{ $vehicleModel->vehicle_name }}">
-                            </div>
-
-                            <!-- Vehicle Image -->
-                            <div class="col-md-6">
-                                <label for="vehicle_image" class="col-sm-3 col-form-label">Vehicle Image</label>
-                                <input type="file" id="vehicle_image" name="vehicle_image">
-                                @if($vehicleModel->vehicle_image)
+                                <label for="part_image" class="col-sm-3 col-form-label">Part Image</label>
+                                <input type="file" class="form-control" id="part_image" name="part_image">
+                                @if($vehicleparts->part_image)
                                 <br>
-                                <img src="{{ $vehicleModel->vehicle_image }}" alt="Vehicle Image" style="max-width: 100px;">
+                                <img src="{{ $vehicleparts->part_image }}" alt="part Image" style="max-width: 100px;">
                                 @else
                                 <p>No Image Available</p>
                                 @endif
                             </div>
 
-                            <!-- Vehicle Model -->
                             <div class="col-md-6">
-                                <label for="model" class="col-sm-3 col-form-label">Vehicle Model</label>
-                                <input type="text" class="form-control" id="model" name="model" value="{{ $vehicleModel->model }}">
+                                <label for="description" class="col-sm-3 col-form-label">Description</label>
+                                <textarea class="form-control" id="description" name="description" rows="4" cols="50">{{ old('description', $vehicleparts->description) }}</textarea>
                             </div>
 
-                            <!-- Year -->
                             <div class="col-md-6">
-                                <label for="year" class="col-sm-3 col-form-label">Year</label>
-                                <input type="date" class="form-control datepicker" id="year" name="year" value="{{ $vehicleModel->year }}">
+                                <label for="price" class="col-sm-3 col-form-label">Part Name</label>
+                                <input type="text" class="form-control" id="price" name="price" value="{{ $vehicleparts->price }}">
                             </div>
 
-                            <!-- Select Fuel Type -->
+                            <div>
+                                <label for="condition" class="col-sm-3 col-form-label">Condition</label>
+                                <br>
+                                <input type="radio" id="good" name="condition" value="good"
+                                    {{ old('condition', $vehicleparts->condition) == 'good' ? 'checked' : '' }}>
+                                <label for="good">Good</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" id="fair" name="condition" value="fair"
+                                    {{ old('condition', $vehicleparts->condition) == 'fair' ? 'checked' : '' }}>
+                                <label for="fair">Fair</label>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Select Part Category</label>
+                                <select id="category_id" class="form-select" name="category_id">
+                                    <option value="">Please Select Part Category</option>
+                                    @foreach($categorylists as $categorylist)
+                                    <option value="{{$categorylist->id}}" {{ $vehicleparts->category_id == $categorylist->id ? 'selected' : '' }}>
+                                        {{ $categorylist->category_name }}
+                                    </option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Select Part Sub Category</label>
+                                <select id="sub_category_id" class="form-select" name="sub_category_id">
+                                    <option value="">Please Select Part Sub Category</option>
+                                    @foreach($subCategorylists as $subCategorylist)
+                                    <option value="{{$subCategorylist->id}}" {{ $vehicleparts->sub_category_id == $subCategorylist->id ? 'selected' : '' }}>
+                                        {{ $subCategorylist->subcategory_name }}
+                                    </option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Select Vehicle Model</label>
+                                <select id="vehicle_id" class="form-select" name="vehicle_id">
+                                    <option value="">Please Select Vehicle Model</option>
+                                    @foreach($vehiclemodellists as $vehiclemodellist)
+                                    <option value="{{$vehiclemodellist->id}}" {{ $vehicleparts->vehicle_id == $vehiclemodellist->id ? 'selected' : '' }}>
+                                        {{ $vehiclemodellist->vehicle_name }}
+                                    </option>
+                                    @endforeach
+                                </select>
+                            </div>
+
                             <div class="col-md-6">
                                 <label class="form-label">Select Fuel Type</label>
                                 <select id="fuel_type" class="form-select" name="fuel_type">
-                                    <option value="">Please Select Fuel type</option>
+                                    <option value="">Please Select Fuel Type</option>
                                     @foreach($fuellists as $fuellist)
-                                    <option value="{{$fuellist->id}}" {{ $vehicleModel->fuel_type == $fuellist->id ? 'selected' : '' }}>
+                                    <option value="{{$fuellist->id}}" {{ $vehicleparts->fuel_type == $fuellist->id ? 'selected' : '' }}>
                                         {{ $fuellist->fuel_type }}
                                     </option>
                                     @endforeach
                                 </select>
                             </div>
 
-                            <!-- Engine Type -->
                             <div class="col-md-6">
-                                <label for="engine_type" class="col-sm-3 col-form-label">Engine Type</label>
-                                <input type="text" class="form-control" id="engine_type" name="engine_type" value="{{ $vehicleModel->engine_type }}">
+                                <label for="year" class="col-sm-3 col-form-label">Date</label>
+                                <input type="date" class="form-control" id="year" name="year" value="{{ $vehicleparts->year }}">
                             </div>
 
-                            <!-- Select Vehicle Type -->
-                            <div class="col-md-6">
-                                <label class="form-label">Select Vehicle Type</label>
-                                <select id="vehicle_type" class="form-select" name="vehicle_type">
-                                    <option value="">Please Select Vehicle type</option>
-                                    @foreach($vehicletypelists as $vehicletypelist)
-                                    <option value="{{$vehicletypelist->id}}" {{ $vehicleModel->vehicle_type == $vehicletypelist->id ? 'selected' : '' }}>
-                                        {{ $vehicletypelist->wheels }}
-                                    </option>
-                                    @endforeach
-                                </select>
-                            </div>
-
-                            <!-- Status -->
                             <div class="col-md-6">
                                 <label for="status" class="form-label">Status</label>
                                 <select id="status" class="form-select" name="status">
-                                    <option value="1" {{ $vehicleModel->status == 1 ? 'selected' : '' }}>Active</option>
-                                    <option value="0" {{ $vehicleModel->status == 0 ? 'selected' : '' }}>Inactive</option>
+                                    <option value="1" {{ $vehicleparts->status == 1 ? 'selected' : '' }}>Active</option>
+                                    <option value="0" {{ $vehicleparts->status == 0 ? 'selected' : '' }}>Inactive</option>
                                 </select>
                             </div>
 
