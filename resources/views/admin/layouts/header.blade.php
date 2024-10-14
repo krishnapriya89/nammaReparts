@@ -15,7 +15,7 @@
                         <a class="nav-link" href="avascript:;"><i class='bx bx-search'></i>
                         </a>
                     </li>
-                    <li class="nav-item dropdown dropdown-laungauge d-none d-sm-flex">
+                    {{-- <li class="nav-item dropdown dropdown-laungauge d-none d-sm-flex">
                         <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="avascript:;" data-bs-toggle="dropdown"><img src="assets/images/county/02.png" width="22" alt="">
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
@@ -36,7 +36,7 @@
                             <li><a class="dropdown-item d-flex align-items-center py-2" href="javascript:;"><img src="assets/images/county/08.png" width="20" alt=""><span class="ms-2">Hindi</span></a>
                             </li>
                         </ul>
-                    </li>
+                    </li> --}}
                     <li class="nav-item dark-mode d-none d-sm-flex">
                         {{-- <a class="nav-link dark-mode-icon" href="javascript:;"><i class='bx bx-moon'></i>
                         </a> --}}

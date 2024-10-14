@@ -38,7 +38,7 @@
                     <div class="card-body p-4">
                         {{-- <h5 class="mb-4">Add Vehicle Parts</h5> --}}
 
-                        <form class="row g-3" action="{{ route('vehicle_part.store') }}" method="POST" enctype="multipart/form-data">
+                        <form class="row g-3" action="{{ route('vehicle_part.store') }}" method="POST" enctype="multipart/form-data" id="vehicle_part_form">
                             @csrf
 
                             <div class="col-md-6">
@@ -113,10 +113,13 @@
                                 <label for="description" class="col-form-label">Description</label>
                                 <div class="card">
                                     <div class="card-body">
-                                        <div id="editor"></div>
+                                        <div id="editor">
+
+                                        </div>
+                                        <textarea id="description" name="description" style="display: none;"></textarea>
                                     </div>
                                 </div>
-                                <textarea id="description" name="description" style="display: none;"></textarea>
+
                             </div>
 
                             <div class="col-md-6">
@@ -200,5 +203,40 @@
         });
 
     });
+   // Initialize Quill
+
+
+$(document).ready(function() {
+    // Initialize the Quill editor on DOM ready
+   var quill = new Quill('#editor', {
+        theme: 'snow'
+    });
+
+    // Form submission logic
+    $('#vehicle_part_form').on('submit', function(e) {
+        e.preventDefault(); // Prevent default form submission
+
+        // Check if quill is initialized
+        if (!quill) {
+            console.error("Quill editor is not initialized!");
+            return;
+        }
+
+        // Use Quill API to get editor content
+        var editorContent = quill.root.innerHTML;
+        console.log("Editor content: ", editorContent); // Debugging
+
+        // Set content to the hidden textarea
+        $('#description').val(editorContent);
+
+        // Ensure value is set
+        console.log("Textarea value: ", $('#description').val());
+
+        // Submit the form after setting the textarea value
+        this.submit();
+    });
+});
+
+
 </script>
 @endsection

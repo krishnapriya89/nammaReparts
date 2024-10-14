@@ -191,12 +191,11 @@
 		  } );
 	</script>
      <script>
-        var quill = new Quill('#editor', {
-            theme: 'snow'
-        });
+     
         var quill = new Quill('#specification', {
             theme: 'snow'
         });
+
     </script>
       @include('admin.layouts.toastr-message')
 
