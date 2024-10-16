@@ -40,13 +40,13 @@
                 <div class="menu-title">Category</div>
             </a>
         </li>
-        <li>
+        {{-- <li>
             <a href="{{route('subcategory.index')}}">
                 <div class="parent-icon"><i class='bx bx-cog'></i>
                 </div>
                 <div class="menu-title">Sub Category</div>
             </a>
-        </li>
+        </li> --}}
         <li>
             <a href="{{route('vehicle_part.index')}}">
                 <div class="parent-icon"><i class='bx bx-cookie'></i>

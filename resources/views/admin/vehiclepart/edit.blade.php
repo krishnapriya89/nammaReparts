@@ -48,11 +48,8 @@
                                 @endif
                             </div>
 
+
                             {{-- <div class="col-md-6">
-                                <label for="description" class="col-sm-3 col-form-label">Description</label>
-                                <textarea class="form-control" id="description" name="description" rows="4" cols="50">{{ old('description', $vehicleparts->description) }}</textarea>
-                            </div> --}}
-                            <div class="col-md-6">
                                 <label for="description" class="col-form-label">Description</label>
                                 <div class="card">
                                     <div class="card-body">
@@ -63,26 +60,13 @@
                                     </div>
                                 </div>
 
-                            </div>
+                            </div> --}}
 
                             <div class="col-md-6">
-                                <label for="price" class="col-sm-3 col-form-label">Part Name</label>
+                                <label for="price" class="col-sm-3 col-form-label">Price</label>
                                 <input type="text" class="form-control" id="price" name="price" value="{{ $vehicleparts->price }}">
                             </div>
 
-                            <div>
-                                <label for="condition" class="col-sm-3 col-form-label">Condition</label>
-                                <br>
-                                <input type="radio" id="good" name="condition" value="good"
-                                    {{ old('condition', $vehicleparts->condition) == 'good' ? 'checked' : '' }}>
-                                <label for="good">Good</label>
-                            </div>
-
-                            <div>
-                                <input type="radio" id="fair" name="condition" value="fair"
-                                    {{ old('condition', $vehicleparts->condition) == 'fair' ? 'checked' : '' }}>
-                                <label for="fair">Fair</label>
-                            </div>
 
                             <div class="col-md-6">
                                 <label class="form-label">Select Part Category</label>
@@ -96,7 +80,7 @@
                                 </select>
                             </div>
 
-                            <div class="col-md-6">
+                            {{-- <div class="col-md-6">
                                 <label class="form-label">Select Part Sub Category</label>
                                 <select id="sub_category_id" class="form-select" name="sub_category_id">
                                     <option value="">Please Select Part Sub Category</option>
@@ -106,7 +90,7 @@
                                     </option>
                                     @endforeach
                                 </select>
-                            </div>
+                            </div> --}}
 
                             <div class="col-md-6">
                                 <label class="form-label">Select Vehicle Model</label>
@@ -144,6 +128,20 @@
                                     <option value="0" {{ $vehicleparts->status == 0 ? 'selected' : '' }}>Inactive</option>
                                 </select>
                             </div>
+                            <div>
+                                <label for="condition" class="col-sm-3 col-form-label">Condition</label>
+                                <br>
+                                <input type="radio" id="good" name="condition" value="good"
+                                    {{ old('condition', $vehicleparts->condition) == 'good' ? 'checked' : '' }}>
+                                <label for="good">Good</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" id="fair" name="condition" value="fair"
+                                    {{ old('condition', $vehicleparts->condition) == 'fair' ? 'checked' : '' }}>
+                                <label for="fair">Fair</label>
+                            </div>
+
 
                             <!-- Submit and Reset Buttons -->
                             <div class="col-md-12">
