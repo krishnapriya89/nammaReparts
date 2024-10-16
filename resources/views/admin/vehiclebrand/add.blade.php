@@ -39,10 +39,7 @@
                         {{-- <h5 class="mb-4">Add Vehicle Brand</h5> --}}
                         <form class="row g-3" action="{{route('vehicle_brand.store')}}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <div class="col-md-6">
-                                <label for="logo" class="col-sm-3 col-form-label">Vehicle Brand Logo Image</label>
-                                <input type="file" id="logo" name="logo" multiple>
-                            </div>
+
                             <div class="col-md-6">
                                 <label for="brand_name" class="col-sm-3 col-form-label">Brand Name</label>
                                 <input type="text" class="form-control" id="brand_name" name="brand_name"
@@ -59,6 +56,25 @@
                                 <small class="red-text">Please Enter Category Name </small>
                                 @enderror
                             </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="form-label">Select Vehicle Type</label>
+                                    <select id="vehicle_type" class="form-select" name="vehicle_type_id" required>
+                                        <option value="">Please Select Vehicle Type</option>
+                                        @foreach($vehicle_types as $type)
+                                            <option value="{{ $type->id }}">{{ $type->wheels }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('vehicle_type')
+                                    <small>Please enter vehicle type</small>
+                                    @enderror
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="logo" class="col-sm-3 col-form-label">Vehicle Brand Logo Image</label>
+                                    <input type="file" id="logo" name="logo" multiple>
+                                </div>
+                            </div>
+
                             <div class="col-md-12">
                                 <div class="d-md-flex d-grid align-items-center gap-3">
                                     <button type="submit" class="btn btn-primary px-4">Submit</button>
