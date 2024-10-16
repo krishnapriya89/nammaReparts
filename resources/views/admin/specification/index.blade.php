@@ -31,19 +31,46 @@
                         <thead>
                             <tr>
                                 <th>Sl No:</th>
-                                <th>Part Image</th>
-                                <th>Part Name</th>
-                                <th>Vehicle Name</th>
-                                <th>Year</th>
-                                <th>Vehicle Fuel Type</th>
-                                <th>Price</th>
-                                <th>Condition</th>
-                                <th>Status</th>
+                                <th>Brand</th>3
+                                <th>Model</th>
+                                <th>Category</th>
+                                <th>Sub Category</th>
+                                <th>Part</th>
+                                <th>Accessory</th>
+                                <th>Outer Diameter</th>
+                                <th>Net Quantity</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($specifications as $specification)
+                            <tr>
+                                <td>{{$loop->iteration}}</td>
+                                <td>{{ $specification->brand->brand_name}}</td>
+                                <td>{{ $specification->vehicleModel->vehicle_name}}</td>
+                                <td>{{ $specification->category->category_name}}</td>
+                                <td>{{ $specification->subCategory->subcategory_name}}</td>
+                                <td>{{ $specification->part->part_name}}</td>
+                                <td>{{ $specification->accessory}}</td>
+                                <td>{{ $specification->outer_diameter }}</td>
+                                <td>{{ $specification->net_quantity}}</td>
+                                <td>
+                                    <a href="{{ route('part_specification.edit', $specification->id) }}">
+                                        <i class="fas fa-pencil" style="color: black;"></i>
+                                    </a>
+                                    <!-- Delete Category-->
+                                    <form action="{{ route('part_specification.destroy', $specification->id) }}" method="POST" style="display:inline-block;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit"
+                                            onclick="return confirm('Are you sure you want to delete this category?')">
+                                            <i class="fa fa-trash" style="color: black;"></i>
 
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

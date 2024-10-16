@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('part_specifications', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('brand_id');
+            $table->foreign('brand_id')->references('id')->on('vehicle_brands');
+            $table->unsignedBigInteger('vehicle_model_id');
+            $table->foreign('vehicle_model_id')->references('id')->on('vehicle_models');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
+            $table->unsignedBigInteger('sub_category_id')->nullable();
+            $table->foreign('sub_category_id')->references('id')->on('sub_categories');
             $table->unsignedBigInteger('part_id');
             $table->foreign('part_id')->references('id')->on('vehicle_parts');
             $table->integer('accessory')->nullable();

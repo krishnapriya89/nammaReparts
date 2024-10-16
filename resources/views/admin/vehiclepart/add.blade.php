@@ -77,7 +77,7 @@
 
                             <div class="col-md-6">
                                 <label class="form-label">Select Part Sub Category</label>
-                                <select id="sub_category_id" class="form-select" name="sub_category_id" required>
+                                <select id="sub_category_id" class="form-select" name="sub_category_id" >
                                     <option value="">Please Select Sub Category</option>
                                 </select>
                             </div>
