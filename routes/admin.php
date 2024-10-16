@@ -32,6 +32,10 @@ Route::prefix('admin-auth')->group(function () {
         Route::get('categories', [VehicleModelController::class, 'getCategory'])->name('categories');
         //select sub categories under category-ajax call
         Route::get('subcategories',[VehicleModelController::class,'getSubcategory'])->name('subcategories');
+        
+        Route::get('categories_update', [VehicleModelController::class, 'getCategory_update'])->name('categories_update');
+        //select sub categories under category-ajax call
+        Route::get('subcategories_update',[VehicleModelController::class,'getSubcategory_update'])->name('subcategories_update');
         //parts specification for vehicle parts
         Route::resource('part_specification',PartsSpecificationController::class);
 

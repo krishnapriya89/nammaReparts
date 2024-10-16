@@ -84,7 +84,7 @@
                             <!-- Engine Type -->
                             <div class="col-md-6">
                                 <label for="engine" class="col-sm-3 col-form-label">Engine</label>
-                                <input type="text" class="form-control" id="engine" name="engine" value="{{ $vehicleModel->engine_type }}">
+                                <input type="text" class="form-control" id="engine" name="engine" value="{{ $vehicleModel->engine }}">
                             </div>
 
                             <!-- Select Vehicle Type -->
