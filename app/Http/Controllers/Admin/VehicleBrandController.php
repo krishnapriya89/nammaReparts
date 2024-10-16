@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 use App\Models\VehicleBrand;
+use App\Models\VehicleType;
 
 class VehicleBrandController extends Controller
 {
@@ -26,7 +27,8 @@ class VehicleBrandController extends Controller
      */
     public function create()
     {
-        return view('admin.vehiclebrand.add');
+        $vehicle_types = VehicleType::get();
+        return view('admin.vehiclebrand.add',compact('vehicle_types'));
     }
 
     /**
@@ -37,7 +39,8 @@ class VehicleBrandController extends Controller
         $request->validate([
             'logo' => 'required|image|mimes:jpeg,png,jpg,svg|max:3048',
             'brand_name' => 'required',
-            'active_status' => 'required'
+            'active_status' => 'required',
+            'vehicle_type_id'=> 'required'
         ]);
 
         if ($request->hasFile('logo')) {
@@ -48,6 +51,7 @@ class VehicleBrandController extends Controller
             $fileUrl = asset('storage/' . $filePath);
 
             $data = [
+                'vehicle_type_id'=>$request->vehicle_type_id,
                 'logo' => $fileUrl,
                 'brand_name' => $request->brand_name,
                 'active_status' => $request->active_status,
@@ -79,9 +83,9 @@ class VehicleBrandController extends Controller
     public function edit(string $id)
     {
         $vehicleBrand = VehicleBrand::findOrFail($id);
-
+        $vehicle_types = VehicleType::get();
         // Pass the data to the edit view
-        return view('admin.vehiclebrand.edit', compact('vehicleBrand'));
+        return view('admin.vehiclebrand.edit', compact('vehicleBrand','vehicle_types'));
     }
 
     /**
@@ -93,7 +97,8 @@ class VehicleBrandController extends Controller
         $request->validate([
             'logo' => 'nullable|image|mimes:jpeg,png,jpg,svg|max:3048', // Make logo nullable in case user doesn't want to update it
             'brand_name' => 'required',
-            'active_status' => 'required'
+            'active_status' => 'required',
+            'vehicle_type_id'=> 'required'
         ]);
 
         // Find the existing vehicle brand by ID
@@ -102,7 +107,8 @@ class VehicleBrandController extends Controller
         // Prepare the data array for updating the record
         $data = [
             'brand_name' => $request->brand_name,
-            'active_status' => $request->active_status // Keep the existing active_status unless you want to update it
+            'active_status' => $request->active_status, // Keep the existing active_status unless you want to update it
+            'vehicle_type_id'=>$request->vehicle_type_id,
         ];
 
         // Check if a new logo is uploaded

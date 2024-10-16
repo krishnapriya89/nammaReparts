@@ -43,6 +43,7 @@ return new class extends Migration
             $table->string('dimensions')->nullable();
             $table->text('other_specifications')->nullable();
             $table->timestamps();
+            
         });
     }
 

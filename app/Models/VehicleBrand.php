@@ -14,7 +14,7 @@ class VehicleBrand extends Model
     protected $table = 'vehicle_brands';
 
     protected $fillable = [
-        'logo',
+        'logo','vehicle_type_id',
         'brand_name',
         'active_status'
     ];
@@ -23,5 +23,10 @@ class VehicleBrand extends Model
     {
         return $this->hasMany(VehicleModel::class, 'brand_id');
     }
-    
+
+    public function vehicleType()
+    {
+        return $this->belongsTo(VehicleType::class,'vehicle_type_id');
+    }
+
 }

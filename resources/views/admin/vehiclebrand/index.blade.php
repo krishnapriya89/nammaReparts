@@ -33,6 +33,7 @@
                                 <th>Sl No:</th>
                                 <th>Vehicle Brand Logo</th>
                                 <th>Vehicle Brand Name</th>
+                                <th>Vehicle Type</th>
                                 <th>Created On</th>
                                 <th>Status</th>
                                 <th>Action</th>
@@ -50,6 +51,7 @@
                                     @endif
                                 </td>
                                 <td>{{$vehiclelists->brand_name}}</td>
+                                <td>{{$vehiclelists->vehicleType->wheels}}</td>
                                 <td>{{$vehiclelists->created_at}}</td>
                                 <td>
                                     @if($vehiclelists->active_status == 1)

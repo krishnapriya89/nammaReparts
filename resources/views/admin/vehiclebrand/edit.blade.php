@@ -28,7 +28,7 @@
             </div>
         </div>
         <!--end breadcrumb-->
-        
+
         <div class="row">
             <div class="col-xl-12 mx-auto">
                 <div class="card">
@@ -50,6 +50,18 @@
                             <div class="col-md-6">
                                 <label for="brand_name" class="col-sm-3 col-form-label">Brand Name</label>
                                 <input type="text" class="form-control" id="brand_name" name="brand_name" value="{{ $vehicleBrand->brand_name }}" placeholder="Enter Brand">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Select Vehicle Type</label>
+                                <select id="vehicle_type" class="form-select" name="vehicle_type_id" required>
+                                    <option value="">Please Select Vehicle Type</option>
+                                    @foreach($vehicle_types as $type)
+                                        <option value="{{ $type->id }}"{{$type->id==$vehicleBrand->vehicle_type_id ? 'selected': ''}}>{{ $type->wheels }}</option>
+                                    @endforeach
+                                </select>
+                                @error('vehicle_type_id')
+                                <small>Please enter vehicle type</small>
+                                @enderror
                             </div>
 
                             <div class="col-md-6">

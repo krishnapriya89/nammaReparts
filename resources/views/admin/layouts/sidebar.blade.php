@@ -54,13 +54,13 @@
                 <div class="menu-title">Vehicle Parts</div>
             </a>
         </li>
-        <li>
+        {{-- <li>
             <a href="{{route('part_specification.index')}}">
                 <div class="parent-icon"><i class='bx bx-cookie'></i>
                 </div>
                 <div class="menu-title">Parts Specification</div>
             </a>
-        </li>
+        </li> --}}
     </ul>
     <!--end navigation-->
 </div>

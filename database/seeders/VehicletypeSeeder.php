@@ -15,17 +15,22 @@ class VehicletypeSeeder extends Seeder
     public function run(): void
     {
         VehicleType::create([
-            'wheels'    =>  '2 Wheeler',
+            'wheels'    =>  'two_wheeler',
             'active_status'     =>  '1',
             'created_on'    => now(), // Or any custom date
         ]);
         VehicleType::create([
-            'wheels'    =>  '3 Wheeler',
+            'wheels'    =>  'three_wheeler',
             'active_status'     =>  '1',
             'created_on'    => now(), // Or any custom date
         ]);
         VehicleType::create([
-            'wheels'    =>  '4 Wheeler',
+            'wheels'    =>  'four_wheeler',
+            'active_status'     =>  '1',
+            'created_on'    => now(), // Or any custom date
+        ]);
+        VehicleType::create([
+            'wheels'    =>  'commercial_vehicle',
             'active_status'     =>  '1',
             'created_on'    => now(), // Or any custom date
         ]);
