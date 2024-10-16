@@ -31,22 +31,17 @@ Route::prefix('admin-auth')->group(function () {
         //select category under vehicle model-ajax call
         Route::get('categories', [VehicleModelController::class, 'getCategory'])->name('categories');
         //select sub categories under category-ajax call
-        Route::get('subcategories',[VehicleModelController::class,'getSubcategory'])->name('subcategories');
-        
-        Route::get('categories_update', [VehicleModelController::class, 'getCategory_update'])->name('categories_update');
-        //select sub categories under category-ajax call
-        Route::get('subcategories_update',[VehicleModelController::class,'getSubcategory_update'])->name('subcategories_update');
+        Route::get('subcategories', [VehicleModelController::class, 'getSubcategory'])->name('subcategories');
         //parts specification for vehicle parts
-        Route::resource('part_specification',PartsSpecificationController::class);
+        Route::resource('part_specification', PartsSpecificationController::class);
 
         //get vehicle model  -ajax call
-        Route::get('get-model',[PartsSpecificationController::class,'getModels'])->name('get-model');
+        Route::get('get-model', [PartsSpecificationController::class, 'getModels'])->name('get-model');
         //get categories under model-ajax call
-        Route::get('get-category',[PartsSpecificationController::class,'getCategory'])->name('get-category');
+        Route::get('get-category', [PartsSpecificationController::class, 'getCategory'])->name('get-category');
         //get subcategories under category -ajax call
-        Route::get('get-subcategory',[PartsSpecificationController::class,'getSubCategory'])->name('get-subcategory');
+        Route::get('get-subcategory', [PartsSpecificationController::class, 'getSubCategory'])->name('get-subcategory');
         //get parts according to category and sub category
-        Route::get('get-parts',[PartsSpecificationController::class,'getParts'])->name('get-parts');
-
+        Route::get('get-parts', [PartsSpecificationController::class, 'getParts'])->name('get-parts');
     });
 });
