@@ -189,7 +189,7 @@ class VehicleModelController extends Controller
      * @param $categoryId.
      * @return mixed|\Illuminate\Http\JsonResponse
      */
-    public function getSubcategory(request $request)
+    public function getSubcategory(Request $request)
     {
         $categoryId = $request->categoryId;
         $subcategories = SubCategory::where('category_id', $categoryId)->get();
