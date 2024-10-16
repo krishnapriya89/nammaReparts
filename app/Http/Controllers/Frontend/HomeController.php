@@ -24,4 +24,34 @@ class HomeController extends Controller
     {
         return view('frontend.details_one');
     }
+
+    //details two page
+    public function detailsTwo()
+    {
+        return view('frontend.details_two');
+    }
+
+    //details three page
+    public function detailsThree()
+    {
+        return view('frontend.details_three');
+    }
+
+    //details four page
+    public function detailsFour()
+    {
+        return view('frontend.details_four');
+    }
+
+    //details five page
+    public function detailsFive()
+    {
+        return view('frontend.details_five');
+    }
+
+    //details shipping address
+    public function shippingAddress()
+    {
+        return view('frontend.shipping_address');
+    }
 }
