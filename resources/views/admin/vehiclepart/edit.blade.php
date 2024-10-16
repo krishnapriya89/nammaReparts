@@ -67,6 +67,17 @@
                                 <input type="text" class="form-control" id="price" name="price" value="{{ $vehicleparts->price }}">
                             </div>
 
+                            <div class="col-md-6">
+                                <label class="form-label">Select Vehicle Model</label>
+                                <select id="vehicle_id" class="form-select" name="vehicle_id">
+                                    <option value="">Please Select Vehicle Model</option>
+                                    @foreach($vehiclemodellists as $vehiclemodellist)
+                                    <option value="{{$vehiclemodellist->id}}" {{ $vehicleparts->vehicle_id == $vehiclemodellist->id ? 'selected' : '' }}>
+                                        {{ $vehiclemodellist->vehicle_name }}
+                                    </option>
+                                    @endforeach
+                                </select>
+                            </div>
 
                             <div class="col-md-6">
                                 <label class="form-label">Select Part Category</label>
@@ -92,17 +103,6 @@
                                 </select>
                             </div> --}}
 
-                            <div class="col-md-6">
-                                <label class="form-label">Select Vehicle Model</label>
-                                <select id="vehicle_id" class="form-select" name="vehicle_id">
-                                    <option value="">Please Select Vehicle Model</option>
-                                    @foreach($vehiclemodellists as $vehiclemodellist)
-                                    <option value="{{$vehiclemodellist->id}}" {{ $vehicleparts->vehicle_id == $vehiclemodellist->id ? 'selected' : '' }}>
-                                        {{ $vehiclemodellist->vehicle_name }}
-                                    </option>
-                                    @endforeach
-                                </select>
-                            </div>
 
                             <div class="col-md-6">
                                 <label class="form-label">Select Fuel Type</label>
@@ -117,7 +117,7 @@
                             </div>
 
                             <div class="col-md-6">
-                                <label for="year" class="col-sm-3 col-form-label">Date</label>
+                                <label for="year" class="col-sm-3 col-form-label">Year</label>
                                 <input type="date" class="form-control" id="year" name="year" value="{{ $vehicleparts->year }}">
                             </div>
 
@@ -143,61 +143,174 @@
                             </div>
 
 
-                            <!-- Submit and Reset Buttons -->
-                            <div class="col-md-12">
-                                <div class="d-md-flex d-grid align-items-center gap-3">
-                                    <button type="submit" class="btn btn-primary px-4">Update</button>
-                                    <a href="{{route('vehicle_model.index')}}" class="btn btn-light px-4">Cancel</a>
+{{--
+                    <div class="col-md-6">
+                        <label for="description" class="col-form-label">Description</label>
+                        <div class="card">
+                            <div class="card-body">
+                                <div id="editor">
+
                                 </div>
+                                <textarea id="description" name="description" style="display: none;">{{ old('description', $vehicleparts->description) }}</textarea>
                             </div>
-                        </form>
+                        </div>
+
+                    </div> --}}
+
+                    {{-- <div>
+                        <label for="condition" class="col-sm-3 col-form-label">Condition</label>
+                        <br>
+                        <input type="radio" id="good" name="condition" value="good"
+                            {{ old('condition', $vehicleparts->condition) == 'good' ? 'checked' : '' }}>
+                        <label for="good">Good</label>
                     </div>
+
+                    <div>
+                        <input type="radio" id="fair" name="condition" value="fair"
+                            {{ old('condition', $vehicleparts->condition) == 'fair' ? 'checked' : '' }}>
+                        <label for="fair">Fair</label>
+                    </div> --}}
+
+                    <!-- Submit and Reset Buttons -->
+                    <div class="col-md-12">
+                        <div class="d-md-flex d-grid align-items-center gap-3">
+                            <button type="submit" class="btn btn-primary px-4">Update</button>
+                            <a href="{{route('vehicle_model.index')}}" class="btn btn-light px-4">Cancel</a>
+                        </div>
+                    </div>
+                    </form>
                 </div>
             </div>
         </div>
-        <!-- End Update Form -->
-
     </div>
+    <!-- End Update Form -->
+
+</div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    $(document).ready(function() {
-    // Initialize the Quill editor on DOM ready
-   var quill = new Quill('#editor', {
-        theme: 'snow'
-    });
+  $(document).ready(function() {
+    // Function to load categories based on vehicleId
+    function loadCategories(vehicleId, selectedCategoryId = null) {
+        $('#category_id').empty().append('<option value="">Please Select Part Category</option>');
+        $('#sub_category_id').empty().append('<option value="">Please Select Part Sub Category</option>'); // Reset subcategories
 
-    // Set old value to Quill editor if it exists
-    var oldDescription = $('#description').val();
-    if (oldDescription) {
-        quill.root.innerHTML = oldDescription; // Set old description in the editor
+        if (vehicleId) {
+            $.ajax({
+                type: 'GET',
+                url: '/admin-auth/categories', // Adjust your URL as needed
+                data: {
+                    vehicleId: vehicleId
+                },
+                success: function(data) {
+                    if (data && data.length > 0) {
+                        $.each(data, function(index, category) {
+                            $('#category_id').append(
+                                `<option value="${category.id}" ${selectedCategoryId == category.id ? 'selected' : ''}>${category.category_name}</option>`
+                            );
+                        });
+                    } else {
+                        console.warn('No categories available for this vehicle.');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error loading categories:', error);
+                }
+            });
+        }
     }
 
+    // Function to load subcategories based on categoryId
+    function loadSubCategories(categoryId, selectedSubCategoryId = null) {
+        $('#sub_category_id').empty().append('<option value="">Please Select Part Sub Category</option>');
 
-    // Form submission logic
-    $('#vehicle_part_form').on('submit', function(e) {
-        e.preventDefault(); // Prevent default form submission
+        if (categoryId) {
+            $.ajax({
+                type: 'GET',
+                url: '/admin-auth/subcategories', // Adjust your URL as needed
+                data: {
+                    categoryId: categoryId
+                },
+                success: function(data) {
 
-        // Check if quill is initialized
-        if (!quill) {
-            console.error("Quill editor is not initialized!");
-            return;
+
+                    // if (data && data.length > 0) {
+                    //     $.each(data, function(index, subcategory) {
+                    //         $('#sub_category_id').append(
+                    //             `<option value="${subcategory.id}" ${selectedSubCategoryId == subcategory.id ? 'selected' : ''}>${subcategory.subcategory_name}</option>`
+                    //         );
+                    //     });
+                    // } else {
+                    //     console.warn('No subcategories available for this category.');
+                    // }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error loading subcategories:', error);
+                }
+            });
         }
+    }
 
-        // Use Quill API to get editor content
-        var editorContent = quill.root.innerHTML;
-        console.log("Editor content: ", editorContent); // Debugging
+    // Initial load of categories and subcategories based on the selected vehicle
+    const initialVehicleId = $('#vehicle_id').val(); // Get the selected vehicle ID on page load
+    const selectedCategoryId = $('#category_id').val(); // Get the selected category ID on page load
+    const selectedSubCategoryId = $('#sub_category_id').val(); // Get the selected subcategory ID on page load
 
-        // Set content to the hidden textarea
-        $('#description').val(editorContent);
+    if (initialVehicleId) {
+        loadCategories(initialVehicleId, selectedCategoryId); // Load categories based on initial vehicle ID
+    }
 
-        // Ensure value is set
-        console.log("Textarea value: ", $('#description').val());
+    // When vehicle ID is changed, load categories
+    $('#vehicle_id').change(function() {
+        const vehicleId = $(this).val();
+        loadCategories(vehicleId);
+    });
 
-        // Submit the form after setting the textarea value
-        this.submit();
+    // When category ID is changed, load subcategories
+    $('#category_id').change(function() {
+        const categoryId = $(this).val();
+        loadSubCategories(categoryId, selectedSubCategoryId); // Pass the selected subcategory ID if necessary
     });
 });
 
+
+
+    $(document).ready(function() {
+        // Initialize the Quill editor on DOM ready
+        var quill = new Quill('#editor', {
+            theme: 'snow'
+        });
+
+        // Set old value to Quill editor if it exists
+        var oldDescription = $('#description').val();
+        if (oldDescription) {
+            quill.root.innerHTML = oldDescription; // Set old description in the editor
+        }
+
+
+        // Form submission logic
+        $('#vehicle_part_form').on('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+
+            // Check if quill is initialized
+            if (!quill) {
+                console.error("Quill editor is not initialized!");
+                return;
+            }
+
+            // Use Quill API to get editor content
+            var editorContent = quill.root.innerHTML;
+            console.log("Editor content: ", editorContent); // Debugging
+
+            // Set content to the hidden textarea
+            $('#description').val(editorContent);
+
+            // Ensure value is set
+            console.log("Textarea value: ", $('#description').val());
+
+            // Submit the form after setting the textarea value
+            this.submit();
+        });
+    });
 </script>
 @endsection

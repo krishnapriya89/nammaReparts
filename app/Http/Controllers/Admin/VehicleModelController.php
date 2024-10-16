@@ -42,7 +42,7 @@ class VehicleModelController extends Controller
         $request->validate([
             'brand_id' => 'required',
             'vehicle_name' => 'required|max:255',
-            'power'=>'required',
+            'power' => 'required',
             'vehicle_image' => 'required|image|mimes:jpeg,png,jpg,svg,webp|max:4048',
             'model' => 'required|max:255',
             'year' => 'required',
@@ -67,7 +67,7 @@ class VehicleModelController extends Controller
                 'year' => $request->year,
                 'fuel_type' => $request->fuel_type,
                 'engine' => $request->engine,
-                'power'=>$request->power,
+                'power' => $request->power,
                 'vehicle_type' => $request->vehicle_type,
                 'status' => $request->status
 
@@ -116,7 +116,7 @@ class VehicleModelController extends Controller
         $request->validate([
             'brand_id' => 'required',
             'vehicle_name' => 'required|max:255',
-            'power'=>'required',
+            'power' => 'required',
             'vehicle_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:4048', // Nullable because the image may not always be updated
             'model' => 'required|max:255',
             'year' => 'required',
@@ -130,7 +130,7 @@ class VehicleModelController extends Controller
         $vehicleModel = VehicleModel::findOrFail($id);
 
         // Check if a new image is uploaded
-        if ($request->filled('vehicle_image')) {
+        if ($request->hasFile('vehicle_image')) {
 
             $file = $request->file('vehicle_image');
             $fileName = time() . '_' . $file->getClientOriginalName();
@@ -152,7 +152,7 @@ class VehicleModelController extends Controller
             'year' => $request->year,
             'fuel_type' => $request->fuel_type,
             'engine' => $request->engine,
-            'power'=>$request->power,
+            'power' => $request->power,
             'vehicle_type' => $request->vehicle_type,
             'status' => $request->status
         ]);
@@ -167,11 +167,10 @@ class VehicleModelController extends Controller
     public function destroy(string $id)
     {
         $vehicleModel = VehicleModel::find($id);
-        if($vehicleModel->delete())
-        {
-            return to_route('vehicle_model.index')->with('success','Vehicle Model Deleted Successfully!');
+        if ($vehicleModel->delete()) {
+            return to_route('vehicle_model.index')->with('success', 'Vehicle Model Deleted Successfully!');
         }
-        return to_route('vehicle_model.index')->with('error','Failed to Delete Vehicle Model');
+        return to_route('vehicle_model.index')->with('error', 'Failed to Delete Vehicle Model');
     }
 
     /**
@@ -182,8 +181,8 @@ class VehicleModelController extends Controller
     public function getCategory(Request $request)
     {
         $vehicle_id = $request->vehicleId;
-       $categories = Category::where('vehicle_model_id',$vehicle_id)->get();
-       return response()->json($categories);
+        $categories = Category::where('vehicle_model_id', $vehicle_id)->get();
+        return response()->json($categories);
     }
     /**
      * select subcategories unde category
@@ -192,8 +191,69 @@ class VehicleModelController extends Controller
      */
     public function getSubcategory(Request $request)
     {
-        $categoryId= $request->categoryId;
-        $subcategories = SubCategory::where('category_id',$categoryId)->get();
+        $categoryId = $request->categoryId;
+        $subcategories = SubCategory::where('category_id', $categoryId)->get();
         return response()->json($subcategories);
+    }
+
+    //     public function getCategory_update(Request $request)
+    //     {
+    //         $vehicle_id = $request->vehicleId;
+    //         dd($vehicle_id); exit;
+    //         // Retrieve categories related to the vehicle model
+    //         $categories = Category::where('vehicle_model_id', $vehicle_id)->get();
+    // dd($categories); exit;
+    //         return response()->json([
+    //             'categories' => $categories,
+    //         ]);
+    //     }
+
+    //     /**
+    //      * Select subcategories under a category
+    //      * @param $categoryId.
+    //      * @return mixed|\Illuminate\Http\JsonResponse
+    //      */
+    //     public function getSubcategory_update(Request $request)
+    //     {
+    //         $categoryId = $request->categoryId;
+
+    //         // Retrieve subcategories related to the selected category
+    //         $subcategories = SubCategory::where('category_id', $categoryId)->get();
+
+    //         return response()->json([
+    //             'subcategories' => $subcategories,
+    //         ]);
+    //     }
+
+    public function getCategory_update(Request $request)
+    {
+        $vehicle_id = $request->vehicleId;
+
+        // Ensure the vehicle ID is valid
+        if ($vehicle_id) {
+            $categories = Category::where('vehicle_model_id', $vehicle_id)->get();
+        } else {
+            $categories = []; // Return an empty array if no vehicle ID is provided
+        }
+
+        return response()->json([
+            'categories' => $categories,
+        ]);
+    }
+
+    public function getSubcategory_update(Request $request)
+    {
+        $categoryId = $request->categoryId;
+
+        // Ensure the category ID is valid
+        if ($categoryId) {
+            $subcategories = SubCategory::where('category_id', $categoryId)->get();
+        } else {
+            $subcategories = []; // Return an empty array if no category ID is provided
+        }
+
+        return response()->json([
+            'subcategories' => $subcategories,
+        ]);
     }
 }
