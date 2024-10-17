@@ -101,7 +101,8 @@ class LoginController extends Controller
 
             $user = User::where('mobile', $phone_number)->first();
             Auth::login($user);
-            return response()->json(['success' => true, 'message' => 'OTP verified successfully','user_id'=>$user->id]);
+
+            return response()->json(['success' => true, 'message' => 'OTP verified successfully','user_id'=>$user->id,'user_name' => $user->first_name,]);
         } else {
             Log::warning('OTP verification failed', [
                 'phone_number' => $phone_number,

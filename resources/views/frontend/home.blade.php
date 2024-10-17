@@ -131,38 +131,32 @@
             <h1 class="main-title" >Reused Vehicle Spares</h1>
             <h2 class="sub-head"> ALL THE PARTS YOUR vehicle  WILL EVER NEED!</h2>
         </div>
-        <div class="col-sm-3" id="loginContainer">
+        {{-- <div class="col-sm-3" id="loginContainer">
             <a href="javascript:;" class="btn btn-primary" data-toggle="modal" data-target="#login">Login</a>
-        </div>
-
-        {{-- <div class="col-sm-3 d-none" id="myAccountContainer">
-            <a href="javascript:;" class="btn btn-primary" id="myAccountButton">My Account</a>
-            @if(Auth()->check())
-            <p>Wecome ,{{ Auth()->user()->first_name}}</p>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: inline;">
-                @csrf
-                <button type="submit" class="btn btn-danger">Logout</button>
-            </form>
-            @endif
         </div> --}}
-        <div class="col-sm-3 d-none" id="myAccountContainer">
-            <div class="dropdown" >
-                <button class="btn btn-primary dropdown-toggle" type="button" id="myAccountButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    My Account
-                </button>
-                <div class="dropdown-menu" aria-labelledby="myAccountButton">
-                    @if(Auth::check())
+
+        <div class="col-sm-3">
+            @if(Auth::check())
+                <!-- Show the My Account dropdown if the user is authenticated -->
+                <div class="dropdown" id="myAccountContainer">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="myAccountButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        My Account
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="myAccountButton">
                         <p class="dropdown-item">Welcome, {{ Auth::user()->first_name }}</p>
                         <div class="dropdown-divider"></div>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="dropdown-item" style="display: inline;">
                             @csrf
                             <button type="submit" class="btn btn-danger btn-sm">Logout</button>
                         </form>
-
-                    @endif
+                    </div>
                 </div>
-            </div>
+            @else
+                <!-- Show the Login button if the user is not authenticated -->
+                <a href="javascript:;" class="btn btn-primary" data-toggle="modal" data-target="#login">Login</a>
+            @endif
         </div>
+
 
 
     </div>
@@ -1012,9 +1006,12 @@
 
                     if (response.success) {
                         alert("Success: " + response.message);
+                        location.reload();
                         $('#MyModa2').modal('hide');
-                        $('#loginContainer').addClass('d-none'); // Hide login container
-                        $('#myAccountContainer').removeClass('d-none');
+
+                        // $('#loginContainer').addClass('d-none'); // Hide login container
+                        // $('#myAccountContainer').removeClass('d-none');
+                        // $('.dropdown-item').first().text('Welcome, ' + response.user_name);
                     } else {
                         alert("Error: " + response.message);
                     }
