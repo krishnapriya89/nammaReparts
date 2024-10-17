@@ -73,7 +73,7 @@
                                     <option value="">Please Select Vehicle Model</option>
                                     @foreach($vehiclemodellists as $vehiclemodellist)
                                     <option value="{{$vehiclemodellist->id}}" {{ $vehicleparts->vehicle_id == $vehiclemodellist->id ? 'selected' : '' }}>
-                                        {{ $vehiclemodellist->vehicle_name }}
+                                        {{ $vehiclemodellist->model }}
                                     </option>
                                     @endforeach
                                 </select>

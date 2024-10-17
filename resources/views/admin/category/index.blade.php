@@ -41,7 +41,7 @@
                             @foreach($categories as $category)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $category->vehicleModel ? $category->vehicleModel->vehicle_name :''}}</td>
+                                <td>{{ $category->vehicleModel ? $category->vehicleModel->model :''}}</td>
                                 <td>{{ $category->category_name }}</td>
                                 <td>
                                     @if($category->status == 1)
