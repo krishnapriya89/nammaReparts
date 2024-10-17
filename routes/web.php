@@ -31,3 +31,7 @@ Route::post('registration', [UserRegistrationController::class, 'submitForm'])->
 Route::post('login', [LoginController::class, 'login'])->name('login');
 // otp verification
 Route::post('verify-otp', [LoginController::class, 'verifyOtp'])->name('verify-otp');
+//logout
+
+Route::post
+('/logout',[LoginController::class,'logout'])->name('logout');

@@ -65,7 +65,7 @@
                 <div class="text-center">
                     <h5 class="form-title">Account registration </h5>
                 </div>
-                <form action="{{route('registration.submit')}}" method="post">
+                <form action="{{route('registration.submit')}}" method="post" id="registrationForm">
                     @csrf
                     <div class="row">
                         <div class="col-md-6">
@@ -74,13 +74,54 @@
                                 <input class="login-input" type="text" name="first_name" placeholder="Enter Your First Name">
                             </div>
                         </div>
+                        <form action="{{route('registration.submit')}}" method="post">
+                            @csrf
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="login-label ">Firtst NAME</label>
+                                        <input class="login-input" type="text" name="first_name" placeholder="Enter Your First Name">
+                                    </div>
+                                </div>
 
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="login-label ">Last NAME</label>
-                                <input class="login-input" type="text" name="last_name" placeholder="Enter Your Last Name">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="login-label ">Last NAME</label>
+                                        <input class="login-input" type="text" name="last_name" placeholder="Enter Your Last Name">
+                                    </div>
+                                </div>
+
                             </div>
-                        </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="login-label ">Email Address</label>
+                                        <input class="login-input" type="email" name="email" placeholder="Enter Your Email">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="login-label ">Mobile Number</label>
+                                        <input class="login-input" type="number" name="phone_number" placeholder="Enter Your Mobile Number">
+                                    </div>
+                                    @error('phone_number')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-12">
+                                    <div class="text-center mt-2">
+                                        <button type="submit" class="verify-account-btn">Register</button>
+                                    </div>
+                                </div>
+
+                            </div>
+
 
                     </div>
                     <div class="row">
@@ -96,9 +137,7 @@
                                 <label class="login-label ">Mobile Number</label>
                                 <input class="login-input" type="number" name="phone_number" placeholder="Enter Your Mobile Number">
                             </div>
-                            @error('phone_number')
-                            <span class="text-danger">{{ $message }}</span>
-                            @enderror
+                            <span class="text-danger" id="phoneNumberError"></span>
                         </div>
 
                     </div>
@@ -183,8 +222,35 @@
                 </div>
                 <div class="col-md-3"><a href="javascript:;" class="btn verify-account-btn">Find Auto Parts</a></div>
             </div>
+            {{-- <div class="col-sm-3" id="loginContainer">
+            <a href="javascript:;" class="btn btn-primary" data-toggle="modal" data-target="#login">Login</a>
+        </div> --}}
+
+            <div class="col-sm-3">
+                @if(Auth::check())
+                <!-- Show the My Account dropdown if the user is authenticated -->
+                <div class="dropdown" id="myAccountContainer">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="myAccountButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        My Account
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="myAccountButton">
+                        <p class="dropdown-item">Welcome, {{ Auth::user()->first_name }}</p>
+                        <div class="dropdown-divider"></div>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="dropdown-item" style="display: inline;">
+                            @csrf
+                            <button type="submit" class="btn btn-danger btn-sm">Logout</button>
+                        </form>
+                    </div>
+                </div>
+                @else
+                <!-- Show the Login button if the user is not authenticated -->
+                <a href="javascript:;" class="btn btn-primary" data-toggle="modal" data-target="#login">Login</a>
+                @endif
+            </div>
+
+
+
         </div>
-    </div>
 </section>
 
 <section class="Shop-by-Brands">
@@ -819,17 +885,17 @@
                     phone_number: $('#phone_number').val()
                 },
                 success: function(response) {
-                    if (response.user_id) {
-                        alert("Success: " + response.message + "\nUser ID: " + response.user_id);
+
+                    if (response.success) {
+                        alert("Success: " + response.message);
+                        location.reload();
+                        $('#MyModa2').modal('hide');
+                        // $('#loginContainer').addClass('d-none'); // Hide login container
+                        // $('#myAccountContainer').removeClass('d-none');
+
                     } else {
-                        alert("Success: " + response.message + "\nUser passed, but no user ID provided.");
+                        alert("Error: " + response.message);
                     }
-                    // console.log(response);
-                    // if (response.success) {
-                    //     alert("Success: " + response.message);
-                    // } else {
-                    //     alert("Error: " + response.message);
-                    // }
                 },
                 error: function(xhr) {
                     console.log(xhr.responseText); // Log error response for debugging
@@ -859,6 +925,35 @@
             });
 
         });
+        $('#registrationForm').on('submit', function(e) {
+            e.preventDefault(); // Prevent the default form submission
 
+            let formData = $(this).serialize(); // Serialize form data
+            let csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+            $.ajax({
+                url: $(this).attr('action'),
+                method: 'POST',
+                data: formData,
+                success: function(response) {
+                    // If registration is successful, hide the modal
+                    $('#MyModa3').modal('hide');
+                    // alert('Registration successful!');
+                },
+                error: function(xhr) {
+                    // If there are validation errors, keep the modal open and display errors
+                    if (xhr.status === 422) {
+                        let errors = xhr.responseJSON.errors;
+                        let phoneNumberError = errors.phone_number ? errors.phone_number[0] : '';
+
+                        // Show the modal again
+                        $('#MyModa3').modal('show');
+
+                        // Display the error message
+                        $('#phoneNumberError').text(phoneNumberError);
+                    }
+                }
+            });
+        });
     });
 </script>

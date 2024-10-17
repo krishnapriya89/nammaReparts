@@ -101,7 +101,8 @@ class LoginController extends Controller
 
             $user = User::where('mobile', $phone_number)->first();
             Auth::login($user);
-            return response()->json(['success' => true, 'message' => 'OTP verified successfully','user_id'=>$user->id]);
+
+            return response()->json(['success' => true, 'message' => 'OTP verified successfully','user_id'=>$user->id,'user_name' => $user->first_name,]);
         } else {
             Log::warning('OTP verification failed', [
                 'phone_number' => $phone_number,
@@ -110,5 +111,14 @@ class LoginController extends Controller
             ]);
             return response()->json(['success' => false, 'message' => 'Invalid or expired OTP'], 400);
         }
+    }
+
+    //logout
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/')->with('success', 'You have been logged out successfully.');
     }
 }
