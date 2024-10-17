@@ -7,7 +7,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Models\Otplog;
 use GuzzleHttp\Client;
+use App\Models\User;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
+
 
 
 class LoginController extends Controller
@@ -22,6 +25,15 @@ class LoginController extends Controller
 
         // Get the phone number and generate the OTP
         $phoneNumber = $request->phone_number;
+        $user = User::where('mobile', $phoneNumber)->first();
+
+        if (!$user) {
+            // If phone number not found in the database, return error response
+            return response()->json([
+                'success' => false,
+                'message' => 'Phone number not registered. Please sign up first.',
+            ], 404);
+        }
         $otp = rand(1000, 9999);
         $expiryTime = Carbon::now()->addMinutes(7);
 
@@ -58,7 +70,7 @@ class LoginController extends Controller
             ]);
 
             $responseData = json_decode($response->getBody(), true);
-            // dd($responseData);
+
             if ($response->getStatusCode() == 202 || $response->getStatusCode() == 200 && isset($responseData['data'])) {
                 return response()->json(['success' => true, 'message' => 'OTP sent successfully!']);
             } else {
@@ -86,7 +98,10 @@ class LoginController extends Controller
                 'phone_number' => $phone_number,
                 'otp' => $otp,
             ]);
-            return response()->json(['success' => true, 'message' => 'OTP verified successfully']);
+
+            $user = User::where('mobile', $phone_number)->first();
+            Auth::login($user);
+            return response()->json(['success' => true, 'message' => 'OTP verified successfully','user_id'=>$user->id]);
         } else {
             Log::warning('OTP verification failed', [
                 'phone_number' => $phone_number,

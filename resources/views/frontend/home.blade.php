@@ -190,402 +190,282 @@
         <div class="title-line"></div>
 
         <div class="row">
-            <div class="col-md-6">
-                <h4 class="shop-by-brand-sub-head"> <span>Two </span> and <span> Three </span>Wheeler</h4>
+            <div class="col-md-12">
                 <div class="shop-by-brand-wrapper">
 
 
                 <div class="row">
 
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo1.png')}}" alt="logo"> <span>Mercedes Benz</span></a>
+                                <a href="#"><img src="{{asset('frontend/images/logo1.png')}}" alt="logo"> <span>Mercedes Benz</span></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="col-6  col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo2.png')}}" alt="logo"> <span>BMW</span></a>
+                                <a href="#"><img src="{{asset('frontend/images/logo2.png')}}" alt="logo"> <span>BMW</span></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="col-6  col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo3.png')}}" alt="logo"> <span>Infinity</span></a>
+                                <a href="#"><img src="{{asset('frontend/images/logo3.png')}}" alt="logo"> <span>Royal Enfield</span></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo4.png')}}" alt="logo"> <span>Audi</span></a>
+                                <a href="#"><img src="{{asset('frontend/images/logo4.png')}}" alt="logo"> <span>Bajaj</span></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo5.png')}}" alt="logo"> <span>Honda</span></a>
+                                <a href="#"><img src="{{asset('frontend/images/logo5.png')}}" alt="logo"> <span>KTM</span></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo6.png')}}" alt="logo"> <span>Volkswagen</span></a>
+                                <a href="#"><img src="{{asset('frontend/images/logo6.png')}}" alt="logo"> <span>Hero </span></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo7.png')}}" alt="logo"> <span>Ford</span></a>
+                                <a href="#"><img src="{{asset('frontend/images/logo7.png')}}" alt="logo"> <span>Honda </span></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo8.png')}}" alt="logo"> <span>Mitsubishi</span></a>
+                                <a href="#"><img src="{{asset('frontend/images/logo8.png')}}" alt="logo"> <span>Yamaha </span></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo9.png')}}" alt="logo"> <span>Chevrolet</span></a>
+                                <a href="#"><img src="{{asset('frontend/images/logo9.png')}}" alt="logo"> <span>Mahindra </span></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo10.png')}}" alt="logo"> <span>Subaru</span></a>
+                                <a href="#"><img src="{{asset('frontend/images/logo10.png')}}" alt="logo"> <span>Jawa </span></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo11.png')}}" alt="logo"> <span>Nissan</span></a>
+                                <a href="listing.html"><img src="{{asset('frontend/images/logo11.png')}}" alt="logo"> <span>Maruti </span></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo12.png')}}" alt="logo"> <span>KIA</span></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
-                        <div class="brand-container">
-                            <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo13.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="#"><img src="{{asset('frontend/images/logo12.png')}}" alt="logo"> <span>TVS</span></a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo14.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="#"><img src="{{asset('frontend/images/logo13.png')}}" alt="logo"> <span>Yezdi </span></a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo15.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="#"><img src="{{asset('frontend/images/logo14.png')}}" alt="logo"> <span>KIA</span></a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo16.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="#"><img src="{{asset('frontend/images/logo15.png')}}" alt="logo"> <span>Harley Davidson</span></a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo17.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="#"><img src="{{asset('frontend/images/logo16.png')}}" alt="logo"> <span>Benelli</span></a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo18.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="#"><img src="{{asset('frontend/images/logo17.png')}}" alt="logo"> <span>Triumph</span></a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo19.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="#"><img src="{{asset('frontend/images/logo18.png')}}" alt="logo"> <span>Ducati</span></a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo19.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="#"><img src="{{asset('frontend/images/logo19.png')}}" alt="logo"> <span>Aprilia</span></a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo20.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="#"><img src="{{asset('frontend/images/logo20.png')}}" alt="logo"> <span>Ola</span></a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo21.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="#"><img src="{{asset('frontend/images/logo21.png')}}" alt="logo"> <span>Piaggio</span></a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo22.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="#"><img src="{{asset('frontend/images/logo22.png')}}" alt="logo"> <span>KIA</span></a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo23.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="#"><img src="{{asset('frontend/images/logo23.png')}}" alt="logo"> <span>KIA</span></a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo24.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="#"><img src="{{asset('frontend/images/logo24.png')}}" alt="logo"> <span>KIA</span></a>
                             </div>
                         </div>
                     </div>
 
-                </div>
-            </div>
-
-            </div>
-
-            <div class="col-md-6">
-                <h4 class="shop-by-brand-sub-head"> <span>Four   </span>Wheeler and <span> commercial  </span>vehicle</h4>
-                <div class="shop-by-brand-wrapper">
 
 
-                <div class="row">
 
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo1.png')}}" alt="logo"> <span>Mercedes Benz</span></a>
+                                <a href="#"><img src="{{asset('frontend/images/four-1.png')}}" alt="logo"> <span>Infinity</span></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo2.png')}}" alt="logo"> <span>BMW</span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
-                        <div class="brand-container">
-                            <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/four-1.png')}}" alt="logo"> <span>Infinity</span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
-                        <div class="brand-container">
-                            <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/four-2.png')}}" alt="logo"> <span>Audi</span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
-                        <div class="brand-container">
-                            <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo7.png')}}" alt="logo"> <span>Honda</span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
-                        <div class="brand-container">
-                            <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/four-3.png')}}" alt="logo"> <span>Volkswagen</span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
-                        <div class="brand-container">
-                            <div class="brand-logo">
-                                <a href="#"><img src="{{asset('frontend/images/four-4.png')}}" alt="logo"> <span>Ford</span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
-                        <div class="brand-container">
-                            <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/four-5.png')}}" alt="logo"> <span>Mitsubishi</span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
-                        <div class="brand-container">
-                            <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/four-6.png')}}" alt="logo"> <span>Chevrolet</span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
-                        <div class="brand-container">
-                            <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo11.png')}}" alt="logo"> <span>Subaru</span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
-                        <div class="brand-container">
-                            <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/four-7.png')}}" alt="logo"> <span>Nissan</span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
-                        <div class="brand-container">
-                            <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/four-8.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="#"><img src="{{asset('frontend/images/four-2.png')}}" alt="logo"> <span>Audi</span></a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/four-9.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="#"><img src="{{asset('frontend/images/four-3.png')}}" alt="logo"> <span>Volkswagen</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
+                        <div class="brand-container">
+                            <div class="brand-logo">
+                                <a href="#"><img src="{{asset('frontend/images/four-4.png')}}" alt="logo"> <span>Mitsubishi</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
+                        <div class="brand-container">
+                            <div class="brand-logo">
+                                <a href="#"><img src="{{asset('frontend/images/four-5.png')}}" alt="logo"> <span>Chevrolet</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
+                        <div class="brand-container">
+                            <div class="brand-logo">
+                                <a href="#"><img src="{{asset('frontend/images/four-6.png')}}" alt="logo"> <span>Kia</span></a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/four-10.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="#"><img src="{{asset('frontend/images/four-7.png')}}" alt="logo"> <span>Hyundai</span></a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/four-11.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="#"><img src="{{asset('frontend/images/four-9.png')}}" alt="logo"> <span>Nissan</span></a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/four-12.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="#"><img src="{{asset('frontend/images/four-10.png')}}" alt="logo"> <span>Toyota</span></a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/four-12.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="#"><img src="{{asset('frontend/images/four-11.png')}}" alt="logo"> <span>Škoda </span></a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
                         <div class="brand-container">
                             <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo18.png')}}" alt="logo"> <span>KIA</span></a>
+                                <a href="#"><img src="{{asset('frontend/images/four-12.png')}}" alt="logo"> <span>TATA</span></a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
-                        <div class="brand-container">
-                            <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo19.png')}}" alt="logo"> <span>KIA</span></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
-                        <div class="brand-container">
-                            <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo19.png')}}" alt="logo"> <span>KIA</span></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
-                        <div class="brand-container">
-                            <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo20.png')}}" alt="logo"> <span>KIA</span></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
-                        <div class="brand-container">
-                            <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo21.png')}}" alt="logo"> <span>KIA</span></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
-                        <div class="brand-container">
-                            <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo22.png')}}" alt="logo"> <span>KIA</span></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
-                        <div class="brand-container">
-                            <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo23.png')}}" alt="logo"> <span>KIA</span></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
-                        <div class="brand-container">
-                            <div class="brand-logo">
-                                <a href="{{route('listing-page')}}"><img src="{{asset('frontend/images/logo24.png')}}" alt="logo"> <span>KIA</span></a>
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
             </div>
@@ -596,6 +476,7 @@
         </div>
     </div>
 </section>
+
 
 <section class="Shop-by-parts">
     <div class="container">
@@ -1097,12 +978,17 @@
                     phone_number:$('#phone_number').val()
                 },
                 success: function(response) {
-                    console.log(response);
-                    if (response.success) {
-                        alert("Success: " + response.message);
+                    if (response.user_id) {
+                        alert("Success: " + response.message + "\nUser ID: " + response.user_id);
                     } else {
-                        alert("Error: " + response.message);
+                        alert("Success: " + response.message + "\nUser passed, but no user ID provided.");
                     }
+                                // console.log(response);
+                    // if (response.success) {
+                    //     alert("Success: " + response.message);
+                    // } else {
+                    //     alert("Error: " + response.message);
+                    // }
                 },
                 error: function(xhr) {
                     console.log(xhr.responseText); // Log error response for debugging
