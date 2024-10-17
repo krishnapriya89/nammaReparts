@@ -5,12 +5,15 @@ namespace App\Http\Controllers\frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Models\VehicleBrand;
+
 class HomeController extends Controller
 {
     //home page
     public function home()
     {
-        return view('frontend.home');
+        $brands = VehicleBrand::all();
+        return view('frontend.home', compact('brands'));
     }
 
     //listing page
