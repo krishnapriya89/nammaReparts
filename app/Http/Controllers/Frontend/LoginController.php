@@ -111,4 +111,13 @@ class LoginController extends Controller
             return response()->json(['success' => false, 'message' => 'Invalid or expired OTP'], 400);
         }
     }
+
+    //logout
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/')->with('success', 'You have been logged out successfully.');
+    }
 }

@@ -131,9 +131,40 @@
             <h1 class="main-title" >Reused Vehicle Spares</h1>
             <h2 class="sub-head"> ALL THE PARTS YOUR vehicle  WILL EVER NEED!</h2>
         </div>
-        <div class="col-sm-3">
+        <div class="col-sm-3" id="loginContainer">
             <a href="javascript:;" class="btn btn-primary" data-toggle="modal" data-target="#login">Login</a>
         </div>
+
+        {{-- <div class="col-sm-3 d-none" id="myAccountContainer">
+            <a href="javascript:;" class="btn btn-primary" id="myAccountButton">My Account</a>
+            @if(Auth()->check())
+            <p>Wecome ,{{ Auth()->user()->first_name}}</p>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: inline;">
+                @csrf
+                <button type="submit" class="btn btn-danger">Logout</button>
+            </form>
+            @endif
+        </div> --}}
+        <div class="col-sm-3 d-none" id="myAccountContainer">
+            <div class="dropdown" >
+                <button class="btn btn-primary dropdown-toggle" type="button" id="myAccountButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    My Account
+                </button>
+                <div class="dropdown-menu" aria-labelledby="myAccountButton">
+                    @if(Auth::check())
+                        <p class="dropdown-item">Welcome, {{ Auth::user()->first_name }}</p>
+                        <div class="dropdown-divider"></div>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="dropdown-item" style="display: inline;">
+                            @csrf
+                            <button type="submit" class="btn btn-danger btn-sm">Logout</button>
+                        </form>
+
+                    @endif
+                </div>
+            </div>
+        </div>
+
+
     </div>
 </div>
 <div class="form-padding">
@@ -978,17 +1009,15 @@
                     phone_number:$('#phone_number').val()
                 },
                 success: function(response) {
-                    if (response.user_id) {
-                        alert("Success: " + response.message + "\nUser ID: " + response.user_id);
+
+                    if (response.success) {
+                        alert("Success: " + response.message);
+                        $('#MyModa2').modal('hide');
+                        $('#loginContainer').addClass('d-none'); // Hide login container
+                        $('#myAccountContainer').removeClass('d-none');
                     } else {
-                        alert("Success: " + response.message + "\nUser passed, but no user ID provided.");
+                        alert("Error: " + response.message);
                     }
-                                // console.log(response);
-                    // if (response.success) {
-                    //     alert("Success: " + response.message);
-                    // } else {
-                    //     alert("Error: " + response.message);
-                    // }
                 },
                 error: function(xhr) {
                     console.log(xhr.responseText); // Log error response for debugging
