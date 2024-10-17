@@ -68,7 +68,7 @@
                 <div class="text-center">
                     <h5 class="form-title">Account registration </h5>
                 </div>
-                <form action="{{route('registration.submit')}}" method="post">
+                <form action="{{route('registration.submit')}}" method="post" id="registrationForm">
                     @csrf
                     <div class="row">
                         <div class="col-md-6">
@@ -99,7 +99,7 @@
                                 <label class="login-label ">Mobile Number</label>
                                 <input class="login-input" type="number" name="phone_number" placeholder="Enter Your Mobile Number">
                             </div>
-                            <span class="text-danger" id="phoneNumberError"></span> 
+                            <span class="text-danger" id="phoneNumberError"></span>
                         </div>
 
                     </div>
@@ -132,9 +132,31 @@
                     <h1 class="main-title">Reused Vehicle Spares</h1>
                     <h2 class="sub-head"> ALL THE PARTS YOUR vehicle WILL EVER NEED!</h2>
                 </div>
-                <div class="col-sm-3">
+                {{-- <div class="col-sm-3">
                     <a href="javascript:;" class="btn btn-primary" data-toggle="modal" data-target="#login">Login</a>
+                </div> --}}
+                <div class="col-sm-3">
+                    @if(Auth::check())
+                        <!-- Show the My Account dropdown if the user is authenticated -->
+                        <div class="dropdown" id="myAccountContainer">
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="myAccountButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                My Account
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="myAccountButton">
+                                <p class="dropdown-item">Welcome, {{ Auth::user()->first_name }}</p>
+                                <div class="dropdown-divider"></div>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="dropdown-item" style="display: inline;">
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger btn-sm">Logout</button>
+                                </form>
+                            </div>
+                        </div>
+                    @else
+                        <!-- Show the Login button if the user is not authenticated -->
+                        <a href="javascript:;" class="btn btn-primary" data-toggle="modal" data-target="#login">Login</a>
+                    @endif
                 </div>
+
             </div>
         </div>
         <div class="form-padding">
@@ -867,34 +889,41 @@
 
         });
         $('#registrationForm').on('submit', function(e) {
-        e.preventDefault(); // Prevent the default form submission
+            e.preventDefault(); // Prevent the default form submission
 
-        let formData = $(this).serialize(); // Serialize form data
-        let csrfToken = $('meta[name="csrf-token"]').attr('content');
+            let formData = $(this).serialize(); // Serialize form data
+            let csrfToken = $('meta[name="csrf-token"]').attr('content');
 
-        $.ajax({
-            url: $(this).attr('action'),
-            method: 'POST',
-            data: formData,
-            success: function(response) {
-                // If registration is successful, hide the modal
-                $('#MyModa3').modal('hide');
-                // alert('Registration successful!');
-            },
-            error: function(xhr) {
-                // If there are validation errors, keep the modal open and display errors
-                if (xhr.status === 422) {
-                    let errors = xhr.responseJSON.errors;
-                    let phoneNumberError = errors.phone_number ? errors.phone_number[0] : '';
+            $.ajax({
+                url: $(this).attr('action'),
+                method: 'POST',
+                data: formData,
+                success: function(response) {
+                    // If registration is successful, hide the modal
+                    $('#MyModa3').modal('hide');
+                    toastr.success("Registration successful!"); // Toastr message for success
+                },
+                error: function(xhr) {
+                    // If there are validation errors, keep the modal open and display errors
+                    if (xhr.status === 422) {
+                        let errors = xhr.responseJSON.errors;
+                        let phoneNumberError = errors.phone_number ? errors.phone_number[0] : '';
 
-                    // Show the modal again
-                    $('#MyModa3').modal('show');
+                        // Show the modal again (optional if it is already open)
+                        $('#MyModa3').modal('show');
 
-                    // Display the error message
-                    $('#phoneNumberError').text(phoneNumberError);
+                        // Clear previous error messages
+                        $('#phoneNumberError').text('');
+
+                        // Display the error message
+                        if (phoneNumberError) {
+                            $('#phoneNumberError').text(phoneNumberError);
+                        }
+                    }
                 }
-            }
-        });
+            });
+});
+
     });
 
 
