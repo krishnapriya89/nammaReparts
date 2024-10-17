@@ -65,7 +65,7 @@
               <div class="text-center">
             <h5 class="form-title">Account registration </h5>
           </div>
-          <form action="{{route('registration.submit')}}" method="post">
+          <form action="{{route('registration.submit')}}" method="post" id="registrationForm">
             @csrf
             <div class="row">
                 <div class="col-md-6">
@@ -96,9 +96,7 @@
                         <label class="login-label ">Mobile Number</label>
                         <input class="login-input" type="number"  name="phone_number" placeholder="Enter Your Mobile Number">
                     </div>
-                    @error('phone_number')
-                    <span class="text-danger">{{ $message }}</span>
-                @enderror
+                    <span class="text-danger" id="phoneNumberError"></span>
                 </div>
 
             </div>
@@ -1008,10 +1006,9 @@
                         alert("Success: " + response.message);
                         location.reload();
                         $('#MyModa2').modal('hide');
-
                         // $('#loginContainer').addClass('d-none'); // Hide login container
                         // $('#myAccountContainer').removeClass('d-none');
-                        // $('.dropdown-item').first().text('Welcome, ' + response.user_name);
+
                     } else {
                         alert("Error: " + response.message);
                     }
@@ -1045,7 +1042,36 @@
             });
 
         });
+        $('#registrationForm').on('submit', function(e) {
+        e.preventDefault(); // Prevent the default form submission
 
+        let formData = $(this).serialize(); // Serialize form data
+        let csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+        $.ajax({
+            url: $(this).attr('action'),
+            method: 'POST',
+            data: formData,
+            success: function(response) {
+                // If registration is successful, hide the modal
+                $('#MyModa3').modal('hide');
+                // alert('Registration successful!');
+            },
+            error: function(xhr) {
+                // If there are validation errors, keep the modal open and display errors
+                if (xhr.status === 422) {
+                    let errors = xhr.responseJSON.errors;
+                    let phoneNumberError = errors.phone_number ? errors.phone_number[0] : '';
+
+                    // Show the modal again
+                    $('#MyModa3').modal('show');
+
+                    // Display the error message
+                    $('#phoneNumberError').text(phoneNumberError);
+                }
+            }
+        });
     });
+   
 
     </script>
