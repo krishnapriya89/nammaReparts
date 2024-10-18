@@ -38,7 +38,7 @@
                     <div class="card">
                         <div class="card-body p-4">
                             {{-- <h5 class="mb-4">Add Category</h5> --}}
-                            <form class="row g-3" action="{{ route('category.update', $category->id) }}" method="POST">
+                            <form class="row g-3" action="{{ route('category.update', $category->id) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
                                 <input type="hidden" value="{{ $category->id }}">
@@ -92,16 +92,15 @@
 
                                                 <div class="pt-3 image-count-holder"></div>
                                             </div>
-                                            @if (isset($category->image) && Storage::exists('public/' . $category->image))
-                                            <div class="mt-3">
-                                                <p>Current Image:</p>
-                                                <img src="{{ Storage::url($category->image) }}" alt="Category Image" class="img-thumbnail" width="150">
-                                            </div>
-                                        @else
-                                            <p>No image uploaded yet.</p>
-                                        @endif
-
-
+                                            @if (isset($category->image) )
+                                                <div class="mt-3">
+                                                    <p>Current Image:</p>
+                                                    <img src="{{ asset('storage/public/' . $category->image) }}" alt="Category Image"
+                                                        class="img-thumbnail" width="150">
+                                                </div>
+                                            @else
+                                                <p>No image uploaded yet.</p>
+                                            @endif
 
                                         </div>
 

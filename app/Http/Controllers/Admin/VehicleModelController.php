@@ -39,6 +39,7 @@ class VehicleModelController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
             'brand_id' => 'required',
             'vehicle_name' => 'required|max:255',

@@ -15,9 +15,9 @@ class HomeController extends Controller
     //home page
     public function home()
     {
-        $brands = VehicleBrand::where('active_status',1)->get();
-        $categories = Category::with('parts')->where('status',1)->get();
-        return view('frontend.home', compact('brands','categories'));
+        $brands = VehicleBrand::where('active_status', 1)->get();
+        $categories = Category::with('parts')->where('status', 1)->distinct('category_name') ->take(8)->get();
+        return view('frontend.home', compact('brands', 'categories'));
     }
 
     //listing page
@@ -32,9 +32,8 @@ class HomeController extends Controller
         // Get the brand name for displaying on the listing page
         $brand = VehicleBrand::findOrFail($brandId);
         $vehicleName = $brand->brand_name;
-
-        
-        return view('frontend.listingpage', compact('vehicleparts', 'vehicleName'));
+        $vehicle_models = VehicleModel::where('brand_id',$brandId)->where('status', 1)->get();
+        return view('frontend.listingpage', compact('vehicleparts', 'vehicleName','vehicle_models'));
     }
 
     //details one page

@@ -99,6 +99,13 @@ class CategoryController extends Controller
         $category->vehicle_model_id = $request->vehicle_model;
         $category->category_name = $request->category_name;
         $category->status =  $request->status;
+        if($request->hasFile('image_files'))
+        {
+            if($category->image != '' || $category->image != NULL)
+            $category->deleteImage('image_files');
+            $file = $request->file('image_files');
+            $category->image = $category->uploadImage($file, $category->getImageDirectory());
+        }
         if($category->save())
         {
             return to_route('category.index')->with('success','Category Updated successfully!');

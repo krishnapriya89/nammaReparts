@@ -28,15 +28,12 @@
                     <h3 class="sub-sub-head">Find Your Auto Parts</h3>
                 </div>
                 <div class="col-md-3">
-                    <select class="form-control sele-opt">
+                    <select class="form-control sele-opt" class="selectModel" id="selectModel">
                         <option value="1">Select Model</option>
-                        <option value="2">Maruti Suzuki New Dzire</option>
-                        <option value="3">Select Mode 2</option>
-                        <option value="4">Select Mode 3</option>
-                        <option value="5">Select Mode 4</option>
-                        <option value="6">Select Mode 5</option>
-                        <option value="7">Select Mode 6</option>
-                        <option value="8">Select Mode 7</option>
+                        @foreach($vehicle_models as $model)
+                        <option value="{{ $model->id }}">{{ $model->model }}</option>
+                        @endforeach
+
                     </select>
                 </div>
                 <div class="col-md-3">
