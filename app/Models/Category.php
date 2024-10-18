@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Category extends Model
@@ -17,5 +18,10 @@ class Category extends Model
     public function vehicleModel()
     {
         return $this->belongsTo(VehicleModel::class);
+    }
+
+    public function parts()
+    {
+        return $this->hasMany(VehiclePart::class,'category_id');
     }
 }

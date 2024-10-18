@@ -206,36 +206,36 @@
    // Initialize Quill
 
 
-$(document).ready(function() {
-    // Initialize the Quill editor on DOM ready
-   var quill = new Quill('#editor', {
-        theme: 'snow'
-    });
+// $(document).ready(function() {
+//     // Initialize the Quill editor on DOM ready
+//    var quill = new Quill('#editor', {
+//         theme: 'snow'
+//     });
 
-    // Form submission logic
-    $('#vehicle_part_form').on('submit', function(e) {
-        e.preventDefault(); // Prevent default form submission
+//     // Form submission logic
+//     $('#vehicle_part_form').on('submit', function(e) {
+//         e.preventDefault(); // Prevent default form submission
 
-        // Check if quill is initialized
-        if (!quill) {
-            console.error("Quill editor is not initialized!");
-            return;
-        }
+//         // Check if quill is initialized
+//         if (!quill) {
+//             console.error("Quill editor is not initialized!");
+//             return;
+//         }
 
-        // Use Quill API to get editor content
-        var editorContent = quill.root.innerHTML;
-        console.log("Editor content: ", editorContent); // Debugging
+//         // Use Quill API to get editor content
+//         var editorContent = quill.root.innerHTML;
+//         console.log("Editor content: ", editorContent); // Debugging
 
-        // Set content to the hidden textarea
-        $('#description').val(editorContent);
+//         // Set content to the hidden textarea
+//         $('#description').val(editorContent);
 
-        // Ensure value is set
-        console.log("Textarea value: ", $('#description').val());
+//         // Ensure value is set
+//         console.log("Textarea value: ", $('#description').val());
 
-        // Submit the form after setting the textarea value
-        this.submit();
-    });
-});
+//         // Submit the form after setting the textarea value
+//         this.submit();
+//     });
+// });
 
 
 </script>

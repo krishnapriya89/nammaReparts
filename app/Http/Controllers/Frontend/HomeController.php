@@ -3,17 +3,20 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 use App\Models\VehicleBrand;
+use App\Models\VehiclePart;
 
 class HomeController extends Controller
 {
     //home page
     public function home()
     {
-        $brands = VehicleBrand::all();
-        return view('frontend.home', compact('brands'));
+        $brands = VehicleBrand::where('active_status',1)->get();
+        $categories = Category::with('parts')->where('status',1)->get();
+        return view('frontend.home', compact('brands','categories'));
     }
 
     //listing page
