@@ -38,20 +38,25 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
             'category_name'=>'required',
             'vehicle_model'=>'required',
-            'status'=>'required'
+            'status'=>'required',
+            'image_files' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
+        $category = new Category();
 
-        $data=[
-            'vehicle_model_id'=>$request->vehicle_model,
-            'category_name'=>$request->category_name,
-            'status'=>$request->status
+        $category->vehicle_model_id = $request->vehicle_model;
+        $category->category_name = $request->category_name;
+        $category->status = $request->status;
+        if($request->hasFile('image_files'))
+        {
+            $file = $request->file('image_files');
+            $category->image= $category->uploadImage($file, $category->getImageDirectory());
+        }
 
-        ];
-        $category = category::create($data);
-        if($category) {
+        if($category->save()) {
             return to_route('category.index')->with('success', 'Category Created Successfully!');
         } else {
             return to_route('category.index')->with('error', 'Failed to Create Category');
