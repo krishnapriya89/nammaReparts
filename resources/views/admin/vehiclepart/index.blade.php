@@ -33,7 +33,8 @@
                                 <th>Sl No:</th>
                                 <th>Part Image</th>
                                 <th>Part Name</th>
-                                <th>Vehicle Name</th>                                
+                                <th>Vehicle Name</th>  
+                                <th>Vehicle Model</th>                               
                                 <th>Year</th>
                                 <th>Vehicle Fuel Type</th>
                                 <th>Price</th>
@@ -55,6 +56,7 @@
                                 </td>
                                 <td>{{$vehiclepart->part_name}}</td>
                                 <td>{{$vehiclepart->vehicle->vehicle_name}}</td> 
+                                <td>{{$vehiclepart->vehicle->model}}</td> 
                                 <td>{{$vehiclepart->year}}</td>                             
                                 <td>{{$vehiclepart->fuel->fuel_type}}</td>
                                 <td>{{$vehiclepart->price}}</td>

@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\VehicleBrand;
+use App\Models\VehiclePart;
+use App\Models\VehicleModel;
 
 class HomeController extends Controller
 {
@@ -17,9 +19,20 @@ class HomeController extends Controller
     }
 
     //listing page
-    public function listingPage()
+    public function listingPage($brandId)
     {
-        return view('frontend.listingpage');
+        $vehicleparts = VehiclePart::with(['category', 'subcategory', 'vehicle', 'fuel'])
+            ->whereHas('vehicle', function ($query) use ($brandId) {
+                $query->where('brand_id', $brandId);
+            })
+            ->get();
+
+        // Get the brand name for displaying on the listing page
+        $brand = VehicleBrand::findOrFail($brandId);
+        $vehicleName = $brand->brand_name;
+
+        
+        return view('frontend.listingpage', compact('vehicleparts', 'vehicleName'));
     }
 
     //details one page

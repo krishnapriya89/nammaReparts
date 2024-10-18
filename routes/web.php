@@ -10,7 +10,7 @@ require __DIR__ . '/admin.php';
 //home page
 Route::get('/', [HomeController::class, 'home'])->name('home');
 //listing page
-Route::get('/listing-page', [HomeController::class, 'listingPage'])->name('listing-page');
+Route::get('/listing-page/{id}', [HomeController::class, 'listingPage'])->name('listing-page');
 //details 1 page
 Route::get('/details_one', [HomeController::class, 'detailsOne'])->name('details_one');
 //details 2 page

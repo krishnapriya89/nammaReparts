@@ -70,7 +70,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="login-label ">Firtst NAME</label>
+                                <label class="login-label ">First NAME</label>
                                 <input class="login-input" type="text" name="first_name" placeholder="Enter Your First Name">
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="login-label ">Firtst NAME</label>
+                                        <label class="login-label ">First NAME</label>
                                         <input class="login-input" type="text" name="first_name" placeholder="Enter Your First Name">
                                     </div>
                                 </div>
@@ -267,7 +267,7 @@
                         <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
                             <div class="brand-container">
                                 <div class="brand-logo">
-                                    <a href="#"><img src="{{ asset($brand->logo) }}" alt="logo"> <span>{{ $brand->brand_name }}</span></a>
+                                    <a href="{{ route('listing-page', $brand->id) }}"><img src="{{ asset($brand->logo) }}" alt="logo"> <span>{{ $brand->brand_name }}</span></a>
                                 </div>
                             </div>
                         </div>
