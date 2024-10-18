@@ -33,7 +33,7 @@
                                 <th>Sl No:</th>
                                 <th>Part Image</th>
                                 <th>Part Name</th>
-                                <th>Vehicle Name</th>  
+                                <th>Brand Name</th>  
                                 <th>Vehicle Model</th>                               
                                 <th>Year</th>
                                 <th>Vehicle Fuel Type</th>
@@ -61,7 +61,7 @@
                                 <td>{{$vehiclepart->fuel->fuel_type}}</td>
                                 <td>{{$vehiclepart->price}}</td>
                                 <td>{{$vehiclepart->condition}}</td>
-                                
+
                                 <td>
                                     @if($vehiclepart->status == 1)
                                     <button class="btn btn-success">Active</button>

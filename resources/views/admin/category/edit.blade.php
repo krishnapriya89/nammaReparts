@@ -48,7 +48,7 @@
                                     <select id="input7" class="form-select" name="vehicle_model">
                                         <option value="">Select Model</option>
                                         @foreach($vehicle_models as $model)
-                                        <option value="{{ $model->id }}" {{$category->vehicle_model_id == $model->id ? 'selected':''}}>{{ $model->model }}</option>
+                                        <option value="{{ $model->id }}" {{$category->vehicle_model_id == $model->id ? 'selected':''}}>{{ $model->model}}</option>
                                         @endforeach
                                     </select>
                                     @error('vehicle_model')
