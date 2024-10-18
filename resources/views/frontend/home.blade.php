@@ -99,7 +99,7 @@
                                     <input class="login-input" type="email" name="email" placeholder="Enter Your Email">
                                 </div>
                             </div>
-
+                            
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="login-label ">Mobile Number</label>
@@ -108,6 +108,9 @@
                                 </div>
                                 <span class="text-danger" id="phoneNumberError"></span>
                             </div>
+                        </div>
+
+
 
                         </div>
 
@@ -567,12 +570,6 @@
                     } else {
                         alert("Error: " + response.message);
                     }
-                    // console.log(response);
-                    // if (response.success) {
-                    //     alert("Success: " + response.message);
-                    // } else {
-                    //     alert("Error: " + response.message);
-                    // }
                 },
                 error: function(xhr) {
                     console.log(xhr.responseText); // Log error response for debugging
