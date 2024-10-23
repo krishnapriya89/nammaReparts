@@ -93,7 +93,9 @@
                     <a href="details5.html">
                         <div class="ribon fs_13">8%</div>
                         <div class="product-block-one-image">
-                            <div class="image"> <img src="{{ asset($part->part_image) }}" alt="{{ $part->name }}"></div>
+                            <div class="image">
+                                <img src="{{ asset($part->part_image) }}" alt="{{ $part->part_name }}">
+                            </div>
                         </div>
                         <div class="product-block-one-cintent">
                             <h4 class="fs_15 product-item-tile__title">{{ $part->part_name }} </h4>
@@ -101,7 +103,11 @@
                                 <div class="price fs_15 fw_medium"><span>₹{{ $part->price }}</span></div>
                             </div>
                             <div>
-                                <h6 class="details-brand-name"> {{ $part->vehicle->model->model_name ?? 'Unknown Model' }}</h6>
+                                <!-- Display the vehicle model name -->
+                                <h6 class="details-brand-name">
+                                    Model: {{ $part->vehicle->model ?? 'Unknown Model' }}
+                                </h6>
+                               
                             </div>
                         </div>
                     </a>
@@ -110,6 +116,7 @@
             @endforeach
             @endif
         </div>
+
     </div>
 </section>
 

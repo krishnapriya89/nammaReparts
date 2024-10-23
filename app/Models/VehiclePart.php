@@ -45,4 +45,9 @@ class VehiclePart extends Model
     {
         return $this->belongsTo(FuelType::class, 'fuel_type');
     }
+
+    public function vehicleModel()
+    {
+        return $this->belongsTo(VehicleModel::class, 'vehicle_id');
+    }
 }

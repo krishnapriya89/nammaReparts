@@ -56,7 +56,7 @@ LOGIN CSS START
 }
 .form-title {
     font-size: 30px;
-    color: #555555;
+    color: #0b1553;
     line-height: 1.2;
     text-transform: uppercase;
     width: 100%;
@@ -71,7 +71,7 @@ LOGIN CSS START
 
 .login-label {
     font-size: 13px;
-    color: #555555;
+    color: ##0b1553;
     line-height: 1.4;
     text-transform: uppercase;
     padding-bottom: 7px;
@@ -152,10 +152,10 @@ LOGIN CSS START
   }
   .verify-account-btn:hover{
     background: #90d865;
-    color: #000000;
+    color: #0b1553;
   }
 .resend{
-    color: #555555;
+    color: #0b1553;
 }
 .resend a{
     color: #5d983a;
@@ -169,11 +169,10 @@ LOGIN CSS START
 Header One 
 ================================*/
 .header-top {
-    background: #fff;
+    background: #0b1553;
     position: relative;
     padding: 20px 0;
-    border-top: 5px solid #3b69b4;
-    border-bottom: 1px solid #e9ecef;
+    color: #ffffff;
 }
 .wrapper-box {
     display: flex;
@@ -217,7 +216,7 @@ ul.social-icon {
 }
 .help-info, .help-info a{
     display: inline-block;
-    color: #2B313E;
+    color: #ffffff;
     font-size: 12px;
     line-height: 14px;
 }
@@ -246,7 +245,7 @@ ul.contact-info li a {
     transition: .5s;
     font-size: 12px;
     line-height: 14px;
-    color: #2B313E;
+    color: #ffffff;
 }
  ul.contact-info li i {
     color: var(--theme-color);
@@ -334,7 +333,7 @@ ul.social-icon li a:hover {
   .header-action-icon>li>a {
     position:relative;
     font-size:27px;
-    color:#333
+    color:#ffffff
   }
   .header-action-icon>li>a:hover {
     color:#5d983a;
@@ -348,15 +347,16 @@ ul.social-icon li a:hover {
     right:-8px;
     font-size:10px;
     display:inline-block;
-    background:#333;
-    color:#fff;
+    background:#f8bd19;
+    color:#000000;
     text-align:center;
     line-height:20px;
     border-radius:50%;
     width:18px;
     height:18px;
     -webkit-transition:all .3s ease 0s;
-    transition:all .3s ease 0s
+    transition:all .3s ease 0s;
+    font-weight: 600;
   }
   .header-bottom {
     background:#333;
@@ -382,7 +382,7 @@ ul.social-icon li a:hover {
     min-height: 50px;
 }
 .sticky-top {
-    background: #ffffff;
+    background: #071047;
   }
   @media (min-width:1200px) {
     .container {
@@ -402,12 +402,26 @@ Banner Section CSS Start
 }
 .banner-wrapper{
     padding: 70px 0px;
-    margin: 0px;
-    border-bottom: 1px solid #e9ecef;
+    margin: 0px;   
 }
+.border-double{
+border-bottom: 2px solid #f8bd19;
+position: relative;
+}
+
+.border-double::after{
+position: absolute;
+background:#0b1553;
+height: 2px;
+content: '';
+width: 50%;
+bottom: -2px;
+left: 0;
+}
+
 .main-title{
     font-size: 60px;
-    color: #3b69b4;
+    color: #0b1553;
     font-weight: 600;
     letter-spacing: -3px;
 }
@@ -415,24 +429,27 @@ Banner Section CSS Start
     font-size: 24px;
     padding: 0px;
     margin: 0px;
-    color: #000000;
-    text-transform: uppercase;
+    color: #0b1553;
 }
 
 .btn-primary{
     border: 0px;
-    padding: 15px;
-    background: #3b69b4;
-    color: #ffffff;
+    padding: 15px 30px;
+    background: #f8bd19;
+    color: #0b1553;
     font-size: 14px;
     font-weight: 500;
     text-transform: uppercase;
     border-radius: 7px;
-    min-width: 236px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     margin: 0 auto;
+    font-weight: 600;
+  }
+  .btn-primary:hover{
+    background: #0b1553;
+    color: #f8bd19;
   }
 .form-padding{
     padding: 20px 0px;
@@ -462,8 +479,8 @@ Shop by Brands Section CSS Start
 ======================================= */
 
 .Shop-by-Brands{
-    padding: 70px 0px;
-    background: #f7faff;
+    padding: 0px 0px 35px 0px;
+    background: #ffffff;
 }
 
 .shop-by-brand-wrapper{
@@ -476,11 +493,26 @@ Shop by Brands Section CSS Start
 .Shop-by-Brands-title{
     font-size: 24px;
     font-weight: 600;
-    color: #000000;
+    color: #0b1553;
     padding: 0px;
     margin: 0px;
 }
-.Shop-by-Brands-title span, .shop-by-brand-sub-head span{
+
+.Shop-by-Brands-title span{
+  display: inline-block;
+  padding: 5px 0px 5px 10px;
+  background-color: #f8bd19;
+  position: relative;
+}
+.Shop-by-Brands-title span:after{
+  position: absolute;
+border-top: 40px solid #f8bd19;
+border-right: 40px solid transparent;
+content: "";
+right: -40px;
+top: 0px;
+}
+ .shop-by-brand-sub-head span{
     color: #3b69b4;
 } 
 .title-line{
@@ -542,6 +574,122 @@ img {
     height: auto;
   }
 
+
+  .cbp-rfgrid {
+    margin: 15px 0 0 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    width: 100%
+  }
+  .cbp-rfgrid li {
+    position: relative;
+    float: left;
+    overflow: hidden;
+   width: calc((-.8 * .5%) + (100% / 10));
+    margin-left: .4%;
+    margin-bottom: .4%;
+    border-radius: 15px;
+  }
+  /* .cbp-rfgrid li:first-of-type, .cbp-rfgrid li:nth-of-type(11n), .cbp-rfgrid li:nth-of-type(21n), .cbp-rfgrid li:nth-of-type(31n)  {
+    margin-left: 0px;
+  } */
+  /* .cbp-rfgrid li:first-of-type, .cbp-rfgrid li:nth-of-type(7n), .cbp-rfgrid li:nth-of-type(13n) {
+    margin-left: 0px;
+  } */
+  .cbp-rfgrid li a {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: block;
+    align-items: center;
+  }
+  .cbp-rfgrid li h4 {
+    font-size: 13px;
+    margin-top: 10px;
+    font-weight: 400;
+    height: 35px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+    color:#0b1553;
+    font-weight: 600;
+  }
+  .cbp-rfgrid li a, .cbp-rfgrid li a img {
+    display: block;
+    cursor: pointer;
+    text-align: center;
+  }
+  .bottom-border-none {
+    border-bottom: none!important;
+  }
+  .hm-grid .cbp-rfgrid li {
+    border-bottom: none;
+  }
+  .cbp-rfgrid li a {
+    padding: 10% 0;
+    display: block;
+    background: #f4f4f4;
+  }
+  .cbp-rfgrid li a img {
+    margin: 0 auto;
+    vertical-align: middle;
+  }
+  .cbp-rfgrid li a img {
+    max-height: 50px;
+  }
+  
+  @media screen and (max-width:1190px) {
+  .cbp-rfgrid li {
+   width: calc((-1 * 1%) + (100% / 7));
+  }
+  }
+  
+  @media screen and (max-width:945px) {
+  .cbp-rfgrid li {
+   width: calc((-1 * 1%) + (100% / 6));
+  }
+  }
+  
+  @media screen and (max-width:660px) {
+  .cbp-rfgrid li {
+   width: calc((-1 * 1%) + (100% / 5));
+  }
+  }
+  
+  @media screen and (max-width:660px) {
+  .cbp-rfgrid li {
+   width: calc((-1 * 1%) + (100% / 4));
+  }
+  }
+  
+  @media screen and (max-width:438px) and (min-width:401px) {
+  .cbp-rfgrid li {
+   width: calc((-1 * 1%) + (100% / 4));
+    min-height: 115px;
+  }
+  }
+  
+  @media screen and (max-width:400px) {
+  .cbp-rfgrid li {
+   width: calc((-1 * 1%) + (100% / 3));
+  }
+  .cbp-rfgrid li h4 {
+    font-size: 13px;
+    letter-spacing: -.5px;
+  }
+  }
+  
+  @media screen and (max-width:300px) {
+  .cbp-rfgrid li {
+    width: 100%
+  }
+  }
+
 /* =====================================
 Shop by Brands Section CSS End
 ======================================= */
@@ -550,7 +698,7 @@ Shop by Brands Section CSS End
 Shop By Parts Section CSS START
 ======================================= */
 .Shop-by-parts{
-  padding: 70px 0px;
+  padding: 0px 0px 35px 0px;
   background: #ffffff;
 }
 
@@ -686,7 +834,7 @@ Shop By Parts Section CSS START
 
 .parts-title{
   font-size: 18px;
-  color: #000000;
+  color: #0b1553;
   font-weight: 600;
 }
  .icon-bx-wraper {
@@ -738,8 +886,9 @@ Shop By Parts Section CSS START
   font-size:15px
 }
 .th-category-card__children a{
-  color:#6c757d;
+  color:#575757;
   font-size: 14px;
+  font-weight: 500;
 }
 .th-category-card__children a:hover{
   color: #3b69b4;
@@ -764,10 +913,19 @@ Shop By Parts Section CSS START
 }
 .parts-show-all-btn{
   font-size: 15px;
-  color: #5d983a;
+  color: #000000;
   font-weight: 600;
   margin-top: 20px;
   display: inline-block;
+  padding: 5px 10px;
+  background: #f8bd19;
+  border-radius: 6px;
+}
+
+.parts-show-all-btn:hover{
+  background: #0b134d;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .Shop-by-parts-title{
@@ -789,7 +947,7 @@ Deals For This Week Section CSS Start
 
 
 .seal-week-wrapper{
-  padding: 0px 0px 70px 0px;
+  padding: 0px 0px 35px 0px;
 }
 
 /* common section title */
@@ -840,19 +998,28 @@ Deals For This Week Section CSS Start
 }
 
 .ribon {
-  padding: 0 10px;
-  border-radius: 5px;
-  background-color: #3b69b4;
+  padding: 0 0px 0px 10px;
+  background-color: #0b1553;
   text-align: center;
   font-weight: 500;
   font-size: 12px;
   line-height: 29px;
-  color: #FFFFFF;
+  color: #f8bd19;
   position: absolute;
-  left: 15px;
+  left: 0px;
   top: 15px;
-  z-index: 1;
+  z-index: 1;  
 }
+
+.ribon:after {
+  position: absolute;
+border-top: 30px solid #0b1553;
+border-right: 30px solid transparent;
+content: "";
+right: -30px;
+top: 0px;
+}
+
 .product-block-one .ribon.style_2 {
   background-color: #15ad64;
 }
@@ -923,6 +1090,15 @@ Deals For This Week Section CSS Start
   justify-content: space-between;
   margin-top: -10px;
 }
+
+.price-container span { 
+  display: inline-block;
+  padding: 0px 7px;
+  background: #f8bd19;
+  color: #000000;
+  border-radius: 5px;
+}
+
 .product-block-one .price-container .price-cart a{
   display: inline-block;
   width: 40px;
@@ -1038,7 +1214,18 @@ Deals For This Week Section CSS Start
   transform: translateY(-50%);
 }
 
-
+.v-brand{
+  font-size: 14px;
+  color: #777a93;
+  font-weight: 500;
+  margin: 0px;
+  padding: 0px;
+}
+.parts-title{
+  font-weight: 600;
+  color: #0b1553;
+  margin-bottom: 20px;
+}
 /* =====================================
 Deals For This Week Section CSS End
 ======================================= */
@@ -1048,7 +1235,7 @@ Features Section Section CSS Start
 ======================================= */
 
 .feature-wrapper{
-  padding: 70px 0px;
+  padding: 35px 0px;
   background: #f7faff;
 }
 .icon_box {
@@ -1057,6 +1244,12 @@ Features Section Section CSS Start
 .icon {
 	margin-bottom: 15px;
 }
+
+.icon_box_content {
+
+  color: #0b1553;
+}
+
 .icon_box_content h1,
 .icon_box_content h2,
 .icon_box_content h3,
@@ -1188,6 +1381,7 @@ Footer Section CSS Start
 /*  07. footer area css here */
 .footer_top {
   padding: 58px 0 60px;
+  background: #0b134d;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .footer_top {
@@ -1217,6 +1411,7 @@ Footer Section CSS Start
   text-transform: capitalize;
   font-weight: 600;
   font-family: "Open Sans", sans-serif;
+  color: #ffffff;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .widgets_container h3 {
@@ -1260,6 +1455,7 @@ Footer Section CSS Start
 .widgets_container.widgets_subscribe p {
   font-size: 14px;
   line-height: 25px;
+  color: #ffffff;
 }
 
 .mailchimp-error {
@@ -1295,6 +1491,7 @@ Footer Section CSS Start
   font-size: 14px;
   margin-bottom: 32px;
   line-height: 25px;
+  color: #ffffff;
 }
 .customer_support {
   display: flex;
@@ -1316,11 +1513,14 @@ Footer Section CSS Start
 .footer_contact .customer_support_text p span {
   font-size: 13px;
   line-height: 16px;
+  font-weight: 600;
+  color: #f8bd19;
 }
 .footer_contact .customer_support_text p a {
   font-size: 24px;
   line-height: 27px;
   font-weight: 400;
+  color: #ffffff;
 }
 .footer_contact .customer_support_text p a:hover {
   color: #fdb813;
@@ -1335,6 +1535,25 @@ Footer Section CSS Start
   display: flex;
   justify-content: space-between;
 }
+
+.footer_menu ul li{
+  position: relative;
+}
+.footer_menu ul li a{
+  margin-left: 30px;
+}
+
+.footer_menu ul li::after{
+  position: absolute;
+  left: 0px;
+  top: 5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 200px;
+  background: #f8bd19;
+  content: "";
+}
+
 @media only screen and (max-width: 767px) {
   .footer_menu {
     justify-content: flex-start;
@@ -1360,11 +1579,10 @@ Footer Section CSS Start
   display: block;
   font-weight: 400;
   font-size: 14px;
-  color: #000000;
+  color: #ffffff;
 }
 .footer_menu ul li a:hover {
-  color: #5d983a;
-  padding-left: 10px;
+  color: #f8bd19;
 }
 
 .subscribe_form {
@@ -1401,7 +1619,7 @@ Footer Section CSS Start
   right: 0;
   top: 0;
   height: 100%;
-  background: #5d983a;
+  background: #f8bd19;
   font-weight: 700;
   padding: 0 18px;
   border: 0;
@@ -1409,7 +1627,7 @@ Footer Section CSS Start
   text-transform: capitalize;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  color: #ffffff;
+  color: #000000;
 }
 .subscribe_form form button:hover {
   background: #333;
@@ -1539,7 +1757,7 @@ Footer Section CSS Start
 .footer-bottom-one {
   padding: 17px 0;
   position: relative;
-  background: #5d983a;
+  background: #071047;
   border-top: 1px solid rgb(255 255 255 / 5%);
 }
 .footer-bottom-one .outer-box {
@@ -1551,18 +1769,21 @@ Footer Section CSS Start
   font-weight: 400;
   font-size: 12px;
   line-height: 29px;
-  color: #000000;
-}
-.footer-bottom-one .copyright-text span{
   color: #ffffff;
 }
+
+.copyright-text span{
+  color: #f8bd19;
+}
+
+
 .footer-bottom-one .menu {
   position: relative;
 }
 .footer-bottom-one .menu li {
   position: relative;
   font-size: 16px;
-  color: #fff;
+  color: #ffffff;
   display: inline-block;
   margin-right: 34px;
 }
@@ -1585,7 +1806,7 @@ Footer Section CSS Start
   font-weight: 400;
   font-size: 14px;
   line-height: 29px;
-  color: #000000;
+  color: #f8bd19;
   transition: .5s;
 }
 .footer-bottom-one .menu li a:hover {
@@ -1598,7 +1819,7 @@ Footer Section CSS Start
   gap: 15px;
 }
 .copyright-card h6{
-  color: #000000;
+  color: #ffffff;
   margin-right: 15px;
 }
 
@@ -2815,3 +3036,84 @@ border: 1px solid #e6e6e6;
 }
 
 
+
+/*--------------------------------------------------
+OWL CAROUSEL CSS :start
+-------------------------------------------------- */
+.owl-dots {
+  display: none !important;
+}
+.owl-2-style .owl-nav {
+  display: none; }
+
+.owl-2-style .owl-dots {
+  text-align: center;
+  position: relative;
+  bottom: -30px; }
+  .owl-2-style .owl-dots .owl-dot {
+    display: inline-block; }
+    .owl-2-style .owl-dots .owl-dot span {
+      display: inline-block;
+      width: 15px;
+      height: 3px;
+      border-radius: 0px;
+      background: #cccccc;
+      -webkit-transition: 0.3s all cubic-bezier(0.32, 0.71, 0.53, 0.53);
+      -o-transition: 0.3s all cubic-bezier(0.32, 0.71, 0.53, 0.53);
+      transition: 0.3s all cubic-bezier(0.32, 0.71, 0.53, 0.53);
+      margin: 3px; }
+    .owl-2-style .owl-dots .owl-dot.active span {
+      background: #007bff; }
+    .owl-2-style .owl-dots .owl-dot:active, .owl-2-style .owl-dots .owl-dot:focus {
+      outline: none; }
+
+
+      .owl-carousel .owl-nav button.owl-prev, .owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot.owl-nav {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        background-color:#0b1553 !important;
+        display: block;
+        padding: 0 .3em !important;
+        font-size: 3em;
+        margin: 0;
+        cursor: pointer;
+        color: #fff !important;
+        font-size: 40px !important;
+        line-height: 0px !important;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+        border-radius: 300px;
+    }
+    .owl-prev span{
+      margin-top: -10px !important;
+      display: inline-block !important;
+      line-height: 0px;
+    }
+    
+    .owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-next, .owl-carousel button.owl-dot.owl-nav {
+        position: absolute;
+        right: -23px;
+        top: 50%;
+        background-color:#0b1553 !important;
+        display: block ;
+        padding: 0 .3em !important;
+        font-size: 3em ;
+        margin: 0;
+        cursor: pointer;
+        color: #fff !important;
+        font-size: 40px !important;
+        line-height: 0px !important;
+        color: #fff;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+        border-radius: 300px;
+    }
+    
+
+
+/*--------------------------------------------------
+OWL CAROUSEL CSS END
+-------------------------------------------------- */
