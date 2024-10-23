@@ -19,7 +19,10 @@
   <link rel="stylesheet" href="{{ asset('frontend/css/fontawesome.min.css') }}">
 
   <link rel="stylesheet" href="{{ asset('frontend/css/owl.carousel.min.css') }}">
-  {{-- toastr --}}
+
+   <!-- Toastr -->
+ <link rel="stylesheet" href="{{asset('backend/plugins/toastr/toastr.min.css')}}">
+ <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
 <body>
@@ -31,7 +34,7 @@
   {{-- footer --}}
   @include('frontend.layouts.footer')
   @include('frontend.layouts.toastr-message')
-
+  <script src="{{ asset('backend/plugins/toastr/toastr.min.js') }}"></script>
   <script src="{{ asset('frontend/js/jquery.min.js') }}"></script>
   <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}"></script>
   <!-- <script src="js/jquery-3.3.1.min.js"></script> -->

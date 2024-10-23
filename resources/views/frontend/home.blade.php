@@ -15,7 +15,7 @@
                     @csrf
                     <div class="form-group">
                         <label class="login-label ">Mobile Number</label>
-                        <input class="login-input" type="text" name="username" placeholder="Enter Your Mobile Number">
+                        <input class="login-input" type="text" id="phone_number" name="phone_number" placeholder="Enter Your Mobile Number">
                     </div>
                 </form>
                 <div class="mt-4 text-center resend">Don't have an account?<a class="" href="#0" data-toggle="modal"
@@ -50,7 +50,7 @@
                 <div class="text-center mt-2">
                     <button type="submit" class="verify-account-btn" id="verifyOtpBtn">Verify Account</button>
                 </div>
-                <div class="mt-4 text-center resend">Didn't receive code? <a class="" href="#0">Resend</a></div>
+                <div class="mt-4 text-center resend">Didn't receive code? <a class="" href="#0" id="resend_otp">Resend</a></div>
             </div>
 
         </div>
@@ -72,7 +72,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="login-label ">First NAME</label>
-                                <input class="login-input" type="text" name="username"
+                                <input class="login-input" type="text" name="first_name"
                                     placeholder="Enter Your Mobile Number">
                             </div>
                         </div>
@@ -80,7 +80,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="login-label ">Last NAME</label>
-                                <input class="login-input" type="text" name="username"
+                                <input class="login-input" type="text" name="last_name"
                                     placeholder="Enter Your Mobile Number">
                             </div>
                         </div>
@@ -90,17 +90,18 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="login-label ">Email Address</label>
-                                <input class="login-input" type="text" name="username"
-                                    placeholder="Enter Your Mobile Number">
+                                <input class="login-input" type="text" name="email"
+                                    placeholder="Enter Your Email address">
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="login-label ">Mobile Number</label>
-                                <input class="login-input" type="text" name="username"
+                                <input class="login-input" type="text" name="phone_number"
                                     placeholder="Enter Your Mobile Number">
                             </div>
+                            <span class="text-danger" id="phoneNumberError"></span>
                         </div>
 
                     </div>
@@ -278,31 +279,7 @@
     </div>
 </section>
 
-<section class="Shop-by-Brands">
-    <div class="container">
-        <h2 class="Shop-by-Brands-title">Shop by <span>Brands</span></h2>
 
-        <div class="title-line"></div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <ul class="cbp-rfgrid text-center">
-                    @foreach($brands as $brand)
-                    <li>
-                        <a href="{{ route('listing-page', $brand->id) }}">
-                            <div class="service-icon-img">
-                                <img src="{{ asset($brand->logo) }}" alt="{{ $brand->brand_name }}">
-                            </div>
-                            <h4>{{ $brand->brand_name }}</h4>
-                        </a>
-                    </li>
-                    @endforeach
-                </ul>
-            </div>
-        </div>
-    </div>
-    </div>
-</section>
 
 <section class="Shop-by-parts">
     <div class="container">
@@ -312,186 +289,6 @@
 
     </div>
 </section>
-
-            <div class="th-block-categories__item">
-                <div class="icon-bx-wraper left">
-                    <div class="icon-bx-sm"><img src="{{ asset('frontend/images/Body-Parts-300x300.jpg') }}"></div>
-                    <div class="icon-content">
-                        <h4 class="parts-title">Body Parts </h4>
-                        <ul class="th-category-card__children">
-                            <li>
-                                <a href="javascript:;">
-                                    RH Front Door </a>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    LH Front Door</a>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    LH Rear Door </a>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    Dashboard </a>
-                            </li>
-                            <li>
-                        </ul>
-                        <div>
-                            <a href="javascript:;" class="parts-show-all-btn">Show All </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="th-block-categories__item">
-                <div class="icon-bx-wraper left">
-                    <div class="icon-bx-sm"><img src="{{ asset('frontend/images/axels.png') }}"></div>
-                    <div class="icon-content">
-                        <h4 class="parts-title">Axels</h4>
-                        <ul class="th-category-card__children">
-                            <li>
-                                <a href="javascript:;">
-                                    Front Dead Axle </a>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    Rear Dead Axle </a>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    Front Axle Left </a>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    Front Axle Right</a>
-                            </li>
-                        </ul>
-                        <div>
-                            <a href="javascript:;" class="parts-show-all-btn">Show All </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="th-block-categories__item">
-                <div class="icon-bx-wraper left">
-                    <div class="icon-bx-sm"><img src="{{ asset('frontend/images/steering-suspension.png') }}"></div>
-                    <div class="icon-content">
-                        <h4 class="parts-title">Steering & suspensions</h4>
-                        <ul class="th-category-card__children">
-                            <li>
-                                <a href="javascript:;">
-                                    Front Shocker+Spring(LH)</a>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    Front Shocker+Spring(RH)</a>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    Rear Shocker(RH) </a>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    Rear Shocker(LH) </a>
-                            </li>
-                        </ul>
-                        <div>
-                            <a href="javascript:;" class="parts-show-all-btn">Show All </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="th-block-categories__item">
-                <div class="icon-bx-wraper left">
-                    <div class="icon-bx-sm"><img src="{{ asset('frontend/images/electrical.png') }}"></div>
-                    <div class="icon-content">
-                        <h4 class="parts-title">
-                            Electrics </h4>
-                        <ul class="th-category-card__children">
-                            <li>
-                                <a href="javascript:;">
-                                    Speedometer </a>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    Fuses Box </a>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    Horn </a>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    Speaker(3/6 Inch) </a>
-                            </li>
-                        </ul>
-                        <div>
-                            <a href="javascript:;" class="parts-show-all-btn">Show All </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="th-block-categories__item">
-                <div class="icon-bx-wraper left">
-                    <div class="icon-bx-sm"><img src="{{ asset('frontend/images/gear.png') }}"></div>
-                    <div class="icon-content">
-                        <h4 class="parts-title">Gear Box </h4>
-                        <ul class="th-category-card__children">
-                            <li>
-                                <a href="javascript:;">
-                                    Secondary Gear Box-4WD </a>
-                            </li>
-                        </ul>
-                        <div>
-                            <a href="javascript:;" class="parts-show-all-btn">Show All </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="th-block-categories__item">
-                <div class="icon-bx-wraper left">
-                    <div class="icon-bx-sm"><img src="{{ asset('frontend/images/wheel.png') }}"></div>
-                    <div class="icon-content">
-                        <h4 class="parts-title">TYRES &WHEELS</h4>
-                        <ul class="th-category-card__children">
-                            <li>
-                                <a href="javascript:;">
-                                    Rim 1</a>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    Rim 2</a>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    Rim 3</a>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    Rim 4 </a>
-                            </li>
-                        </ul>
-                        <div>
-                            <a href="javascript:;" class="parts-show-all-btn">Show All </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="th-block-categories__item">
-                <img src="{{ asset('frontend/images/ad-banner.png') }}" class="img-responsive">
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
 
 <section class="feature-wrapper">
     <div class="container text-center">
@@ -606,6 +403,7 @@
                 return $(this).val();
             }).get().join(''); // Join all OTP inputs
             let csrfToken = $('meta[name="csrf-token"]').attr('content');
+
             $.ajax({
                 url: '/verify-otp',
                 method: 'POST',
@@ -656,6 +454,7 @@
 
         });
         $('#registrationForm').on('submit', function(e) {
+
             e.preventDefault(); // Prevent the default form submission
 
             let formData = $(this).serialize(); // Serialize form data
