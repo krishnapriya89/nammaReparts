@@ -36,39 +36,27 @@ class HomeController extends Controller
         return view('frontend.listingpage', compact('vehicleparts', 'vehicleName','vehicle_models'));
     }
 
-    //details one page
-    public function detailsOne()
+    /**
+     * Part listing page
+     * @param $categoryId
+     *
+     */
+    public function partListing($id)
     {
-        return view('frontend.details_one');
+        $category = Category::where('id',$id)->first();
+        $categoryName= $category->category_name;
+        $categories = Category::where('category_name', $categoryName)->pluck('id');
+        $parts = VehiclePart::whereIn('category_id',$categories)->get();
+        $categories = Category::with('parts')->where('status', 1)->distinct('category_name') ->take(8)->get();
+        return view('frontend.part_listing',compact('category','parts','categories'));
     }
 
-    //details two page
-    public function detailsTwo()
-    {
-        return view('frontend.details_two');
-    }
 
-    //details three page
-    public function detailsThree()
-    {
-        return view('frontend.details_three');
-    }
 
-    //details four page
-    public function detailsFour()
-    {
-        return view('frontend.details_four');
-    }
 
-    //details five page
-    public function detailsFive()
-    {
-        return view('frontend.details_five');
-    }
 
-    //details shipping address
-    public function shippingAddress()
-    {
-        return view('frontend.shipping_address');
-    }
+
+
+
+
 }

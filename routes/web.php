@@ -11,18 +11,8 @@ require __DIR__ . '/admin.php';
 Route::get('/', [HomeController::class, 'home'])->name('home');
 //listing page
 Route::get('/listing-page/{id}', [HomeController::class, 'listingPage'])->name('listing-page');
-//details 1 page
-Route::get('/details_one', [HomeController::class, 'detailsOne'])->name('details_one');
-//details 2 page
-Route::get('/details_two', [HomeController::class, 'detailsTwo'])->name('details_two');
-//details 3 page
-Route::get('/details_three', [HomeController::class, 'detailsThree'])->name('details_three');
-//details 4 page
-Route::get('/details_four', [HomeController::class, 'detailsFour'])->name('details_four');
-//details 5 page
-Route::get('/details_five', [HomeController::class, 'detailsFive'])->name('details_five');
-//shipping address page
-Route::get('/shipping_address', [HomeController::class, 'shippingAddress'])->name('shipping_address');
+// part listing
+Route::get('/part_listing/{id}',[HomeController::class,'partListing'])->name('part_listing');
 
 
 //submit registration details
