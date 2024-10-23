@@ -3,6 +3,7 @@
 
 @section('content')
 
+
 <div class="modal align-middle" id="login">
     <div class="modal-dialog modal-dialog-centered form-radious">
         <div class="form-radious modal-content">
@@ -14,14 +15,11 @@
                     @csrf
                     <div class="form-group">
                         <label class="login-label ">Mobile Number</label>
-                        <input class="login-input" type="text" name="phone_number" id="phone_number"
-                            placeholder="Enter Your Mobile Number">
+                        <input class="login-input" type="text" name="username" placeholder="Enter Your Mobile Number">
                     </div>
                 </form>
-
-
-                <div class="mt-4 text-center resend">Don't have an account?<a class="" href="#0"
-                        data-toggle="modal" data-target="#MyModa3"> Sign Up</a></div>
+                <div class="mt-4 text-center resend">Don't have an account?<a class="" href="#0" data-toggle="modal"
+                        data-target="#MyModa3"> Sign Up</a></div>
             </div>
 
         </div>
@@ -52,14 +50,10 @@
                 <div class="text-center mt-2">
                     <button type="submit" class="verify-account-btn" id="verifyOtpBtn">Verify Account</button>
                 </div>
-                <div class="mt-4 text-center resend">Didn't receive code? <a class="" href="#0"
-                        id="resend_otp">Resend</a></div>
+                <div class="mt-4 text-center resend">Didn't receive code? <a class="" href="#0">Resend</a></div>
             </div>
 
         </div>
-
-
-
     </div>
 </div>
 
@@ -77,17 +71,17 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="login-label ">Firtst NAME</label>
-                                <input class="login-input" type="text" name="first_name"
-                                    placeholder="Enter Your First Name">
+                                <label class="login-label ">First NAME</label>
+                                <input class="login-input" type="text" name="username"
+                                    placeholder="Enter Your Mobile Number">
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="login-label ">Last NAME</label>
-                                <input class="login-input" type="text" name="last_name"
-                                    placeholder="Enter Your Last Name">
+                                <input class="login-input" type="text" name="username"
+                                    placeholder="Enter Your Mobile Number">
                             </div>
                         </div>
 
@@ -96,51 +90,47 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="login-label ">Email Address</label>
-                                <input class="login-input" type="email" name="email" placeholder="Enter Your Email">
+                                <input class="login-input" type="text" name="username"
+                                    placeholder="Enter Your Mobile Number">
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="login-label ">Mobile Number</label>
-                                <input class="login-input" type="number" name="phone_number"
+                                <input class="login-input" type="text" name="username"
                                     placeholder="Enter Your Mobile Number">
                             </div>
-                            <span class="text-danger" id="phoneNumberError"></span>
                         </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="text-center mt-2">
+                                <button type="submit" class="verify-account-btn">Register</button>
+                            </div>
+                        </div>
+
                     </div>
 
 
-
             </div>
-
-            <div class="row">
-
-                <div class="col-md-12">
-                    <div class="text-center mt-2">
-                        <button type="submit" class="verify-account-btn">Register</button>
-                    </div>
-                </div>
-
-            </div>
-
-
+            </form>
         </div>
-        </form>
-
-
     </div>
+</div>
 
-</div>
-</div>
-</div>
+
+
 <section>
     <div class="container">
-        <div class="banner-wrapper">
+        <div class="banner-wrapper border-double">
             <div class="row">
                 <div class="col-sm-9">
                     <h1 class="main-title">Reused Vehicle Spares</h1>
-                    <h2 class="sub-head"> ALL THE PARTS YOUR vehicle WILL EVER NEED!</h2>
+                    <h2 class="sub-head"> All the parts your vehicle will ever need!</h2>
                 </div>
                 {{-- <div class="col-sm-3">
                     <a href="javascript:;" class="btn btn-primary" data-toggle="modal" data-target="#login">Login</a>
@@ -156,8 +146,8 @@
                         <div class="dropdown-menu" aria-labelledby="myAccountButton">
                             <p class="dropdown-item">Welcome, {{ Auth::user()->first_name }}</p>
                             <div class="dropdown-divider"></div>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                class="dropdown-item" style="display: inline;">
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="dropdown-item"
+                                style="display: inline;">
                                 @csrf
                                 <button type="submit" class="btn btn-danger btn-sm">Logout</button>
                             </form>
@@ -165,283 +155,403 @@
                     </div>
                     @else
                     <!-- Show the Login button if the user is not authenticated -->
-                    <a href="javascript:;" class="btn btn-primary" data-toggle="modal"
-                        data-target="#login">Login</a>
+                    <a href="javascript:;" class="btn btn-primary" data-toggle="modal" data-target="#login">Login</a>
                     @endif
                 </div>
-
             </div>
         </div>
-        <div class="form-padding">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h3 class="sub-sub-head">Find Your Auto Parts</h3>
-                </div>
-                <div class="col-md-3">
-                    <select class="form-control sele-opt">
-                        <option value="1">Select Make</option>
-                        <option value="2">Select Make 1</option>
-                        <option value="3">Select Make 2</option>
-                        <option value="4">Select Make 3</option>
-                        <option value="5">Select Make 4</option>
-                        <option value="6">Select Make 5</option>
-                        <option value="7">Select Make 6</option>
-                        <option value="8">Select Make 7</option>
-                    </select>
-                </div>
-                <div class="col-md-3">
 
-                    <select class="form-control sele-opt">
-                        <option value="1">Select Model</option>
-                        <option value="2">Select Model 1</option>
-                        <option value="3">Select Model 2</option>
-                        <option value="4">Select Model 3</option>
-                        <option value="5">Select Model 4</option>
-                        <option value="6">Select Model 5</option>
-                        <option value="7">Select Model 6</option>
-                        <option value="8">Select Model 7</option>
-                    </select>
-
-                </div>
-                <div class="col-md-3">
-
-                    <select class="form-control sele-opt">
-                        <option value="1">Select Year</option>
-                        <option value="2">Select Year 1</option>
-                        <option value="3">Select Year 2</option>
-                        <option value="4">Select Year 3</option>
-                        <option value="5">Select Year 4</option>
-                        <option value="6">Select Year 5</option>
-                        <option value="7">Select Year 6</option>
-                        <option value="8">Select Year 7</option>
-                    </select>
-
-                </div>
-                <div class="col-md-3"><a href="javascript:;" class="btn verify-account-btn">Find Auto Parts</a></div>
-            </div>
-        </div>
     </div>
 </section>
-
-<section class="Shop-by-Brands">
-    <div class="container">
-        <h2 class="Shop-by-Brands-title">Shop by <span>Brands</span></h2>
-        <div class="title-line"></div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="shop-by-brand-wrapper">
-
-                    <div class="row">
-                        @foreach($brands as $brand)
-                        <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-3">
-                            <div class="brand-container">
-                                <div class="brand-logo">
-                                    <a href="{{ route('listing-page', $brand->id) }}"><img src="{{ asset($brand->logo) }}" alt="logo"> <span>{{ $brand->brand_name }}</span></a>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-                    </div>
-
-
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-    </div>
-</section>
-
-
-<section class="Shop-by-parts">
-    <div class="container">
-        <h4 class="Shop-by-parts-title">Shop By <span> Parts</span></h4>
-
-        <div class="th-block-categories__list">
-            @foreach ($categories as $category)
-            <div class="th-block-categories__item">
-                <div class="icon-bx-wraper left">
-
-                    <div class="icon-bx-sm">
-                        @if (isset($category->image))
-                            <!-- Display dynamic category image -->
-                            <img src="{{ asset('storage/public/' . $category->image) }}" alt="{{ $category->category_name }}" class="img-thumbnail" width="150">
-                        @else
-                            <!-- Fallback image if no category image is available -->
-                            <img src="{{ asset('frontend/images/car-metal-bearings-500x500-1-300x300.webp') }}" alt="Default Image" class="img-thumbnail" width="150">
-                        @endif
-                        {{-- <img src="{{ asset('frontend/images/car-metal-bearings-500x500-1-300x300.webp') }}"> --}}
-                    </div>
-                    <div class="icon-content">
-                        <a href=""><h4 class="parts-title">{{ $category->category_name }}</h4></a>
-                        <ul class="th-category-card__children">
-                            <!-- Show first 5 parts -->
-                            @foreach ($category->parts->slice(0, 5) as $part)
-                            <li>
-                                <a href="javascript:;">
-                                    {{ $part->part_name }}
-                                </a>
-                            </li>
-                            @endforeach
-
-                            <!-- Hidden parts -->
-                            @if ($category->parts->count() > 5)
-                            @foreach ($category->parts->slice(5) as $part)
-                            <li class="hiddenPart" style="display: none;">
-                                <a href="javascript:;">
-                                    {{ $part->part_name }}
-                                </a>
-                            </li>
-                            @endforeach
-                            @endif
-                        </ul>
-                        <div>
-                            <!-- Show All Button -->
-                            @if ($category->parts->count() > 5)
-                            <a href="javascript:;" class="parts-show-all-btn">Show All</a>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @endforeach
-        </div>
-    </div>
-</section>
-
 
 <section class="seal-week-wrapper">
-    <div class="container">
+    <div class="container border-double">
+        <div class=" mt-5 mb-4">
+            <h2 class="Shop-by-Brands-title mb-4">Deals For This <span>Week</span></h2>
 
-        <div class="common-section-title">
-            <div class="common-section-title-left">
-                <div class="section-title">
-                    <h4>Deals For This Week</h4>
-                </div>
-
-            </div>
-            <div class="common-more-btn">
-                <a href="#">View More <i class="flaticon-right-arrow"></i></a>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-3 col-md-6">
-                <div class="product-block-one week-deal-one">
-                    <div class="ribon fs_13">8%</div>
-                    <div class="product-block-one-image">
-                        <div class="image"><img src="{{ asset('frontend/images/f-1.png') }}" alt="parts"></div>
-                    </div>
-                    <div class="product-block-one-cintent">
-                        <h4 class="fs_15"><a href="#">R1 Concepts® – eLINE Series Plain Brake Rotors </a></h4>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star empty-star"></i>
-                            <span>1 review </span>
+            <div class="owl-carousel owl-2">
+                <div class="media-29101">
+                    <div class="product-block-one week-deal-one">
+                        <div class="ribon fs_13">8%</div>
+                        <div class="product-block-one-image">
+                            <div class="image"><img src="{{ asset('frontend/images/f-1.png') }}" alt="parts"></div>
                         </div>
-                        <div class="price-container">
-                            <div class="price fs_15 fw_medium">$268.99 <span>$168.99</span></div>
-                            <div class="price-cart"><a href="#"><i class="flaticon-shopping-cart"></i></a>
+                        <div class="product-block-one-cintent">
+                            <h5 class="v-brand">Maruti / ertiga</h5>
+                            <h4 class="fs_15 parts-title"><a href="#">Front Wheel Bearings</a></h4>
+
+                            <div class="price-container">
+                                <div class="price fs_15 fw_medium">₹268.99 <span>₹168.99</span></div>
                             </div>
                         </div>
-                    </div>
-                    <div class="product-block-one-heart">
-                        <a href=""><i class="far fa-heart"></i></a>
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="product-block-one week-deal-one">
-                    <div class="ribon fs_13">8%</div>
-                    <div class="product-block-one-image">
-                        <div class="image"><img src="{{ asset('frontend/images/f-2.png') }}" alt="parts"></div>
-                    </div>
-                    <div class="product-block-one-cintent">
-                        <h4 class="fs_15"><a href="#">Spyder® – Projector Headlights halogen </a></h4>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star empty-star"></i>
-                            <span>1 review </span>
+                        <div class="product-block-one-heart">
+                            <a href=""><i class="far fa-heart"></i></a>
                         </div>
-                        <div class="price-container">
-                            <div class="price fs_15 fw_medium">$268.99 <span>$168.99</span></div>
-                            <div class="price-cart"><a href="#"><i class="flaticon-shopping-cart"></i></a>
+
+                    </div>
+                </div>
+                <div class="media-29101">
+                    <div class="product-block-one week-deal-one">
+                        <div class="ribon fs_13">8%</div>
+                        <div class="product-block-one-image">
+                            <div class="image"><img src="{{ asset('frontend/images/f-2.png') }}" alt="parts"></div>
+                        </div>
+                        <div class="product-block-one-cintent">
+                            <h5 class="v-brand">Maruti / ertiga</h5>
+                            <h4 class="fs_15 parts-title"><a href="#">Front Wheel Bearings</a></h4>
+
+                            <div class="price-container">
+                                <div class="price fs_15 fw_medium">₹268.99 <span>₹168.99</span></div>
                             </div>
                         </div>
-                    </div>
-                    <div class="product-block-one-heart">
-                        <a href=""><i class="far fa-heart"></i></a>
-                    </div>
+                        <div class="product-block-one-heart">
+                            <a href=""><i class="far fa-heart"></i></a>
+                        </div>
 
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="product-block-one week-deal-one">
-                    <div class="ribon fs_13">Super Price</div>
-                    <div class="product-block-one-image">
-                        <div class="image"><img src="{{ asset('frontend/images/f-3.png') }}" alt="parts"></div>
-                    </div>
-                    <div class="product-block-one-cintent">
-                        <h4 class="fs_15"><a href="#">Spender® - Wheeler for all car tires 17/30ins </a></h4>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star empty-star"></i>
-                            <span>1 review </span>
-                        </div>
-                        <div class="price-container">
-                            <div class="price fs_15 fw_medium">$268.99 <span>$168.99</span></div>
-                            <div class="price-cart"><a href="#"><i class="flaticon-shopping-cart"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-block-one-heart">
-                        <a href=""><i class="far fa-heart"></i></a>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="product-block-one week-deal-one">
-                    <div class="ribon fs_13">8%</div>
-                    <div class="product-block-one-image">
-                        <div class="image"><img src="{{ asset('frontend/images/f-4.png') }}" alt="parts"></div>
-                    </div>
-                    <div class="product-block-one-cintent">
-                        <h4 class="fs_15"><a href="#">All Weather Terrain Barker AbS/PRO for Car </a></h4>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star empty-star"></i>
-                            <span>1 review </span>
+                <div class="media-29101">
+                    <div class="product-block-one week-deal-one">
+                        <div class="ribon fs_13">Super Price</div>
+                        <div class="product-block-one-image">
+                            <div class="image"><img src="{{ asset('frontend/images/f-3.png') }}" alt="parts"></div>
                         </div>
-                        <div class="price-container">
-                            <div class="price fs_15 fw_medium">$268.99 <span>$168.99</span></div>
-                            <div class="price-cart"><a href="#"><i class="flaticon-shopping-cart"></i></a>
+                        <div class="product-block-one-cintent">
+                            <h5 class="v-brand">Maruti / ertiga</h5>
+                            <h4 class="fs_15 parts-title"><a href="#">Front Wheel Bearings</a></h4>
+
+                            <div class="price-container">
+                                <div class="price fs_15 fw_medium">₹268.99 <span>₹168.99</span></div>
                             </div>
                         </div>
                         <div class="product-block-one-heart">
                             <a href=""><i class="far fa-heart"></i></a>
                         </div>
                     </div>
-
                 </div>
+                <div class="media-29101">
+                    <div class="product-block-one week-deal-one">
+                        <div class="ribon fs_13">8%</div>
+                        <div class="product-block-one-image">
+                            <div class="image"><img src="{{ asset('frontend/images/f-4.png') }}" alt="parts"></div>
+                        </div>
+                        <div class="product-block-one-cintent">
+                            <h5 class="v-brand">Maruti / ertiga</h5>
+                            <h4 class="fs_15 parts-title"><a href="#">Front Wheel Bearings</a></h4>
+
+                            <div class="price-container">
+                                <div class="price fs_15 fw_medium">₹268.99 <span>₹168.99</span></div>
+                            </div>
+                            <div class="product-block-one-heart">
+                                <a href=""><i class="far fa-heart"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="media-29101">
+                    <div class="product-block-one week-deal-one">
+                        <div class="ribon fs_13">8%</div>
+                        <div class="product-block-one-image">
+                            <div class="image"><img src="{{ asset('frontend/images/f-2.png') }}" alt="parts"></div>
+                        </div>
+                        <div class="product-block-one-cintent">
+                            <h5 class="v-brand">Maruti / ertiga</h5>
+                            <h4 class="fs_15 parts-title"><a href="#">Front Wheel Bearings </a></h4>
+
+                            <div class="price-container">
+                                <div class="price fs_15 fw_medium">₹268.99 <span>₹168.99</span></div>
+                            </div>
+                        </div>
+                        <div class="product-block-one-heart">
+                            <a href=""><i class="far fa-heart"></i></a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+</section>
+
+<section class="Shop-by-Brands">
+    <div class="container">
+        <h2 class="Shop-by-Brands-title">Shop by <span>Brands</span></h2>
+
+        <div class="title-line"></div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="cbp-rfgrid text-center">
+                    @foreach($brands as $brand)
+                    <li>
+                        <a href="{{ route('listing-page', $brand->id) }}">
+                            <div class="service-icon-img">
+                                <img src="{{ asset($brand->logo) }}" alt="{{ $brand->brand_name }}">
+                            </div>
+                            <h4>{{ $brand->brand_name }}</h4>
+                        </a>
+                    </li>
+                    @endforeach
+                </ul>
             </div>
         </div>
     </div>
+    </div>
 </section>
+
+<section class="Shop-by-parts">
+    <div class="container">
+        <h2 class="Shop-by-Brands-title mb-4">Shop by <span>Parts</span></h2>
+
+        <div class="th-block-categories__list">
+            <div class="th-block-categories__item">
+                <div class="icon-bx-wraper left">
+                    <div class="icon-bx-sm"><img src="{{ asset('frontend/images/engine.png') }}"></div>
+                    <div class="icon-content">
+                        <h4 class="parts-title">Engine </h4>
+                        <ul class="th-category-card__children">
+                            <li>
+                                <a href="javascript:;">
+                                    Alternator </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    Fuel Pump </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    Engine Mounting </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    AC Compressor</a>
+                            </li>
+                        </ul>
+
+
+
+
+
+
+
+                        <div>
+                            <a href="javascript:;" class="parts-show-all-btn">Show All </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="th-block-categories__item">
+                <div class="icon-bx-wraper left">
+                    <div class="icon-bx-sm"><img src="{{ asset('frontend/images/cooling-system.png') }}"></div>
+                    <div class="icon-content">
+                        <h4 class="parts-title">Cooling System </h4>
+                        <ul class="th-category-card__children">
+                            <li>
+                                <a href="javascript:;">
+                                    Radiatore </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    Radiatore Fan </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    Inter Cooler</a>
+                            </li>
+                            <li>
+                        </ul>
+                        <div>
+                            <a href="javascript:;" class="parts-show-all-btn">Show All </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="th-block-categories__item">
+                <div class="icon-bx-wraper left">
+                    <div class="icon-bx-sm"><img src="{{ asset('frontend/images/Body-Parts-300x300.jpg') }}"></div>
+                    <div class="icon-content">
+                        <h4 class="parts-title">Body Parts </h4>
+                        <ul class="th-category-card__children">
+                            <li>
+                                <a href="javascript:;">
+                                    RH Front Door </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    LH Front Door</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    LH Rear Door </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    Dashboard </a>
+                            </li>
+                            <li>
+                        </ul>
+                        <div>
+                            <a href="javascript:;" class="parts-show-all-btn">Show All </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="th-block-categories__item">
+                <div class="icon-bx-wraper left">
+                    <div class="icon-bx-sm"><img src="{{ asset('frontend/images/axels.png') }}"></div>
+                    <div class="icon-content">
+                        <h4 class="parts-title">Axels</h4>
+                        <ul class="th-category-card__children">
+                            <li>
+                                <a href="javascript:;">
+                                    Front Dead Axle </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    Rear Dead Axle </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    Front Axle Left </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    Front Axle Right</a>
+                            </li>
+                        </ul>
+                        <div>
+                            <a href="javascript:;" class="parts-show-all-btn">Show All </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="th-block-categories__item">
+                <div class="icon-bx-wraper left">
+                    <div class="icon-bx-sm"><img src="{{ asset('frontend/images/steering-suspension.png') }}"></div>
+                    <div class="icon-content">
+                        <h4 class="parts-title">Steering & suspensions</h4>
+                        <ul class="th-category-card__children">
+                            <li>
+                                <a href="javascript:;">
+                                    Front Shocker+Spring(LH)</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    Front Shocker+Spring(RH)</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    Rear Shocker(RH) </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    Rear Shocker(LH) </a>
+                            </li>
+                        </ul>
+                        <div>
+                            <a href="javascript:;" class="parts-show-all-btn">Show All </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="th-block-categories__item">
+                <div class="icon-bx-wraper left">
+                    <div class="icon-bx-sm"><img src="{{ asset('frontend/images/electrical.png') }}"></div>
+                    <div class="icon-content">
+                        <h4 class="parts-title">
+                            Electrics </h4>
+                        <ul class="th-category-card__children">
+                            <li>
+                                <a href="javascript:;">
+                                    Speedometer </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    Fuses Box </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    Horn </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    Speaker(3/6 Inch) </a>
+                            </li>
+                        </ul>
+                        <div>
+                            <a href="javascript:;" class="parts-show-all-btn">Show All </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="th-block-categories__item">
+                <div class="icon-bx-wraper left">
+                    <div class="icon-bx-sm"><img src="{{ asset('frontend/images/gear.png') }}"></div>
+                    <div class="icon-content">
+                        <h4 class="parts-title">Gear Box </h4>
+                        <ul class="th-category-card__children">
+                            <li>
+                                <a href="javascript:;">
+                                    Secondary Gear Box-4WD </a>
+                            </li>
+                        </ul>
+                        <div>
+                            <a href="javascript:;" class="parts-show-all-btn">Show All </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="th-block-categories__item">
+                <div class="icon-bx-wraper left">
+                    <div class="icon-bx-sm"><img src="{{ asset('frontend/images/wheel.png') }}"></div>
+                    <div class="icon-content">
+                        <h4 class="parts-title">TYRES &WHEELS</h4>
+                        <ul class="th-category-card__children">
+                            <li>
+                                <a href="javascript:;">
+                                    Rim 1</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    Rim 2</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    Rim 3</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    Rim 4 </a>
+                            </li>
+                        </ul>
+                        <div>
+                            <a href="javascript:;" class="parts-show-all-btn">Show All </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="th-block-categories__item">
+                <img src="{{ asset('frontend/images/ad-banner.png') }}" class="img-responsive">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
 
 <section class="feature-wrapper">
     <div class="container text-center">
@@ -454,8 +564,7 @@
                         <div class="icon_box icon_box_style1">
 
                             <div class="icon">
-                                <i> <img src="{{ asset('frontend/images/Free-Delivery-icon.png') }}"
-                                        class="img-responsive"> </i>
+                                <i> <img src="{{ asset('frontend/images/Free-Delivery-icon.png') }}" class="img-responsive"> </i>
                             </div>
 
                             <div class="icon_box_content">
@@ -472,8 +581,7 @@
                         <div class="icon_box icon_box_style1">
 
                             <div class="icon">
-                                <i> <img src="{{ asset('frontend/images/30-Day-Return-icon.png') }}"
-                                        class="img-responsive"> </i>
+                                <i> <img src="{{ asset('frontend/images/30-Day-Return-icon.png') }}" class="img-responsive"> </i>
                             </div>
 
                             <div class="icon_box_content">
@@ -509,6 +617,7 @@
         </div>
     </div>
 </section>
+
 @endsection
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>

@@ -4093,7 +4093,9 @@ input[type="submit"].btn-block {
     color: rgba(0, 0, 0, 0.9);
 }
 .navbar-light .navbar-nav .nav-link {
-    color: rgba(0, 0, 0, 0.5);
+    color:#ffffff;
+    font-size: 13px;
+    font-weight: 600;
 }
 .navbar-light .navbar-nav .nav-link:focus,
 .navbar-light .navbar-nav .nav-link:hover {
@@ -4106,7 +4108,7 @@ input[type="submit"].btn-block {
 .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .nav-link.show,
 .navbar-light .navbar-nav .show > .nav-link {
-    color: rgba(0, 0, 0, 0.9);
+    color:#f8bd19;
 }
 .navbar-light .navbar-toggler {
     color: rgba(0, 0, 0, 0.5);

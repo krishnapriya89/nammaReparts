@@ -8,10 +8,10 @@
                             <a href="#"><img src="{{asset('frontend/images/logo.png')}}" class="img-fluid"></a>
                         </div>
                         <div class="footer_contact">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In  id dolor tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras gravida tellus nec purus tempor vehicula. Ut efficitur mattis arcu, sit amet sodales tellus rutrum eu. </p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id dolor tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras gravida tellus nec purus tempor vehicula. Ut efficitur mattis arcu, sit amet sodales tellus rutrum eu. </p>
                             <div class="customer_support">
                                 <div class="support_img_icon">
-                                    <img src="{{asset('frontend/images/hotline5.webp')}}" alt="">
+                                    <img src="{{asset('frontend/images/hotline5.png')}}" alt="">
                                 </div>
                                 <div class="customer_support_text">
                                     <p>
@@ -39,15 +39,7 @@
                             </div><!-- mailchimp-alerts end -->
                         </div>
                         <p>We’ll never share your email address with a third-party.</p>
-                        <div class="footer_social">
-                            <ul>
-                                <li><a class="facebook" href="#"><i class="ion-social-facebook"></i></a></li>
-                                <li><a class="twitter" href="#"><i class="ion-social-twitter"></i></a></li>
-                                <li><a class="youtube" href="#"><i class="ion-social-youtube"></i></a></li>
-                                <li><a class="google" href="#"><i class="ion-social-google"></i></a></li>
-                                <li><a class="instagram" href="#"><i class="ion-social-instagram"></i></a></li>
-                            </ul>
-                        </div>
+
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
@@ -80,7 +72,9 @@
                 </div>
                 <ul class="menu">
                     <li><a href="#">About Us</a></li>
+                    <li>|</li>
                     <li><a href="#">FAQ’s</a></li>
+                    <li>|</li>
                     <li><a href="#">Privacy Policy </a></li>
                 </ul>
             </div>
