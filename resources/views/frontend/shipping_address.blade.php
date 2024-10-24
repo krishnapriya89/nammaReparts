@@ -4,6 +4,7 @@
 @section('content')
 
 
+
 <section>
     <div class="container">
         <div class="banner-inner-wrapper">
@@ -49,7 +50,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="formGroupExampleInput">Address</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
             </div>
             <div class="col-md-6">
@@ -84,5 +85,88 @@
     </div>
 
 </section>
+
+
+<section class="feature-wrapper mt-4">
+    <div class="container text-center">
+        <div class="section pb_70" id="section-template--14221051559994__1632218905c29fe3a1">
+            <div class="container">
+                <div class="row no-gutters">
+
+
+                    <div class="col-lg-4">
+                        <div class="icon_box icon_box_style1">
+
+                            <div class="icon">
+                                <i> <img src="images/Free-Delivery-icon.png" class="img-responsive"> </i>
+                            </div>
+
+                            <div class="icon_box_content">
+
+                                <h5>Free Delivery</h5>
+
+
+                                <p>If you are going to use of Lorem, you need to be sure there anything</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="icon_box icon_box_style1">
+
+                            <div class="icon">
+                                <i> <img src="images/30-Day-Return-icon.png" class="img-responsive"> </i>
+                            </div>
+
+                            <div class="icon_box_content">
+
+                                <h5>30 Day Return</h5>
+
+
+                                <p>If you are going to use of Lorem, you need to be sure there anything</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="icon_box icon_box_style1">
+
+                            <div class="icon">
+                                <i> <img src="images/54x7.png" class="img-responsive"> </i>
+                            </div>
+
+                            <div class="icon_box_content">
+
+                                <h5>27/4 Support</h5>
+
+
+                                <p>If you are going to use of Lorem, you need to be sure there anything</p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<script>
+    $(document).ready(function() {
+        $('.count').prop('disabled', true);
+        $(document).on('click', '.plus', function() {
+            $('.count').val(parseInt($('.count').val()) + 1);
+        });
+        $(document).on('click', '.minus', function() {
+            $('.count').val(parseInt($('.count').val()) - 1);
+            if ($('.count').val() == 0) {
+                $('.count').val(1);
+            }
+        });
+    });
+</script>
 
 @endsection

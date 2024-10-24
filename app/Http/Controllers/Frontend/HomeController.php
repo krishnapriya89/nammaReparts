@@ -37,28 +37,32 @@ class HomeController extends Controller
 
     /**
      * Part listing page
-     * @param $categoryId
+     * @param 
      *
      */
     public function partListing($id)
     {
-        $category = Category::where('id',$id)->first();
-        $categoryName= $category->category_name;
-        $categories = Category::where('category_name', $categoryName)->pluck('id');
-        $parts = VehiclePart::whereIn('category_id',$categories)->get();
-        $categories = Category::with('parts')->where('status', 1)->distinct('category_name') ->take(8)->get();
-        return view('frontend.part_listing',compact('category','parts','categories'));
 
-
+        $part = VehiclePart::with('vehicleModel.brand')->where('id', $id)->first();
+       //dd($part);
+        return view('frontend.part_listing', compact('part'));
     }
 
+     /**
+     * Shipping address page
+     *
+     */
+    public function shippingaddress()
+    {
+        return view('frontend.shipping_address');
+    }
 
-
-
-
-
-
-
-
-
+     /**
+     * My cart
+     *
+     */
+    public function mycart()
+    {
+        return view('frontend.mycart');
+    }
 }

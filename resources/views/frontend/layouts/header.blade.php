@@ -37,7 +37,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mx-auto text-center">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">HOME</a>
+                    <a class="nav-link" href="{{ route('home') }}">HOME</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">SHOP</a>
@@ -60,7 +60,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#offcanvas-add-cart" class="offcanvas-toggle">
+                        <a href="{{ route('my-cart') }}" class="offcanvas-toggle">
                             <i class="fas fa-cart-arrow-down"></i>
                             <span class="header-action-icon-item-count">3</span>
                         </a>

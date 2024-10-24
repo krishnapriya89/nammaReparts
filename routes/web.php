@@ -13,7 +13,10 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/listing-page/{id}', [HomeController::class, 'listingPage'])->name('listing-page');
 // part listing
 Route::get('/part_listing/{id}',[HomeController::class,'partListing'])->name('part_listing');
-
+// shipping address
+Route::get('/shipping-address',[HomeController::class,'shippingaddress'])->name('shipping-address');
+// My cart
+Route::get('/my-cart',[HomeController::class,'mycart'])->name('my-cart');
 
 //submit registration details
 Route::post('registration', [UserRegistrationController::class, 'submitForm'])->name('registration.submit');

@@ -11,16 +11,45 @@ li {
 /*--------------------------------------------------
 SLIDING NAVBAR CSS START
 -------------------------------------------------- */
+
+/* @media (max-width: 992px) { */
+
+@media screen and (max-width: 991px) {
+  .navbar-collapse .logo {
+    margin-bottom: 10vh;
+    padding-left: 12px;
+    margin-top: 20%;
+  }
+.navbar-collapse.show {
+    transform: translateX(0);
+    box-shadow: 15px 0 25px rgba(35,35,35,.09);
+  }
+  .navbar .navbar-nav .nav-link {
+    margin: 0;
+    padding: 15px 15px 15px 25px;
+    border-top: 1px dashed rgba(255,255,255,.1);
+    text-align: left;
+  }
+}
+
+/* @media (min-width: 992px) {
+  .d-lg-none {
+    display: none !important;
+  }
+} */
+
+
 @media (max-width: 992px) {
     .navbar-collapse {
         position: fixed;
         top: 0px;
         left: 0;
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: 0px;
+        padding-right: 0px;
         padding-bottom: 15px;
-        width: 75%;
+        width:320px;
         height: 100%;
+        background: #071047;
     }
 
     .navbar-collapse.collapsing {
@@ -71,7 +100,7 @@ LOGIN CSS START
 
 .login-label {
     font-size: 13px;
-    color: ##0b1553;
+    color: #0b1553;
     line-height: 1.4;
     text-transform: uppercase;
     padding-bottom: 7px;
@@ -88,6 +117,7 @@ LOGIN CSS START
     padding: 15px 25px 15px 25px;
     border: 1px solid #999999;
     border-radius: 7px;
+    background: #f4f4f4;
   }
 
   .login-subtitle{
@@ -138,8 +168,8 @@ LOGIN CSS START
   .verify-account-btn{
     border: 0px;
     padding: 15px;
-    background: #5d983a;
-    color: #ffffff;
+    background: #f8bd19;
+    color: #000000;
     font-size: 14px;
     font-weight: 500;
     text-transform: uppercase;
@@ -151,11 +181,54 @@ LOGIN CSS START
     margin: 0 auto;
   }
   .verify-account-btn:hover{
-    background: #90d865;
+    background: #0b1553;
+    color: #f8bd19;
+  }
+
+  .buy-now-btn{
+    border: 0px;
+    padding: 15px;
+    background: #f8bd19;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 7px;
+    min-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .buy-now-btn:hover{
+    background: #0b1553;
+    color: #f8bd19;
+  }
+
+  .detail-add-to-btn{
+    border: 0px;
+    padding: 15px;
+    background: #0b1553;
+    color: #f8bd19;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 7px;
+    min-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .detail-add-to-btn:hover{
+    background: #f8bd19;
     color: #0b1553;
   }
+
+
 .resend{
     color: #0b1553;
+    font-weight: 500;
 }
 .resend a{
     color: #5d983a;
@@ -165,6 +238,71 @@ LOGIN CSS START
     color: #555555;
 }
 
+.pay-total-btn{
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  background: #f4f4f4;
+  position: relative;
+  margin-top: 20px;
+  max-width: 400px;
+  padding: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  padding-right: 50px;
+}
+.pay-total-amount{
+  font-size: 30px;
+  line-height: 0px;
+  text-align: right;
+}
+.pay-total-btn:after{
+  width: 40px;
+  height: 20px;
+  background-image: url(../images/right-arrow.png);
+  content: "";
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  margin-top: -10px;
+}
+
+.f-right {
+  position: absolute;
+  right: 70px;
+}
+.adv-pay{
+  font-size:12px;
+  color:#fff;
+  padding:0 5px 1px;
+  background-color:#5d983a;
+  border-radius:5px;
+  margin:0px
+}
+
+
+@media screen and (max-width: 767px) {
+.wrap-login100 {
+  padding: 30px;
+}
+.form-title {
+  font-size: 20px;
+}
+.resend {
+  font-size: 14px;
+}
+}
+@media screen and (max-width: 500px) {
+.detail-add-to-btn{
+  min-width: auto;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.buy-now-btn{
+  min-width: auto;
+  width: 100%;
+}
+}
 /* ==============================
 Header One 
 ================================*/
@@ -389,6 +527,15 @@ ul.social-icon li a:hover {
       max-width:1300px
     }
   }
+
+
+  @media screen and (max-width: 991px) {
+    .header-action-icon{
+      justify-content: flex-start;
+      margin-left: 25px;  
+    }
+  }
+
 /* =====================================
 Header One 
 ======================================= */
@@ -424,6 +571,12 @@ left: 0;
     color: #0b1553;
     font-weight: 600;
     letter-spacing: -3px;
+}
+.main-title2{
+  font-size: 36px;
+  color: #0b1553;
+  font-weight: 600;
+  letter-spacing: -3px;
 }
 .sub-head{
     font-size: 24px;
@@ -469,6 +622,55 @@ left: 0;
     min-width: 236px;
     height: auto;
 }
+
+@media screen and (max-width: 991px) {
+.main-title{
+    font-size: 40px;
+    letter-spacing: -2px;
+}
+.banner-wrapper {
+  padding: 50px 0px;
+  margin: 0px;
+}
+}
+
+@media screen and (max-width: 767px) {
+  .main-title{
+      font-size: 30px;
+      letter-spacing: -1px;
+  }
+  .banner-wrapper {
+    padding: 30px 0px;
+    margin: 0px;
+  }
+  .sub-head{
+    font-size: 20px;
+}
+.btn-primary, .verify-account-btn{
+  border: 0px;
+  padding: 10px 20px;
+  width: auto;
+  }
+
+  .main-title2 {
+    font-size: 26px;
+    letter-spacing: -1px;
+  }
+
+  .sub-sub-head{
+    font-size: 20px;
+}
+}
+@media screen and (max-width: 580px) {
+.m-t-15{
+  margin-top: 15px;
+}
+}
+
+
+
+
+
 
 /* =====================================
 Banner Section CSS End
@@ -687,6 +889,12 @@ img {
   @media screen and (max-width:300px) {
   .cbp-rfgrid li {
     width: 100%
+  }
+  }
+
+  @media screen and (max-width: 991px) {
+    .Shop-by-Brands-title{
+      font-size: 20px;
   }
   }
 
@@ -977,9 +1185,11 @@ Deals For This Week Section CSS Start
   gap: 40px;
 }
 /* common section title */
+
+
+
 .product-block-one {
   position: relative;
-  width: 305px;
   margin-bottom: 10px;
   padding-top: 0;
   transition: .5s;
@@ -1228,6 +1438,41 @@ top: 0px;
 }
 /* =====================================
 Deals For This Week Section CSS End
+======================================= */
+
+
+/* =====================================
+PRODUCTS LISTINGSection CSS Start
+======================================= */
+
+.products-listing-wra{
+border: 1px solid #E9ECEF;
+border-radius: 10px;
+margin-bottom: 15px;
+}
+
+.product-image-wra{
+  width: 100%;
+  padding:25px 0px;
+  background: #f4f4f4;
+  text-align: center;
+}
+
+.product-list-content-wra{
+  padding: 15px ;
+}
+
+.products-listing-wra a{
+  text-decoration: none;
+}
+@media only screen and (max-width: 767px) {
+.icon_box_content H5{
+  font-size: 16px;
+}
+}
+
+/* =====================================
+PRODUCTS LISTINGSection CSS End
 ======================================= */
 
 /* =====================================
@@ -1785,7 +2030,7 @@ Footer Section CSS Start
   font-size: 16px;
   color: #ffffff;
   display: inline-block;
-  margin-right: 34px;
+  margin-right: 15px;
 }
 .footer-bottom-one .menu li:last-child {
   margin-right: 0;
@@ -1832,6 +2077,12 @@ Footer Section CSS Start
   .footer-bottom-one .row{
       gap: 10px;
   }
+}
+
+@media only screen and (max-width: 767px) {
+.copyright-card{
+  justify-content: center;
+}
 }
 
 /* =====================================
@@ -1910,6 +2161,12 @@ INNER PAGE CSS START
 
 .p-b-70{
   padding-top: 70px;
+}
+
+@media screen and (max-width: 580px) {
+  .banner-inner-wrapper {
+    padding: 25px 0px;
+  }
 }
 
 /* =======================================
@@ -2306,6 +2563,7 @@ DETAILS CSS END
           flex-grow: 1;         
           border: 1px solid #dddddd;
           border-radius: 10px;
+          background: #f4f4f4;
         }
 
 .preview-thumbnail.nav-tabs {
@@ -2318,6 +2576,7 @@ DETAILS CSS END
     margin-right: 2.5%; 
     border: 1px solid #dddddd;
     border-radius: 10px;
+    background: #f4f4f4;
   }
     .preview-thumbnail.nav-tabs li img {
       max-width: 100%;
@@ -2443,8 +2702,8 @@ DETAILS CSS END
               margin-bottom: 20px;
             }
             .main-title-details2{
-              font-size: 40px;
-              color: #3b69b4;
+              font-size: 24px;
+              color: #0b1553;
               font-weight: 600;
               margin: 0px;
               padding: 0px;
@@ -2491,11 +2750,30 @@ DETAILS CSS END
 .delivery-pin{
   font-size: 16px;
   font-weight: 600;
-  color: #3b69b4;
+  color: #0b1553;
 }
 
 .delivery-pin span{
   color: #000000;
+}
+
+
+@media only screen and (max-width: 767px) {
+  .details-brand-name2 {
+    font-size: 18px;
+  }
+  .main-title-details2{
+    font-size: 20px;
+  }
+  .price-big {
+    font-size: 30px;
+  }
+  .delivery-pin {
+    font-size: 14px;
+  }
+  .pay-total-amount{
+    font-size: 22px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
@@ -2605,6 +2883,9 @@ input:disabled{
     margin-top:35px
   }
 }
+
+
+
 .delivery-info .disabled {
   color:#aaa
 }
@@ -2647,6 +2928,21 @@ input:disabled{
   border-color:#fff3cd transparent transparent transparent;
   border-width:10px;
   border-style:solid
+}
+
+@media all and (max-width: 642px) {
+  .delivery-info__item{
+    font-size: 13px;
+  }
+  .delivery-info__item + .delivery-info__item{
+    margin-top: 15px;
+  }
+
+  .ng-star-inserted IMG{
+    width: 30px;
+    margin-right: 10px;
+  }
+
 }
        
 /* GRID TABL CSS START */
@@ -2692,7 +2988,7 @@ input:disabled{
 
 .form-control-1{
   padding: 15px;
-  background: #ffffff;
+  background: #f4f4f4;
   color: #000000;
   font-size: 14px;
   border-radius: 7px;
@@ -2700,7 +2996,9 @@ border: 1px solid #e6e6e6;
   height: auto;
 }
 
-
+.textarea {
+  background: #f4f4f4;
+}
 /* cart page style */  
 
 .shop_cart_table th, .shop_cart_table td,
@@ -2724,6 +3022,11 @@ border: 1px solid #e6e6e6;
   margin: 0;
   text-align: center;
   width: 100%;  
+  background: #ffffff;
+}
+
+.my-cart-table table {
+  background: #f4f4f4;
 }
 
 .roundedTable
@@ -2763,11 +3066,13 @@ border: 1px solid #e6e6e6;
   text-transform: capitalize;
   vertical-align: middle;
   white-space: nowrap;
-  background: #f7faff;
+  background: #f4f4f4;
 }
 .cart-table table tbody tr td.pro-thumbnail {
   width: 130px;
 }
+
+
 .cart-table table tbody tr td {
   border-bottom: 0px solid #ddd;
   border-right: 0px solid #ddd;
@@ -2780,7 +3085,7 @@ border: 1px solid #e6e6e6;
   min-width: 100px;
 }
 .cart-table table tbody tr td.pro-thumbnail a img {
-  width: 100%;
+  width: 100px
 }
 .cart-table table tbody tr td.pro-title {
   width: 270px;
@@ -3027,6 +3332,7 @@ border: 1px solid #e6e6e6;
 
 .payment{
   min-height: 90px;
+  background: #f4f4f4;
 }
 .payment a{
   padding-top: 30px;
@@ -3034,9 +3340,37 @@ border: 1px solid #e6e6e6;
 .payment img{
   max-width: 90px;
 }
+@media screen and (max-width: 767px) {
+.td-75 {
+  text-align: center !important;
+}
+.pro-title.text-left{
+  text-align: center !important;
+}
+.cart-title {
+  margin-bottom: 0px;
+}
+.pro-remove.text-right, .pro-remove.text-left{
+    text-align: center !important;
+}
+.pro-remove  {
+  padding-top: 0px !important;
+}
+.pro-remove.text-right a{
+  margin-left: auto;
+  margin-right: auto;
+}
+.g-total{
+  font-size: 16px;
+}
+.g-total-value {
+  font-size: 24px;
+}
+.cart-table table tbody tr {
+  margin-bottom: 10px;
+}
 
-
-
+}
 /*--------------------------------------------------
 OWL CAROUSEL CSS :start
 -------------------------------------------------- */
